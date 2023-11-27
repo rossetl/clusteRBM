@@ -11,10 +11,6 @@ Code for the paper "Unsupervised hierarchical clustering using the learning dyna
 </p>
 
 ## Installation
-- Create the conda environment with all the dependencies: 
-```
-conda env create -f RBMenv.yml
-```
 
 - Include the main directory to your PATH environment variable by adding the following line to your ~/.bashrc file:
 ```
@@ -27,24 +23,6 @@ mkdir data models trees
 ```
 
 ## Usage
-
-### Train an RBM model
-The possible RBM models are denoted as:
-- `BernoulliBernoulliRBM`: Bernoulli variables in both the visible and the hidden layer;
-- `BernoulliBernoulliWeightedRBM`: Bernoulli variables in both the visible and the hidden layer. During the training, the averages over the data points are weighted;
-- `PottsBernoulliRBM`: Potts variables in the visible layer and Bernoulli variables in the hidden layer;
-- `PottsBernoulliWeightedRBM`: Potts variables in the visible layer and Bernoulli variables in the hidden layer. During the training, the averages over the data points are weighted.
-
-To train a specific RBM model launch `rbm-train` followed by the proper arguments:
-- *default*: trains a `BernoulliBernoulliRBM` model;
-- `-V`: selects the visible layer variables type. Followed by `Bernoulli` trains a `BernoulliBernoulliRBM` model, while followed by `Potts` trains a `PottsBernoulliRBM` model;
-- `-w`: trains the weighted version of the previous models;
-- To open the help page type `rbm-train -h`.
-
-Apart from the previous parameters, another series of parameters specifies the training specifics. To list all the possibilities, use the argument `-i` (e.g. `rbm-train -V -w -i`).
-
-The script will ask to select the data file to be used for the training among those present in the folder `data/` (for details on the training data file format see the next section).
-
 #### Data source format
 
 ## TreeRBM
