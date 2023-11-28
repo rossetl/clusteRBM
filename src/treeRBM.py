@@ -6,7 +6,7 @@ if os.getenv('CLUSTERBM') != None:
     os.chdir(os.getenv('CLUSTERBM'))
 sys.path.append(os.getcwd() + '/src')
 from typing import Tuple, Union, Optional
-from mean_field_tools import *
+from mf_tools_binary import *
 from dataset import DatasetRBM
 from pathlib import Path
 import logging
@@ -64,49 +64,11 @@ def get_epochs(filename : str) -> Array:
     # Sort the results
     alltime = np.sort(alltime)
     return alltime
-     
-def get_tree_ages(fname : str,
-                  X : Tuple[Tensor, Tensor],
-                  min_increase : Optional[float]=0.1,
-                  alpha : Optional[float]=1e-4,
-                  device : Optional[torch.device]=torch.device("cpu")) -> Array:
-    """Scans all t_ages and returns those that bring an increase in the mean-field estimate of the number of fixed points greather than
-    the proportion min_increase.
-    
-    Args:
-        fname (str): Path to the RBM model.
-        X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
-        min_increase (float, optional): Fraction of fixed points increase to consider for choosing the ages of the RBM. Defaults to 0.1.
-        alpha (float, optional): Convergence threshold of the algorithm. Defaults to 1e-4.
-        device (torch.device): Device.
-        
-    Returns:
-        Array: t_ages for constructing the tree.
-    """
-    # Get all t_ages saved
-    alltime = get_epochs(fname)
-    tree_ages = []
-    prev_num_fps = 1
-    pbar = tqdm(alltime, colour='red', leave=False, ascii="-#")
-    pbar.set_description('Filtering the ages')
-    for stamp in pbar:
-        params = get_params(fname, stamp=stamp, device=device)            
-        X_mf, _ = iterate_mean_field(X=X, params=params, order=1, batch_size=256, alpha=alpha, verbose=False)
-        fps = torch.unique(torch.argmax(X_mf, -1), dim=0).cpu().numpy()
-        num_fps = len(fps)
-        if (len(tree_ages) > 0) and (num_fps == prev_num_fps):
-            # keep all t_ages with the same number of fixed points for tracking the dragging of the fixed points
-            tree_ages.append(stamp)
-        elif (num_fps - prev_num_fps) / num_fps >= min_increase:
-            tree_ages.append(stamp)
-            prev_num_fps = num_fps
-    return np.array(tree_ages)
     
 def fit(fname : str,
         data : Tensor,
-        t_ages : Optional[Array]=None,
+        t_ages : Array,
         batch_size : Optional[int]=500,
-        min_increase : Optional[float]=0.1,
         eps : Optional[float]=1.,
         alpha : Optional[float]=1e-4,
         save_node_features : Optional[bool]=False,
@@ -118,9 +80,8 @@ def fit(fname : str,
     Args:
         fname (str): Path to the RBM model.
         data (Tensor): Data to fill the treeRBM model.
-        t_ages (Array, optional): Ages of the RBM at which compute the branches of the tree. If None, t_ages are chosen automatically. Defaults to None.
+        t_ages (Array): Ages of the RBM at which compute the branches of the tree.
         batch_size (int, optional): Batch size, to tune based on the memory availability. Defaults to 128.
-        min_increase (float, optional): Relative fixed points number that has to change for saving one age. Used only if t_ages is None. Defaults to 0.1.
         eps (float, optional): Epsilon parameter of the DBSCAN. Defaults to 1..
         alpha (float, optional): Convergence threshold of the TAP equations. Defaults to 1e-4.
         save_node_features (bool, optional): Wheather to save the states (fixed points) at the tree nodes.
@@ -131,18 +92,13 @@ def fit(fname : str,
     Returns:
         Tuple[Array, dict] : Array with the encoded tree structure, dictionary that associates tree nodes to the fixed points.
     """
-    # get t_ages
-    if t_ages is not None:
-        t_ages = t_ages
-    else:
-        t_ages = get_tree_ages(data, min_increase=min_increase)
         
     # initialize the RBM
     params = get_params(fname, stamp=t_ages[-1], device=device)
     
     # generate tree_codes
-    _, mh = sample_hiddens(data, params[1], params[2])
-    _, mv = sample_visibles(mh, params[0], params[2])
+    mh = profile_hiddens(data, params[1], params[2])
+    mv = profile_visibles(mh, params[0], params[2])
     mag_state = (mv, mh)
         
     n_data = data.shape[0]
@@ -289,11 +245,13 @@ def generate_tree(tree_codes : Array,
                 colors_dict[i] = {l : c for l, c in colors_dict[i].items() if l != '-1'} # remove '-1' if present
                 leaves_colors = [colors_dict[i][label] for label in ld.values()]
                 # create annotation file for iTOL
-                f = open(f'{folder}/leaves_colours{str(i)}{str(i)}.txt', 'w')
-                f.write('DATASET_COLORSTRIP\nSEPARATOR TAB\nDATASET_LABEL\tLabel family ' + str(i) + '\nCOLOR\tred\n')
                 if legend is not None:
+                    f = open(f'{folder}/leaves_colours_{legend[i]}.txt', 'w')
+                    f.write('DATASET_COLORSTRIP\nSEPARATOR TAB\nDATASET_LABEL\t{0}'.format(legend[i]) + '\nCOLOR\tred\n')
                     f.write('LEGEND_TITLE\t{0}\nSTRIP_WIDTH\t75'.format(legend[i]))
                 else:
+                    f = open(f'{folder}/leaves_colours_{str(i)}.txt', 'w')
+                    f.write('DATASET_COLORSTRIP\nSEPARATOR TAB\nDATASET_LABEL\tLabel family ' + str(i) + '\nCOLOR\tred\n')
                     f.write('LEGEND_TITLE\tLabel family {0}\nSTRIP_WIDTH\t75'.format(i))
                 f.write('\nLEGEND_SHAPES')
                 for _ in colors_dict[i].keys():
@@ -343,16 +301,14 @@ def create_parser():
     optional.add_argument('-c', '--colors',           type=Path,  default=None,       help='Path to the csv color mapping file.')
     optional.add_argument('--n_data',                 type=int,   default=500,        help='(Defaults to 500). Number of data to put in the tree.')
     optional.add_argument('--batch_size',             type=int,   default=500,        help='(Defaults to 500). Batch size.')
-    optional.add_argument('--filter_ages', '-f',      action='store_true',   default=False,      help='If specified, filters the ages with the naive MF equations.')
     optional.add_argument('--max_age',                type=int,   default=np.inf,     help='(Defaults to inf). Maximum age to consider for the tree construction.')
     optional.add_argument('--save_node_features',     action='store_true',  default=False,      help='If specified, saves the states corresponding to the tree nodes.')
     optional.add_argument('--max_iter',               type=int,   default=10000,      help='(Defaults to 10000). Maximum number of TAP iterations.')
     optional.add_argument('--max_depth',              type=int,   default=50,         help='(Defaults to 50). Maximum depth to visualize in the generated tree.')
     optional.add_argument('--order_mf',               type=int,   default=2,          help='(Defaults to 2). Mean-field order of the Plefka expansion.', choices=[1, 2, 3])
-    optional.add_argument('--min_increase',           type=float, default=0.1,        help='(Defaults to 0.1). Relative fixed points number that has to change for saving one age. Used only if `filter_ages` is specified.')
     optional.add_argument('--eps',                    type=float, default=1.,         help='(Defaults to 1.). Epsilon parameter of the DBSCAN.')
     optional.add_argument('--alpha',                  type=float, default=1e-4,       help='(Defaults to 1e-4). Convergence threshold of the TAP equations.')
-    optional.add_argument('--colormap',               type=str,   default='tab20',    help='(Defaults to `Paired`). Name of the colormap to use for the labels.')
+    optional.add_argument('--colormap',               type=str,   default='tab20',    help='(Defaults to `tab20`). Name of the colormap to use for the labels.')
     return parser
 
 if __name__ == '__main__':
@@ -395,14 +351,11 @@ if __name__ == '__main__':
     labels_dict = [{n : l for n, l in dl.items() if n in leaves_names} for dl in dataset.labels]
     
     # Fit the tree to the data
-    if args.filter_ages:
-        t_ages = None
-    else:
-        alltime = get_epochs(args.model)
-        t_ages = alltime[alltime <= args.max_age]
+    alltime = get_epochs(args.model)
+    t_ages = alltime[alltime <= args.max_age]
     logger.info('Fitting the model')
     tree_codes, node_features_dict = fit(fname=args.model, data=data, batch_size=args.batch_size,
-                                        t_ages=t_ages, save_node_features=args.save_node_features, min_increase=args.min_increase,
+                                        t_ages=t_ages, save_node_features=args.save_node_features,
                                         eps=args.eps, alpha=args.alpha, max_iter=args.max_iter, order=args.order_mf)
     max_depth = tree_codes.shape[1]
     # Save the tree codes
