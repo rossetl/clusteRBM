@@ -1,7 +1,8 @@
 from typing import Optional, Union, List, Any
 from pathlib import Path
 import numpy as np
-from torch.utils.data import Dataset, DataLoader
+import pandas as pd
+from torch.utils.data import Dataset
 
 def sequence_to_numeric(string : str) -> list:
     amino_letters = 'ACDEFGHIKLMNPQRSTVWY-'
@@ -37,16 +38,18 @@ def import_from_fasta(fasta_name : Union[str, Path]) -> List[list]:
     return names, sequences
 
 class DatasetRBM(Dataset):
-    def __init__(self, data_path : Union[str, Path], ann_path : Union[str, Path]):
+    def __init__(self, data_path : Union[str, Path], ann_path : Union[str, Path], colors_path : Optional[Union[str, Path]]=None):
         """Initialize the dataset.
 
         Args:
             data_path (Union[str, Path]): Path to the data file (plain text or fasta).
             ann_path (Union[str, Path]): Path to the annotations file (csv).
+            colors_path (Union[str, Path], optional): Path to the color mapping file (csv). If None, colors are assigned automatically. Defaults to None.
         """
         self.names = []
         self.data = []
         self.labels = []
+        self.colors = []
         
         # Automatically detects if the file is in fasta format and imports the data
         with open(data_path, "r") as f:
@@ -62,15 +65,18 @@ class DatasetRBM(Dataset):
             self.data = np.array(self.data, dtype=np.float32)
             self.names = np.arange(len(self.data)).astype(str)
         
-        with open(ann_path, "r") as f:
-            headers = f.readline().strip().split(",")
-            n_class = len(headers) - 1
-            for _ in range(n_class):
-                self.labels.append({n : "-1" for n in self.names})
-            for line in f:
-                n, *l = line.strip().split(",")
-                for i, lab_class in enumerate(self.labels):
-                    lab_class[n] = list(l)[i]
+        # Load annotations
+        ann_df = pd.read_csv(ann_path).astype(str)
+        self.legend = [n for n in ann_df.columns if n != "Name"]
+        for leg in self.legend:
+            self.labels.append({n : l for n, l in zip(ann_df["Name"], ann_df[leg])})
+        
+        # Load colors
+        if colors_path is not None:
+            df_colors = pd.read_csv(colors_path)
+            for leg in self.legend:
+                df_leg = df_colors.loc[df_colors["Legend"] == leg]
+                self.colors.append({n : c for n, c in zip(df_leg["Label"], df_leg["Color"])})
 
     def __len__(self):
         return len(self.data)

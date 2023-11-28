@@ -5,9 +5,9 @@ import os
 if os.getenv('CLUSTERBM') != None:
     os.chdir(os.getenv('CLUSTERBM'))
 sys.path.append(os.getcwd() + '/src')
-from typing import Tuple, Union
+from typing import Tuple, Union, Optional
 from mean_field_tools import *
-from datasetRBM import DatasetRBM
+from dataset import DatasetRBM
 from pathlib import Path
 import logging
 import random
@@ -26,7 +26,7 @@ from matplotlib.colors import to_hex
 Tensor = torch.Tensor
 Array = np.ndarray
 
-def get_params(filename : str, stamp : Union[str, int], device : torch.device=torch.device("cpu")) -> Tuple[Tensor, Tensor, Tensor]:
+def get_params(filename : str, stamp : Union[str, int], device : Optional[torch.device]=torch.device("cpu")) -> Tuple[Tensor, Tensor, Tensor]:
     """Returns the parameters of the model at the selected time stamp.
 
     Args:
@@ -65,7 +65,11 @@ def get_epochs(filename : str) -> Array:
     alltime = np.sort(alltime)
     return alltime
      
-def get_tree_ages(fname : str, X : Tuple[Tensor, Tensor], min_increase : float=0.1, alpha : float=1e-4, device : torch.device=torch.device("cpu")) -> Array:
+def get_tree_ages(fname : str,
+                  X : Tuple[Tensor, Tensor],
+                  min_increase : Optional[float]=0.1,
+                  alpha : Optional[float]=1e-4,
+                  device : Optional[torch.device]=torch.device("cpu")) -> Array:
     """Scans all t_ages and returns those that bring an increase in the mean-field estimate of the number of fixed points greather than
     the proportion min_increase.
     
@@ -73,7 +77,7 @@ def get_tree_ages(fname : str, X : Tuple[Tensor, Tensor], min_increase : float=0
         fname (str): Path to the RBM model.
         X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
         min_increase (float, optional): Fraction of fixed points increase to consider for choosing the ages of the RBM. Defaults to 0.1.
-        eps (float, optional): Convergence threshold of the algorithm. Defaults to 1e-4.
+        alpha (float, optional): Convergence threshold of the algorithm. Defaults to 1e-4.
         device (torch.device): Device.
         
     Returns:
@@ -98,26 +102,34 @@ def get_tree_ages(fname : str, X : Tuple[Tensor, Tensor], min_increase : float=0
             prev_num_fps = num_fps
     return np.array(tree_ages)
     
-def fit(fname : str, data : Tensor, leaves_names : Array, t_ages : Array=None, batch_size : int=500, min_increase : float=0.1, eps : float=1.,
-        alpha : float=1e-4, save_node_features : bool=False, order : int=2, max_iter : int=10000, device : torch.device=torch.device("cpu")) -> Tuple[Array, dict]:
+def fit(fname : str,
+        data : Tensor,
+        t_ages : Optional[Array]=None,
+        batch_size : Optional[int]=500,
+        min_increase : Optional[float]=0.1,
+        eps : Optional[float]=1.,
+        alpha : Optional[float]=1e-4,
+        save_node_features : Optional[bool]=False,
+        order : Optional[int]=2,
+        max_iter : Optional[int]=10000,
+        device : Optional[torch.device]=torch.device("cpu")) -> Tuple[Array, dict]:
     """Fits the treeRBM model on the data.
     
     Args:
         fname (str): Path to the RBM model.
         data (Tensor): Data to fill the treeRBM model.
-        leaves_names (Array): Names of the leaves.
         t_ages (Array, optional): Ages of the RBM at which compute the branches of the tree. If None, t_ages are chosen automatically. Defaults to None.
         batch_size (int, optional): Batch size, to tune based on the memory availability. Defaults to 128.
         min_increase (float, optional): Relative fixed points number that has to change for saving one age. Used only if t_ages is None. Defaults to 0.1.
         eps (float, optional): Epsilon parameter of the DBSCAN. Defaults to 1..
         alpha (float, optional): Convergence threshold of the TAP equations. Defaults to 1e-4.
-        save_features_depth (int, optional): Depth below which saving the states at the tree nodes.
+        save_node_features (bool, optional): Wheather to save the states (fixed points) at the tree nodes.
         order (int, optional): Order of the mean-field free energy approximation. Defaults to 2.
         max_iter (int, optional): Maximum number of TAP iterations. Defaults to 10000.
         device (torch.device): Device.
         
     Returns:
-        dict : dictionary that associates tree nodes to the fixed points.
+        Tuple[Array, dict] : Array with the encoded tree structure, dictionary that associates tree nodes to the fixed points.
     """
     # get t_ages
     if t_ages is not None:
@@ -208,16 +220,23 @@ def fit(fname : str, data : Tensor, leaves_names : Array, t_ages : Array=None, b
     #self.max_depth = tree_codes.shape[1]
     return (tree_codes, node_features_dict)
 
-def generate_tree(tree_codes : Array, folder : str, labels_dict : list=None, colors_dict : list=None, depth : int=None) -> None:
+def generate_tree(tree_codes : Array,
+                  folder : str,
+                  leaves_names : Array,
+                  legend : Optional[list]=None,
+                  labels_dict : Optional[list]=None,
+                  colors_dict : Optional[list]=None,
+                  depth : Optional[int]=None) -> None:
     """Constructs an ete3.Tree objects with the previously fitted data.
     
     Args:
         tree_codes (Array): Array encoding the tree.
         folder (str): Path to the folder where to store the data.
+        leaves_names (Array): List of names of all the leaves in the tree.
+        legend (list, optional): List with the names to assign to the legend titles. Defaults to None.
         labels_dict (list, optional): Dictionaries of the kind {leaf_name : leaf_label} with the labels to assign to the leaves. Defaults to None.
         colors_dict (list, optional): Dictionaries with a mapping {label : colour}. Defaults to None.
         depth (int, optional): Maximum depth of the tree. If None, all levels are used. Defaults to None.
-        write_to_file (bool, optional): Wheather to save the results on a file.
     """
     # Validate input arguments
     if labels_dict:
@@ -272,7 +291,10 @@ def generate_tree(tree_codes : Array, folder : str, labels_dict : list=None, col
                 # create annotation file for iTOL
                 f = open(f'{folder}/leaves_colours{str(i)}{str(i)}.txt', 'w')
                 f.write('DATASET_COLORSTRIP\nSEPARATOR TAB\nDATASET_LABEL\tLabel family ' + str(i) + '\nCOLOR\tred\n')
-                f.write('LEGEND_TITLE\tLabel family {0}\nSTRIP_WIDTH\t75'.format(i))
+                if legend is not None:
+                    f.write('LEGEND_TITLE\t{0}\nSTRIP_WIDTH\t75'.format(legend[i]))
+                else:
+                    f.write('LEGEND_TITLE\tLabel family {0}\nSTRIP_WIDTH\t75'.format(i))
                 f.write('\nLEGEND_SHAPES')
                 for _ in colors_dict[i].keys():
                     f.write('\t2')
@@ -318,6 +340,7 @@ def create_parser():
     required.add_argument('-d', '--data',          type=Path, help='Path to data.', required=True)
     required.add_argument('-a', '--annotations',   type=Path, help='Path to the csv annotation file.', required=True)
     
+    optional.add_argument('-c', '--colors',           type=Path,  default=None,       help='Path to the csv color mapping file.')
     optional.add_argument('--n_data',                 type=int,   default=500,        help='(Defaults to 500). Number of data to put in the tree.')
     optional.add_argument('--batch_size',             type=int,   default=500,        help='(Defaults to 500). Batch size.')
     optional.add_argument('--filter_ages', '-f',      action='store_true',   default=False,      help='If specified, filters the ages with the naive MF equations.')
@@ -366,7 +389,7 @@ if __name__ == '__main__':
     # Load the data
     logger.info('Loading the data')
     data_type = torch.float32
-    dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations)
+    dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations, colors_path=args.colors)
     data = torch.tensor(dataset.data[:args.n_data], device=device).type(data_type)
     leaves_names = dataset.names[:args.n_data]
     labels_dict = [{n : l for n, l in dl.items() if n in leaves_names} for dl in dataset.labels]
@@ -378,7 +401,7 @@ if __name__ == '__main__':
         alltime = get_epochs(args.model)
         t_ages = alltime[alltime <= args.max_age]
     logger.info('Fitting the model')
-    tree_codes, node_features_dict = fit(fname=args.model, data=data, leaves_names=leaves_names, batch_size=args.batch_size,
+    tree_codes, node_features_dict = fit(fname=args.model, data=data, batch_size=args.batch_size,
                                         t_ages=t_ages, save_node_features=args.save_node_features, min_increase=args.min_increase,
                                         eps=args.eps, alpha=args.alpha, max_iter=args.max_iter, order=args.order_mf)
     max_depth = tree_codes.shape[1]
@@ -395,12 +418,15 @@ if __name__ == '__main__':
         f_nodes.close()
     
     # Generate the tree
-    logger.info(f'Generating a tree of depth {min(args.max_depth, max_depth)}. Maximum depth is {max_depth}')
-    colors = matplotlib.colormaps[args.colormap]
-    colors_dict = [{l : to_hex(colors(i)) for i, l in enumerate(np.unique(list(labels.values())))} for labels in labels_dict]
+    logger.info(f'Generating a tree of depth {min(args.max_depth, max_depth)}. Maximum depth is {max_depth}.')
+    if args.colors is not None:
+        colors_dict = dataset.colors
+    else:
+        colors = matplotlib.colormaps[args.colormap]
+        colors_dict = [{l : to_hex(colors(i)) for i, l in enumerate(np.unique(list(labels.values())))} for labels in labels_dict]
     if args.max_depth > max_depth:
         args.max_depth = max_depth
-    generate_tree(tree_codes=tree_codes, folder=args.output, labels_dict=labels_dict, colors_dict=colors_dict, depth=args.max_depth)
+    generate_tree(tree_codes=tree_codes, leaves_names=leaves_names, legend=dataset.legend, folder=args.output, labels_dict=labels_dict, colors_dict=colors_dict, depth=args.max_depth)
 
     stop = time.time()
     logger.info(f'Process completed, elapsed time: {round((stop - start) / 60, 1)} minutes')
