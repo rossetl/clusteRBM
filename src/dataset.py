@@ -69,14 +69,14 @@ class DatasetRBM(Dataset):
         ann_df = pd.read_csv(ann_path).astype(str)
         self.legend = [n for n in ann_df.columns if n != "Name"]
         for leg in self.legend:
-            self.labels.append({n : l for n, l in zip(ann_df["Name"], ann_df[leg])})
+            self.labels.append({str(n) : str(l) for n, l in zip(ann_df["Name"], ann_df[leg])})
         
         # Load colors
         if colors_path is not None:
             df_colors = pd.read_csv(colors_path)
             for leg in self.legend:
                 df_leg = df_colors.loc[df_colors["Legend"] == leg]
-                self.colors.append({n : c for n, c in zip(df_leg["Label"], df_leg["Color"])})
+                self.colors.append({str(n) : c for n, c in zip(df_leg["Label"], df_leg["Color"])})
 
     def __len__(self):
         return len(self.data)

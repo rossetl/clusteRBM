@@ -130,10 +130,10 @@ def fit(fname : str,
     for t_age in reversed(t_ages):
         pbar.update(1)
         # load the rbm parameters
-        params = get_params(fname, stamp=t_age)
+        params = get_params(fname, stamp=t_age, device=device)
         # Iterate mean field equations until convergence
         n = len(mag_state[0])
-        mag_state = iterate_mean_field(X=mag_state, params=params, order=order, batch_size=batch_size, alpha=alpha, max_iter=max_iter, verbose=False, device=device)
+        mag_state = iterate_mean_field(X=mag_state, params=params, order=order, batch_size=batch_size, alpha=alpha, rho=0., max_iter=max_iter, verbose=False, device=device)
         # Clustering with DBSCAN
         scan.fit(mag_state[1].cpu())
         unique_labels = np.unique(scan.labels_)
@@ -356,7 +356,8 @@ if __name__ == '__main__':
     logger.info('Fitting the model')
     tree_codes, node_features_dict = fit(fname=args.model, data=data, batch_size=args.batch_size,
                                         t_ages=t_ages, save_node_features=args.save_node_features,
-                                        eps=args.eps, alpha=args.alpha, max_iter=args.max_iter, order=args.order_mf)
+                                        eps=args.eps, alpha=args.alpha, max_iter=args.max_iter,
+                                        order=args.order_mf, device=device)
     max_depth = tree_codes.shape[1]
     # Save the tree codes
     logger.info(f'Saving the model in {args.output}')

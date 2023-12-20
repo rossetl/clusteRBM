@@ -33,7 +33,7 @@ def profile_visibles(h : Tensor, vbias : Tensor, weight_matrix : Tensor) -> Tens
     return mv
 
 @torch.jit.script
-def iterate_mf1(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : Optional[float]=1e-6, max_iter : Optional[int]=2000, rho : Optional[float]=0.) -> Tuple[Tensor, Tensor]:
+def iterate_mf1(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : float=1e-6, max_iter : int=2000, rho : float=0.) -> Tuple[Tensor, Tensor]:
     """Iterates the mean field self-consistency equations at first order (naive mean field), starting from the visible units X, until convergence.
     Args:
         X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
@@ -65,7 +65,7 @@ def iterate_mf1(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor
     return (mv, mh)
 
 @torch.jit.script
-def iterate_mf2(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : Optional[float]=1e-6, max_iter : Optional[int]=2000, rho : Optional[float]=0.) -> Tuple[Tensor, Tensor]:
+def iterate_mf2(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : float=1e-6, max_iter : int=2000, rho : float=0.) -> Tuple[Tensor, Tensor]:
     """Iterates the mean field self-consistency equations at second order (TAP equations), starting from the visible units X, until convergence.
     Args:
         X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
@@ -107,7 +107,7 @@ def iterate_mf2(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor
     return (mv, mh)
 
 @torch.jit.script
-def iterate_mf3(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : Optional[float]=1e-6, max_iter : Optional[int]=2000, rho : Optional[float]=0.) -> Tuple[Tensor, Tensor]:
+def iterate_mf3(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : float=1e-6, max_iter : int=2000, rho : float=0.) -> Tuple[Tensor, Tensor]:
     """Iterates the mean field self-consistency equations at third order, starting from the visible units X, until convergence.
     Args:
         X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
@@ -153,9 +153,9 @@ def iterate_mf3(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor
             break
     return (mv, mh)
 
-def iterate_mean_field(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], order : Optional[int]=2,
-                       batch_size : Optional[int]=128, alpha : Optional[float]=1e-6, verbose : Optional[bool]=True, 
-                       rho : Optional[float]=0., max_iter : Optional[int]=2000, device : Optional[torch.device]=torch.device("cpu")) -> Tuple[Tensor, Tensor]:
+def iterate_mean_field(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], order : int=2,
+                       batch_size : int=128, alpha : float=1e-6, verbose : bool=True, 
+                       rho : float=0., max_iter : int=2000, device : torch.device=torch.device("cpu")) -> Tuple[Tensor, Tensor]:
     """Iterates the mean field self-consistency equations at the specified order, starting from the visible units X, until convergence.
     Args:
         X (Tuple[Tensor, Tensor]): Initial conditions (visible and hidden magnetizations).
