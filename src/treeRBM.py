@@ -5,28 +5,29 @@ import os
 if os.getenv('CLUSTERBM') != None:
     os.chdir(os.getenv('CLUSTERBM'))
 sys.path.append(os.getcwd() + '/src')
-from typing import Tuple, Union, Optional
-from mf_tools_binary import *
-from dataset import DatasetRBM
-from pathlib import Path
-import logging
-import random
+from typing import Tuple, Union
+import matplotlib
 import matplotlib.colors as plt_colors
-import torch
+from matplotlib.colors import to_hex
+from pathlib import Path
+import random
+import importlib
 import numpy as np
+import time
+import argparse
+
+import torch
 from h5py import File
 from sklearn.cluster import DBSCAN
 from ete3 import Tree
-import time
 from tqdm import tqdm
-import argparse
-import matplotlib
-from matplotlib.colors import to_hex
+import logging
+from dataset import DatasetRBM
 
 Tensor = torch.Tensor
 Array = np.ndarray
 
-def get_params(filename : str, stamp : Union[str, int], device : Optional[torch.device]=torch.device("cpu")) -> Tuple[Tensor, Tensor, Tensor]:
+def get_params(filename : str, stamp : Union[str, int], device : torch.device=torch.device("cpu")) -> Tuple[Tensor, Tensor, Tensor]:
     """Returns the parameters of the model at the selected time stamp.
 
     Args:
@@ -65,19 +66,21 @@ def get_epochs(filename : str) -> Array:
     alltime = np.sort(alltime)
     return alltime
     
-def fit(fname : str,
+def fit(module,
+        fname : str,
         data : Tensor,
         t_ages : Array,
-        batch_size : Optional[int]=500,
-        eps : Optional[float]=1.,
-        alpha : Optional[float]=1e-4,
-        save_node_features : Optional[bool]=False,
-        order : Optional[int]=2,
-        max_iter : Optional[int]=10000,
-        device : Optional[torch.device]=torch.device("cpu")) -> Tuple[Array, dict]:
+        batch_size : int=500,
+        eps : float=1.,
+        alpha : float=1e-4,
+        save_node_features : bool=False,
+        order : int=2,
+        max_iter : int=10000,
+        device : torch.device=torch.device("cpu")) -> Tuple[Array, dict]:
     """Fits the treeRBM model on the data.
     
     Args:
+        module: module containing the mean-field methods.
         fname (str): Path to the RBM model.
         data (Tensor): Data to fill the treeRBM model.
         t_ages (Array): Ages of the RBM at which compute the branches of the tree.
@@ -97,8 +100,8 @@ def fit(fname : str,
     params = get_params(fname, stamp=t_ages[-1], device=device)
     
     # generate tree_codes
-    mh = profile_hiddens(data, params[1], params[2])
-    mv = profile_visibles(mh, params[0], params[2])
+    mh = module.profile_hiddens(data, params[1], params[2])
+    mv = module.profile_visibles(mh, params[0], params[2])
     mag_state = (mv, mh)
         
     n_data = data.shape[0]
@@ -133,7 +136,9 @@ def fit(fname : str,
         params = get_params(fname, stamp=t_age, device=device)
         # Iterate mean field equations until convergence
         n = len(mag_state[0])
-        mag_state = iterate_mean_field(X=mag_state, params=params, order=order, batch_size=batch_size, alpha=alpha, rho=0., max_iter=max_iter, verbose=False, device=device)
+        mag_state = module.iterate_mean_field(X=mag_state, params=params,
+                                              order=order, batch_size=batch_size,
+                                              alpha=alpha, rho=0., max_iter=max_iter, verbose=False, device=device)
         # Clustering with DBSCAN
         scan.fit(mag_state[1].cpu())
         unique_labels = np.unique(scan.labels_)
@@ -153,7 +158,7 @@ def fit(fname : str,
         mag_state = representative_list
         level_classification = evaluate_mask_pipe(mask_pipe, unique_labels)
         
-        # add the new classification only if the number of TAP fixed points has decreased
+        # Add the new classification only if the number of TAP fixed points has decreased
         if new_fixed_points_number < old_fixed_points_number:
             tree_codes[:, level] = level_classification
             unused_levels -= 1
@@ -172,17 +177,15 @@ def fit(fname : str,
     # Construct the node features dictionary
     node_features_dict = {f'I{level}-{lab}' : fp for level, lab, fp in zip(levels_temp, labels_temp, fps_temp)}
     tree_codes = tree_codes[:, unused_levels:]
-
-    #self.max_depth = tree_codes.shape[1]
     return (tree_codes, node_features_dict)
 
 def generate_tree(tree_codes : Array,
                   folder : str,
                   leaves_names : Array,
-                  legend : Optional[list]=None,
-                  labels_dict : Optional[list]=None,
-                  colors_dict : Optional[list]=None,
-                  depth : Optional[int]=None) -> None:
+                  legend : list=None,
+                  labels_dict : list=None,
+                  colors_dict : list=None,
+                  depth : int=None) -> None:
     """Constructs an ete3.Tree objects with the previously fitted data.
     
     Args:
@@ -235,16 +238,16 @@ def generate_tree(tree_codes : Array,
         mother_name = 'R' + ''.join([str(aa) + '-' for aa in tree_node[:n_levels]])
         M = t.search_nodes(name=mother_name)[0]
         M.add_child(name=leaf_name)
-    # add labels to the leaves
+    # Add labels to the leaves
     if labels_dict:
         for i, ld_raw in enumerate(labels_dict):
-            # remove '-1' if present
+            # Remove '-1' if present
             ld = {k : v for k, v in ld_raw.items() if v != '-1'}
             
             if colors_dict:
                 colors_dict[i] = {l : c for l, c in colors_dict[i].items() if l != '-1'} # remove '-1' if present
                 leaves_colors = [colors_dict[i][label] for label in ld.values()]
-                # create annotation file for iTOL
+                # Create annotation file for iTOL
                 if legend is not None:
                     f = open(f'{folder}/leaves_colours_{legend[i]}.txt', 'w')
                     f.write('DATASET_COLORSTRIP\nSEPARATOR TAB\nDATASET_LABEL\t{0}'.format(legend[i]) + '\nCOLOR\tred\n')
@@ -272,7 +275,7 @@ def generate_tree(tree_codes : Array,
                     f.write(leaf.name + '\trgba' + str(rgba_colors).replace(' ', '') + '\t' + str(label) + '\n')
                 f.close()
     
-    # rename the nodes of the tree
+    # Rename the nodes of the tree
     def get_node_name(node_id):
         split = [s for s in node_id.split('-') if s != '']
         level = len(split) - 1
@@ -284,7 +287,7 @@ def generate_tree(tree_codes : Array,
             if node.name != 'Root':
                 node.name = get_node_name(node.name)
     
-    # generate nw file
+    # Generate newick file
     t.write(format=1, outfile=f'{folder}/tree.nw')
 
 def create_parser():
@@ -312,7 +315,7 @@ def create_parser():
     return parser
 
 if __name__ == '__main__':
-    # define logger
+    # Define logger
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(
@@ -342,10 +345,17 @@ if __name__ == '__main__':
     random.seed(0)
     np.random.seed(0)
     
-    # Load the data
+    # Load the data and the module
     logger.info('Loading the data')
-    data_type = torch.float32
     dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations, colors_path=args.colors)
+    
+    if dataset.get_num_states() > 2:
+        data_type = torch.int64
+        module = importlib.import_module("mf_tools.mf_tools_categorical")
+    else:
+        data_type = torch.float32
+        module = importlib.import_module("mf_tools.mf_tools_binary")
+        
     data = torch.tensor(dataset.data[:args.n_data], device=device).type(data_type)
     leaves_names = dataset.names[:args.n_data]
     labels_dict = [{n : l for n, l in dl.items() if n in leaves_names} for dl in dataset.labels]
@@ -354,7 +364,7 @@ if __name__ == '__main__':
     alltime = get_epochs(args.model)
     t_ages = alltime[alltime <= args.max_age]
     logger.info('Fitting the model')
-    tree_codes, node_features_dict = fit(fname=args.model, data=data, batch_size=args.batch_size,
+    tree_codes, node_features_dict = fit(module=module, fname=args.model, data=data, batch_size=args.batch_size,
                                         t_ages=t_ages, save_node_features=args.save_node_features,
                                         eps=args.eps, alpha=args.alpha, max_iter=args.max_iter,
                                         order=args.order_mf, device=device)

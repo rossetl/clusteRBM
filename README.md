@@ -3,6 +3,8 @@
 
 Code for the paper "Unsupervised hierarchical clustering using the learning dynamics of RBMs" by Aurélien Decelle, Lorenzo Rosset and Beatriz Seoane.
 
+ClusteRBM generates a ralational tree of some input dataset using a previously trained RBM model.
+
 <p align="center">
 <image src="/images/tree-MNIST.png" width=456 height=400/>
 <p align="center">
@@ -14,16 +16,32 @@ Code for the paper "Unsupervised hierarchical clustering using the learning dyna
 
 - Include the main directory to your PATH environment variable by adding the following line to your ~/.bashrc file:
 ```
-RBM_CLUSTERING=/path/to/RBM-hierarchical-clustering
+CLUSTERBM=/path/to/clusteRBM
 ```
 
-- Create some repositories for storing the data and the programs' outputs
+- (Optional) Create some repositories for storing the data and the programs' outputs
 ```
 mkdir data models trees
 ```
 
 ## Usage
-#### Data source format
+
+The code for training an RBM and save the model in the correct format can be found in [TorchRBM](https://github.com/AurelienDecelle/TorchRBM.git). To obtain a proper tree reconstruction, it is important to save the parameters of the model many times during the training at evenly spaced time intervals. We therefore suggest to set `--n_save` $\geq$ 100 and `--spacing linear`.
+
+Once you have a properly trained RBM model, to generate the tree enter:
+```bash
+./clusterbm -m <path_to_rbm_model> -d <path_to_data> -a <path_to_annotations> -o <output_folder>
+```
+This will create a folder called `output_folder` containing the tree in newick format and the annotation files to be given to [iTOL](https://itol.embl.de/).
+
+The list of available argument can be printed using:
+```bash
+./clusterbm -h
+```
+
+### Options
+
+- 
 
 ## TreeRBM
 Once you have a trained model in the folder `models/`, you can use the `rbm-maketree` command to generate the hierarchical tree for a dataset compatible with the one used for the training of the RBM. Use `rbm-maketree -h` to list all the optional arguments.
