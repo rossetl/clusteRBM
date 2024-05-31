@@ -212,6 +212,9 @@ def generate_tree(tree_codes : Array,
     else:
         n_levels = max_depth
         
+    # Leaves names cannot contain the characters '(', ')', which are reserved for the newick sy>
+    leaves_names = np.array([ln.replace('(', '').replace(')', '') for ln in leaves_names])
+        
     # Initialize the tree with the proper number of initial branches
     n_start_branches = np.max(tree_codes[:, 0]) + 1
     init_tree = '('
@@ -242,7 +245,7 @@ def generate_tree(tree_codes : Array,
     if labels_dict:
         for i, ld_raw in enumerate(labels_dict):
             # Remove '-1' if present
-            ld = {k : v for k, v in ld_raw.items() if v != '-1'}
+            ld = {k.replace('(', '').replace(')', '') : v for k, v in ld_raw.items() if v != '-1'}
             
             if colors_dict:
                 colors_dict[i] = {l : c for l, c in colors_dict[i].items() if l != '-1'} # remove '-1' if present
