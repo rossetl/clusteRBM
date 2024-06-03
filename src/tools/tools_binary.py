@@ -1,6 +1,9 @@
 import torch
-from typing import Tuple, Optional
+from typing import Tuple
 from tqdm import tqdm
+import numpy as np
+import h5py
+from treeRBM import get_params, get_epochs
 
 Tensor = torch.Tensor
 
@@ -31,6 +34,131 @@ def profile_visibles(h : Tensor, vbias : Tensor, weight_matrix : Tensor) -> Tens
     """
     mv = torch.sigmoid(vbias + h @ weight_matrix.T)
     return mv
+
+@torch.jit.script
+def compute_energy_visibles(v : Tensor, params : Tuple[Tensor, Tensor, Tensor]) -> Tensor:
+    """Returns the energy of the model computed on the input data.
+
+    Args:
+        v (Tensor): Visible data.
+        params (Tuple[Tensor, Tensor, Tensor]): (vbias, hbias, weight_matrix) Parameters of the model.
+
+    Returns:
+        Tensor: Energies of the data points.
+    """
+    vbias, hbias, weight_matrix = params
+    field = v @ vbias
+    exponent = hbias + (v @ weight_matrix)
+    log_term = torch.where(exponent < 10, torch.log(1. + torch.exp(exponent)), exponent)
+    return - field - log_term.sum(1)
+
+def sample_hiddens(v: Tensor, hbias: Tensor, weight_matrix: Tensor) -> Tensor:
+    """Samples the hidden layer conditioned on the state of the visible layer.
+
+    Args:
+        v (Tensor): Visible layer.
+        hbias (Tensor): Hidden bias.
+        weight_matrix (Tensor): Weight matrix.
+
+    Returns:
+        Tensor: Hidden units.
+    """
+    h = torch.bernoulli(torch.sigmoid(hbias + v @ weight_matrix))
+    return h
+
+def sample_visibles(h: Tensor, vbias: Tensor, weight_matrix: Tensor) -> Tensor:
+    """Samples the visible layer conditioned on the hidden layer.
+
+    Args:
+        h (Tensor): Hidden layer.
+        vbias (Tensor): Visible bias.
+        weight_matrix (Tensor): Weight matrix.
+
+    Returns:
+        Tensor: Visible units.
+    """
+    v = torch.bernoulli(torch.sigmoid(vbias + h @ weight_matrix.T))
+    return v
+
+@torch.jit.script
+def sample_state(chains: Tensor, params: Tuple[Tensor, Tensor, Tensor], gibbs_steps: int) -> Tensor:
+    """Generates data sampled from the model by performing gibbs_steps Monte Carlo updates.
+
+    Args:
+        parallel_chains (Tensor): Initial visible state.
+        params (Tuple[Tensor, Tensor, Tensor]): (vbias, hbias, weight_matrix) Parameters of the model.
+        gibbs_steps (int): Number of Monte Carlo updates.
+
+    Returns:
+        Tuple[Tensor, Tensor]: Generated visibles, generated hiddens
+    """
+    # Unpacking the arguments
+    v = chains
+    vbias, hbias, weight_matrix = params
+
+    for _ in torch.arange(gibbs_steps):
+        h = sample_hiddens(v=v, hbias=hbias, weight_matrix=weight_matrix)
+        v = sample_visibles(h=h, vbias=vbias, weight_matrix=weight_matrix)
+    return v
+
+def init_sampling(
+    fname: str,
+    n_gen: int,
+    num_states : int,
+    it_mcmc: int = 10,
+    epochs: list = None,
+    device: torch.device = "cpu") -> Tensor:
+    
+    f = h5py.File(fname, "r")
+    if epochs is None:
+        epochs = get_epochs(fname)
+    n_models = len(epochs)
+    num_visibles = f["parallel_chains"][()].shape[1]
+
+    chains = torch.zeros(size=(n_models, n_gen, num_visibles), device=device, dtype=torch.float32)
+    chains[0] = torch.randint(0, num_states, size=(n_gen, num_visibles), device=device)
+    # initialize all models by performing it_mcmc steps starting from the state of the previous model
+    pbar = tqdm(total=(len(epochs) - 1) * it_mcmc, colour='red', leave=False, dynamic_ncols=True, ascii='-#')
+    for idx, ep in enumerate(epochs[1:]):
+        params = get_params(filename=fname, stamp=ep, device=device)
+        chains[idx + 1] = sample_state(chains[idx], params=params, gibbs_steps=it_mcmc)
+        pbar.update(it_mcmc)
+    f.close()
+    return chains
+
+def match_epochs(fname : str, chains : Tensor, epoch_ref : int, all_epochs : list, target_acc_rate : float, device : torch.device=torch.device("cpu")):
+    n_chains = len(chains[0])
+    idx_ref = np.where(all_epochs == epoch_ref)[0][0]
+    params_ref = get_params(filename=fname, stamp=epoch_ref, device=device)
+    chains_ref = chains[idx_ref]
+    
+    for i in range(idx_ref):
+        idx_test = idx_ref - i - 1
+        params_test = get_params(filename=fname, stamp=all_epochs[idx_test], device=device)
+        chains_test = chains[idx_test]
+        delta_E = (
+            - compute_energy_visibles(chains_ref, params_test)
+            + compute_energy_visibles(chains_test, params_test)
+            + compute_energy_visibles(chains_ref, params_ref)
+            - compute_energy_visibles(chains_test, params_ref)
+        )
+        swap_chain = torch.bernoulli(torch.clamp(torch.exp(delta_E), max=1.0)).bool()
+        acc_rate = (swap_chain.sum() / n_chains).cpu().numpy()
+        if (acc_rate < target_acc_rate + 0.1) or (all_epochs[idx_test] == 1):
+            print(f"Epochs match: {all_epochs[idx_ref]}\t->\t{all_epochs[idx_test]}\t-\tacc_rate = {acc_rate:.3f}")
+            return all_epochs[idx_test]
+
+def filter_epochs(fname : str, chains : Tensor, target_acc_rate : float, device : torch.device=torch.device("cpu")):
+    all_epochs = get_epochs(fname)
+    epoch_ref = all_epochs[-1]
+    sel_epochs = [epoch_ref]
+    while epoch_ref > 1:
+        epoch_ref = match_epochs(fname=fname, chains=chains, epoch_ref=epoch_ref, all_epochs=all_epochs, target_acc_rate=target_acc_rate, device=device)
+        if epoch_ref is None:
+            epoch_ref = 1
+        sel_epochs.append(epoch_ref)
+    sel_epochs = np.sort(sel_epochs)
+    return sel_epochs
 
 @torch.jit.script
 def iterate_mf1(X : Tuple[Tensor, Tensor], params : Tuple[Tensor, Tensor, Tensor], alpha : float=1e-6, max_iter : int=2000, rho : float=0.) -> Tuple[Tensor, Tensor]:

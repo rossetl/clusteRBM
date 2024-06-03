@@ -70,12 +70,14 @@ def fit(module,
         fname : str,
         data : Tensor,
         t_ages : Array,
+        num_states : int,
         batch_size : int=500,
         eps : float=1.,
         alpha : float=1e-4,
         save_node_features : bool=False,
         order : int=2,
         max_iter : int=10000,
+        filter_ages : float=None,
         device : torch.device=torch.device("cpu")) -> Tuple[Array, dict]:
     """Fits the treeRBM model on the data.
     
@@ -84,17 +86,25 @@ def fit(module,
         fname (str): Path to the RBM model.
         data (Tensor): Data to fill the treeRBM model.
         t_ages (Array): Ages of the RBM at which compute the branches of the tree.
+        num_states (int): Number of categories of the categorical variables.
         batch_size (int, optional): Batch size, to tune based on the memory availability. Defaults to 128.
         eps (float, optional): Epsilon parameter of the DBSCAN. Defaults to 1..
         alpha (float, optional): Convergence threshold of the TAP equations. Defaults to 1e-4.
         save_node_features (bool, optional): Wheather to save the states (fixed points) at the tree nodes.
         order (int, optional): Order of the mean-field free energy approximation. Defaults to 2.
         max_iter (int, optional): Maximum number of TAP iterations. Defaults to 10000.
+        filter_ages (float, optional): Selects a subset of epochs such that the acceptance rate of swapping two adjacient configurations is the one specified.'
         device (torch.device): Device.
         
     Returns:
         Tuple[Array, dict] : Array with the encoded tree structure, dictionary that associates tree nodes to the fixed points.
     """
+
+    # filter the ages
+    if filter_ages:
+        print(f'Filtering the ages with mutual acceptance rate of {filter_ages}:')
+        chains = module.init_sampling(fname=fname, n_gen=1000, it_mcmc=100, epochs=t_ages, num_states=num_states, device=device)
+        t_ages = module.filter_epochs(fname=fname, chains=chains, target_acc_rate=filter_ages, device=device)
         
     # initialize the RBM
     params = get_params(fname, stamp=t_ages[-1], device=device)
@@ -305,6 +315,7 @@ def create_parser():
     required.add_argument('-a', '--annotations',   type=Path, help='Path to the csv annotation file.', required=True)
     
     optional.add_argument('-c', '--colors',           type=Path,  default=None,       help='Path to the csv color mapping file.')
+    optional.add_argument('-f', '--filter',           type=float, default=None,       help='(defaults to None). Selects a subset of epochs such that the acceptance rate of swapping two adjacient configurations is the one specified.')
     optional.add_argument('--n_data',                 type=int,   default=500,        help='(Defaults to 500). Number of data to put in the tree.')
     optional.add_argument('--batch_size',             type=int,   default=500,        help='(Defaults to 500). Batch size.')
     optional.add_argument('--max_age',                type=int,   default=np.inf,     help='(Defaults to inf). Maximum age to consider for the tree construction.')
@@ -351,13 +362,14 @@ if __name__ == '__main__':
     # Load the data and the module
     logger.info('Loading the data')
     dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations, colors_path=args.colors)
+    num_states = int(dataset.get_num_states())
     
-    if dataset.get_num_states() > 2:
+    if num_states > 2:
         data_type = torch.int64
-        module = importlib.import_module("mf_tools.mf_tools_categorical")
+        module = importlib.import_module("tools.tools_categorical")
     else:
         data_type = torch.float32
-        module = importlib.import_module("mf_tools.mf_tools_binary")
+        module = importlib.import_module("tools.tools_binary")
         
     data = torch.tensor(dataset.data[:args.n_data], device=device).type(data_type)
     leaves_names = dataset.names[:args.n_data]
@@ -368,9 +380,9 @@ if __name__ == '__main__':
     t_ages = alltime[alltime <= args.max_age]
     logger.info('Fitting the model')
     tree_codes, node_features_dict = fit(module=module, fname=args.model, data=data, batch_size=args.batch_size,
-                                        t_ages=t_ages, save_node_features=args.save_node_features,
+                                        t_ages=t_ages, num_states=num_states, save_node_features=args.save_node_features,
                                         eps=args.eps, alpha=args.alpha, max_iter=args.max_iter,
-                                        order=args.order_mf, device=device)
+                                        order=args.order_mf, filter_ages=args.filter, device=device)
     max_depth = tree_codes.shape[1]
     # Save the tree codes
     logger.info(f'Saving the model in {args.output}')
