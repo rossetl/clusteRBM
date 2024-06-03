@@ -144,7 +144,7 @@ def match_epochs(fname : str, chains : Tensor, epoch_ref : int, all_epochs : lis
         )
         swap_chain = torch.bernoulli(torch.clamp(torch.exp(delta_E), max=1.0)).bool()
         acc_rate = (swap_chain.sum() / n_chains).cpu().numpy()
-        if (acc_rate < target_acc_rate + 0.1) or (all_epochs[idx_test] == 1):
+        if (acc_rate < target_acc_rate + 0.1) or (all_epochs[idx_test] == all_epochs[0]):
             print(f"Epochs match: {all_epochs[idx_ref]}\t->\t{all_epochs[idx_test]}\t-\tacc_rate = {acc_rate:.3f}")
             return all_epochs[idx_test]
 
@@ -152,10 +152,10 @@ def filter_epochs(fname : str, chains : Tensor, target_acc_rate : float, device 
     all_epochs = get_epochs(fname)
     epoch_ref = all_epochs[-1]
     sel_epochs = [epoch_ref]
-    while epoch_ref > 1:
+    while epoch_ref > all_epochs[0]:
         epoch_ref = match_epochs(fname=fname, chains=chains, epoch_ref=epoch_ref, all_epochs=all_epochs, target_acc_rate=target_acc_rate, device=device)
         if epoch_ref is None:
-            epoch_ref = 1
+            epoch_ref = all_epochs[0]
         sel_epochs.append(epoch_ref)
     sel_epochs = np.sort(sel_epochs)
     return sel_epochs
