@@ -32,14 +32,14 @@ def get_params(filename : str, stamp : Union[str, int], device : torch.device=to
 
     Args:
         filename (str): filename of the model.
-        stamp (Union[str, int]): Epoch.
+        stamp (Union[str, int]): Update number.
         device (torch.device): device.
 
     Returns:
         Tuple[Tensor, Tensor, Tensor]: Parameters of the model (vbias, hbias, weigth_matrix).
     """
     stamp = str(stamp)
-    key = f"epoch_{stamp}"
+    key = f"update_{stamp}"
     f = File(filename, "r")
     vbias = torch.tensor(f[key]["vbias"][()], device=device)
     hbias = torch.tensor(f[key]["hbias"][()], device=device)
@@ -51,7 +51,7 @@ def get_epochs(filename : str) -> Array:
 
     Args:
         filename (str): filename of the model.
-        stamp (Union[str, int]): Epoch.
+        stamp (Union[str, int]): Update number.
 
     Returns:
         Tuple[Tensor, Tensor, Tensor]: Parameters of the model (vbias, hbias, weigth_matrix).
@@ -59,8 +59,8 @@ def get_epochs(filename : str) -> Array:
     f = File(filename, 'r')
     alltime = []
     for key in f.keys():
-        if "epoch" in key:
-            alltime.append(int(key.replace("epoch_", "")))
+        if "update" in key:
+            alltime.append(int(key.replace("update_", "")))
     f.close()
     # Sort the results
     alltime = np.sort(alltime)
@@ -316,6 +316,7 @@ def create_parser():
     
     optional.add_argument('-c', '--colors',           type=Path,  default=None,       help='Path to the csv color mapping file.')
     optional.add_argument('-f', '--filter',           type=float, default=None,       help='(defaults to None). Selects a subset of epochs such that the acceptance rate of swapping two adjacient configurations is the one specified.')
+    optional.add_argument("--alphabet",                 type=str,   default="protein",  help="(Defaults to protein). Type of encoding for the sequences. Choose among ['protein', 'rna', 'dna'] or a user-defined string of tokens.")
     optional.add_argument('--n_data',                 type=int,   default=500,        help='(Defaults to 500). Number of data to put in the tree.')
     optional.add_argument('--batch_size',             type=int,   default=500,        help='(Defaults to 500). Batch size.')
     optional.add_argument('--max_age',                type=int,   default=np.inf,     help='(Defaults to inf). Maximum age to consider for the tree construction.')
