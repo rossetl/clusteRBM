@@ -93,14 +93,14 @@ class DatasetRBM(Dataset):
             self.tokens = get_tokens(alphabet)
             names, sequences = import_from_fasta(data_path)
             validate_alphabet(sequences=sequences, tokens=self.tokens)
-            self.names = np.array(names)
+            self.names = np.array(names).astype(str)
             self.data = np.vectorize(encode_sequence, excluded=["tokens"], signature="(), () -> (n)")(sequences, self.tokens)
         else:
             with open(data_path, "r") as f:
                 for line in f:
                     self.data.append(line.strip().split())
             self.data = np.array(self.data, dtype=np.float32)
-            self.names = np.arange(len(self.data))
+            self.names = np.arange(len(self.data)).astype("str")
         
         # Load annotations
         ann_df = pd.read_csv(ann_path).astype(str)
