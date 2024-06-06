@@ -57,6 +57,7 @@ The list of available arguments can be printed using:
 - `--order_mf`: Order of the mean field approximation to be used for estimating the model's free energy, where '1' corresponds to the naive mean field and '2' corresponds to the TAP approximation. Binary variables support (1, 2, 3), while for categorical variables only (1, 2) are implemented. Defaults to '2';
 - `--colormap`: If `colors` is omitted, the colors in the tree are assigned automatically according the Matplotlib's colomap specified here. Defaults to "tab20";
 - `--max_iter`: Maximum number of iterations of the mean-field equations. Defaults to 10000;
+- `--alphabet`: When the input data come from a file in fasta format, an alphabet for the symbols encoding is needed. You can choose among the default alphabets "protein", "dna", "rna", or a coherent alphabet of your choice. Defaults to "protein";
 - `--alpha`: Convergence threshold for the mean-field equations. Defaults to 1e-4;
 - `--eps`: Epsilon parameter of the DBSCAN algorithm.
 
@@ -72,6 +73,8 @@ This is an example of an annotation file:
 |name_1| label_1  | sublabel_1 |
 |name_2| label_2  | -1         |
 |name_3| label_3  | sublabel_3 |
+
+**NOTE**: Legend names can't contain any special characters.
 
 ## Color mapping format
 For custom coloring, a `csv` file that associates each label with a color must be provided. The file must have three columns with the mandatory names: "Legend", "Label" and "Color". Each row must have the specification of the Legend from which the label comes (it has to correspond to one of the annotation file's column names), the label and the color in hex format.

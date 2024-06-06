@@ -145,7 +145,7 @@ def match_epochs(fname : str, chains : Tensor, epoch_ref : int, all_epochs : lis
         swap_chain = torch.bernoulli(torch.clamp(torch.exp(delta_E), max=1.0)).bool()
         acc_rate = (swap_chain.sum() / n_chains).cpu().numpy()
         if (acc_rate < target_acc_rate + 0.1) or (all_epochs[idx_test] == all_epochs[0]):
-            print(f"Epochs match: {all_epochs[idx_ref]}\t->\t{all_epochs[idx_test]}\t-\tacc_rate = {acc_rate:.3f}")
+            print(f"Checkpoint match: {all_epochs[idx_ref]}\t->\t{all_epochs[idx_test]}\t-\tacc_rate = {acc_rate:.3f}")
             return all_epochs[idx_test]
 
 def filter_epochs(fname : str, chains : Tensor, target_acc_rate : float, device : torch.device=torch.device("cpu")):

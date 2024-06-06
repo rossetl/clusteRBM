@@ -32,15 +32,22 @@ def get_params(filename : str, stamp : Union[str, int], device : torch.device=to
 
     Args:
         filename (str): filename of the model.
-        stamp (Union[str, int]): Epoch.
+        stamp (Union[str, int]): Update number.
         device (torch.device): device.
 
     Returns:
         Tuple[Tensor, Tensor, Tensor]: Parameters of the model (vbias, hbias, weigth_matrix).
     """
     stamp = str(stamp)
-    key = f"epoch_{stamp}"
     f = File(filename, "r")
+    for k in f.keys():
+        if "update_" in k:
+            base_key = "update"
+            break
+        elif "epoch_" in k:
+            base_key = "epoch"
+            break
+    key = f"{base_key}_{stamp}"
     vbias = torch.tensor(f[key]["vbias"][()], device=device)
     hbias = torch.tensor(f[key]["hbias"][()], device=device)
     weight_matrix = torch.tensor(f[key]["weight_matrix"][()], device=device)
@@ -51,7 +58,7 @@ def get_epochs(filename : str) -> Array:
 
     Args:
         filename (str): filename of the model.
-        stamp (Union[str, int]): Epoch.
+        stamp (Union[str, int]): Update number.
 
     Returns:
         Tuple[Tensor, Tensor, Tensor]: Parameters of the model (vbias, hbias, weigth_matrix).
@@ -59,12 +66,43 @@ def get_epochs(filename : str) -> Array:
     f = File(filename, 'r')
     alltime = []
     for key in f.keys():
-        if "epoch" in key:
+        if "update" in key:
+            alltime.append(int(key.replace("update_", "")))
+        elif "epoch" in key:
             alltime.append(int(key.replace("epoch_", "")))
     f.close()
     # Sort the results
     alltime = np.sort(alltime)
     return alltime
+
+# Function to find a node by name
+def find_node_by_name(tree, name):
+    for node in tree.traverse():
+        if node.name == name:
+            return node
+    return None
+
+def l2_dist(p, c):
+    return np.square(p - c).mean()
+
+def set_tree_lengths(
+    t : Tree,
+    nodes_list : list,
+    fp : dict,
+    dist_fn
+):
+    new_nodes_list = []
+    for p_name in nodes_list:
+        p = find_node_by_name(t, p_name)
+        children = p.get_children()
+        for c in children:
+            if c.is_leaf():
+                return t
+            c_name = c.name
+            new_nodes_list.append(c_name)
+            branch_length = dist_fn(fp[p_name], fp[c_name])
+            c.dist = branch_length
+    return set_tree_lengths(t, new_nodes_list, fp, dist_fn)
     
 def fit(module,
         fname : str,
@@ -74,7 +112,6 @@ def fit(module,
         batch_size : int=500,
         eps : float=1.,
         alpha : float=1e-4,
-        save_node_features : bool=False,
         order : int=2,
         max_iter : int=10000,
         filter_ages : float=None,
@@ -174,11 +211,10 @@ def fit(module,
             unused_levels -= 1
             old_fixed_points_number = new_fixed_points_number
             
-            if save_node_features:
-                for lab, fp in zip(unique_labels, mag_state[0]):
-                    labels_temp.append(lab)
-                    levels_temp.append(level)
-                    fps_temp.append(fp.cpu().numpy())
+            for lab, fp in zip(unique_labels, mag_state[0]):
+                labels_temp.append(lab)
+                levels_temp.append(level)
+                fps_temp.append(fp.cpu().numpy())
             level -= 1       
     pbar.close()
     
@@ -189,13 +225,17 @@ def fit(module,
     tree_codes = tree_codes[:, unused_levels:]
     return (tree_codes, node_features_dict)
 
-def generate_tree(tree_codes : Array,
-                  folder : str,
-                  leaves_names : Array,
-                  legend : list=None,
-                  labels_dict : list=None,
-                  colors_dict : list=None,
-                  depth : int=None) -> None:
+def generate_tree(
+    tree_codes : Array,
+    folder : str,
+    leaves_names : Array,
+    legend : list=None,
+    labels_dict : list=None,
+    colors_dict : list=None,
+    depth : int=None,
+    node_features_dict : dict=None,
+    dist_fn = l2_dist
+) -> None:
     """Constructs an ete3.Tree objects with the previously fitted data.
     
     Args:
@@ -223,7 +263,7 @@ def generate_tree(tree_codes : Array,
         n_levels = max_depth
         
     # Leaves names cannot contain the characters '(', ')', which are reserved for the newick sy>
-    leaves_names = np.array([ln.replace('(', '').replace(')', '') for ln in leaves_names])
+    leaves_names = np.array([str(ln).replace('(', '').replace(')', '') for ln in leaves_names])
         
     # Initialize the tree with the proper number of initial branches
     n_start_branches = np.max(tree_codes[:, 0]) + 1
@@ -299,6 +339,38 @@ def generate_tree(tree_codes : Array,
         if not node.is_leaf():
             if node.name != 'Root':
                 node.name = get_node_name(node.name)
+            
+    # Set the length of the first nodes wrt a uniform profile distribution
+    init_node_list = []
+    for nn in node_features_dict.keys():
+        if "I0" in nn:
+            init_node_list.append(nn)
+            
+    if len(node_features_dict[init_node_list[0]].shape) == 2:
+        norm_factor = node_features_dict[init_node_list[0]].shape[1] # Potts
+    else:
+        norm_factor = 2 # Binary
+    ref_profile = np.ones_like(node_features_dict[init_node_list[0]]) / norm_factor
+    for nn in init_node_list:
+        n = find_node_by_name(t, nn)
+        n.dist = dist_fn(ref_profile, node_features_dict[nn])
+    
+    # Set the lengths of the internal branches
+    t = set_tree_lengths(t=t, nodes_list=init_node_list, fp=node_features_dict, dist_fn=dist_fn)
+    
+    # Set the length of the leafs as the average tree branch length
+    total_branch_length = 0
+    num_branches = 0
+    for node in t.traverse():
+        if (not node.is_root()) and (not node.is_leaf()):
+            total_branch_length += node.dist
+            num_branches += 1
+    if num_branches > 0:
+        average_branch_length = total_branch_length / num_branches
+    else:
+        average_branch_length = 0
+    for leaf in t.iter_leaves():
+        leaf.dist = average_branch_length
     
     # Generate newick file
     t.write(format=1, outfile=f'{folder}/tree.nw')
@@ -314,18 +386,19 @@ def create_parser():
     required.add_argument('-d', '--data',          type=Path, help='Path to data.', required=True)
     required.add_argument('-a', '--annotations',   type=Path, help='Path to the csv annotation file.', required=True)
     
-    optional.add_argument('-c', '--colors',           type=Path,  default=None,       help='Path to the csv color mapping file.')
-    optional.add_argument('-f', '--filter',           type=float, default=None,       help='(defaults to None). Selects a subset of epochs such that the acceptance rate of swapping two adjacient configurations is the one specified.')
-    optional.add_argument('--n_data',                 type=int,   default=500,        help='(Defaults to 500). Number of data to put in the tree.')
-    optional.add_argument('--batch_size',             type=int,   default=500,        help='(Defaults to 500). Batch size.')
-    optional.add_argument('--max_age',                type=int,   default=np.inf,     help='(Defaults to inf). Maximum age to consider for the tree construction.')
-    optional.add_argument('--save_node_features',     action='store_true',  default=False,      help='If specified, saves the states corresponding to the tree nodes.')
-    optional.add_argument('--max_iter',               type=int,   default=10000,      help='(Defaults to 10000). Maximum number of TAP iterations.')
-    optional.add_argument('--max_depth',              type=int,   default=50,         help='(Defaults to 50). Maximum depth to visualize in the generated tree.')
-    optional.add_argument('--order_mf',               type=int,   default=2,          help='(Defaults to 2). Mean-field order of the Plefka expansion.', choices=[1, 2, 3])
-    optional.add_argument('--eps',                    type=float, default=1.,         help='(Defaults to 1.). Epsilon parameter of the DBSCAN.')
-    optional.add_argument('--alpha',                  type=float, default=1e-4,       help='(Defaults to 1e-4). Convergence threshold of the TAP equations.')
-    optional.add_argument('--colormap',               type=str,   default='tab20',    help='(Defaults to `tab20`). Name of the colormap to use for the labels.')
+    optional.add_argument('-c', '--colors',           type=Path,            default=None,             help='Path to the csv color mapping file.')
+    optional.add_argument('-f', '--filter',           type=float,           default=None,             help='(defaults to None). Selects a subset of epochs such that the acceptance rate of swapping two adjacient configurations is the one specified.')
+    optional.add_argument("--alphabet",               type=str,             default="protein",        help="(Defaults to protein). Type of encoding for the sequences. Choose among ['protein', 'rna', 'dna'] or a user-defined string of tokens.")
+    optional.add_argument('--n_data',                 type=int,             default=500,              help='(Defaults to 500). Number of data to put in the tree.')
+    optional.add_argument('--batch_size',             type=int,             default=500,              help='(Defaults to 500). Batch size.')
+    optional.add_argument('--max_age',                type=int,             default=np.inf,           help='(Defaults to inf). Maximum age to consider for the tree construction.')
+    optional.add_argument('--save_node_features',     action='store_true',  default=False,            help='If specified, saves the states corresponding to the tree nodes.')
+    optional.add_argument('--max_iter',               type=int,             default=10000,            help='(Defaults to 10000). Maximum number of TAP iterations.')
+    optional.add_argument('--max_depth',              type=int,             default=50,               help='(Defaults to 50). Maximum depth to visualize in the generated tree.')
+    optional.add_argument('--order_mf',               type=int,             default=2,                help='(Defaults to 2). Mean-field order of the Plefka expansion.', choices=[1, 2, 3])
+    optional.add_argument('--eps',                    type=float,           default=1.,               help='(Defaults to 1.). Epsilon parameter of the DBSCAN.')
+    optional.add_argument('--alpha',                  type=float,           default=1e-4,             help='(Defaults to 1e-4). Convergence threshold of the TAP equations.')
+    optional.add_argument('--colormap',               type=str,             default='tab20',          help='(Defaults to `tab20`). Name of the colormap to use for the labels.')
     return parser
 
 if __name__ == '__main__':
@@ -379,10 +452,20 @@ if __name__ == '__main__':
     alltime = get_epochs(args.model)
     t_ages = alltime[alltime <= args.max_age]
     logger.info('Fitting the model')
-    tree_codes, node_features_dict = fit(module=module, fname=args.model, data=data, batch_size=args.batch_size,
-                                        t_ages=t_ages, num_states=num_states, save_node_features=args.save_node_features,
-                                        eps=args.eps, alpha=args.alpha, max_iter=args.max_iter,
-                                        order=args.order_mf, filter_ages=args.filter, device=device)
+    tree_codes, node_features_dict = fit(
+        module=module,
+        fname=args.model,
+        data=data,
+        batch_size=args.batch_size,
+        t_ages=t_ages,
+        num_states=num_states,
+        eps=args.eps,
+        alpha=args.alpha,
+        max_iter=args.max_iter,
+        order=args.order_mf,
+        filter_ages=args.filter,
+        device=device
+        )
     max_depth = tree_codes.shape[1]
     # Save the tree codes
     logger.info(f'Saving the model in {args.output}')
@@ -405,7 +488,17 @@ if __name__ == '__main__':
         colors_dict = [{l : to_hex(colors(i)) for i, l in enumerate(np.unique(list(labels.values())))} for labels in labels_dict]
     if args.max_depth > max_depth:
         args.max_depth = max_depth
-    generate_tree(tree_codes=tree_codes, leaves_names=leaves_names, legend=dataset.legend, folder=args.output, labels_dict=labels_dict, colors_dict=colors_dict, depth=args.max_depth)
+    generate_tree(
+        tree_codes=tree_codes,
+        leaves_names=leaves_names,
+        legend=dataset.legend,
+        folder=args.output,
+        labels_dict=labels_dict,
+        colors_dict=colors_dict,
+        depth=args.max_depth,
+        node_features_dict=node_features_dict,
+        dist_fn=l2_dist
+    )
 
     stop = time.time()
     logger.info(f'Process completed, elapsed time: {round((stop - start) / 60, 1)} minutes')
