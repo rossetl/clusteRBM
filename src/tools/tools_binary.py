@@ -22,7 +22,7 @@ def profile_hiddens(v : Tensor, hbias : Tensor, weight_matrix : Tensor) -> Tenso
     return mh
 
 def profile_visibles(h : Tensor, vbias : Tensor, weight_matrix : Tensor) -> Tensor:
-    """Samples the visible layer conditioned on the hidden layer.
+    """Computes the visible profile conditioned on the state of the hidden layer.
 
     Args:
         h (Tensor): Hidden layer.
