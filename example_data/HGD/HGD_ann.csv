@@ -1,0 +1,5009 @@
+Name,Continent,Population
+0,European,CEU
+1,South Asian,STU
+2,American,CLM
+3,African,GWD
+4,American,CLM
+5,South Asian,STU
+6,African,ASW
+7,African,YRI
+8,South Asian,ITU
+9,European,CEU
+10,American,PEL
+11,East Asian,CHS
+12,European,TSI
+13,American,MXL
+14,European,FIN
+15,African,MSL
+16,African,MSL
+17,African,ACB
+18,East Asian,CDX
+19,American,PUR
+20,European,CEU
+21,European,TSI
+22,European,IBS
+23,East Asian,CHS
+24,European,TSI
+25,European,CEU
+26,East Asian,KHV
+27,African,ESN
+28,East Asian,KHV
+29,South Asian,BEB
+30,European,CEU
+31,European,TSI
+32,African,MSL
+33,African,MSL
+34,African,ESN
+35,African,LWK
+36,European,IBS
+37,African,ASW
+38,East Asian,CDX
+39,South Asian,ITU
+40,African,LWK
+41,African,MSL
+42,South Asian,ITU
+43,European,GBR
+44,East Asian,CHS
+45,African,YRI
+46,South Asian,GIH
+47,American,PEL
+48,American,MXL
+49,East Asian,JPT
+50,East Asian,CDX
+51,European,FIN
+52,South Asian,GIH
+53,African,ACB
+54,African,ACB
+55,African,ACB
+56,European,IBS
+57,American,PEL
+58,American,MXL
+59,European,CEU
+60,European,FIN
+61,American,PEL
+62,African,YRI
+63,American,CLM
+64,South Asian,ITU
+65,European,GBR
+66,South Asian,ITU
+67,South Asian,ITU
+68,African,ESN
+69,East Asian,CDX
+70,South Asian,ITU
+71,African,GWD
+72,East Asian,KHV
+73,East Asian,CHS
+74,African,YRI
+75,European,IBS
+76,European,CEU
+77,European,TSI
+78,European,CEU
+79,African,LWK
+80,South Asian,BEB
+81,African,LWK
+82,African,YRI
+83,American,PEL
+84,South Asian,PJL
+85,South Asian,PJL
+86,South Asian,PJL
+87,European,TSI
+88,South Asian,GIH
+89,African,GWD
+90,European,TSI
+91,African,YRI
+92,South Asian,ITU
+93,European,CEU
+94,African,ESN
+95,African,GWD
+96,East Asian,CHB
+97,African,YRI
+98,American,CLM
+99,South Asian,BEB
+100,African,YRI
+101,African,ASW
+102,East Asian,KHV
+103,African,YRI
+104,European,IBS
+105,East Asian,CHS
+106,American,PUR
+107,South Asian,PJL
+108,American,CLM
+109,European,CEU
+110,American,PUR
+111,South Asian,STU
+112,South Asian,PJL
+113,East Asian,KHV
+114,American,PUR
+115,European,IBS
+116,American,PUR
+117,South Asian,GIH
+118,European,IBS
+119,South Asian,GIH
+120,American,CLM
+121,African,ACB
+122,East Asian,JPT
+123,European,GBR
+124,South Asian,STU
+125,East Asian,CHB
+126,African,ESN
+127,African,ASW
+128,European,TSI
+129,European,TSI
+130,European,FIN
+131,South Asian,BEB
+132,South Asian,BEB
+133,African,ESN
+134,South Asian,PJL
+135,African,ESN
+136,American,PEL
+137,European,CEU
+138,African,GWD
+139,American,PEL
+140,South Asian,PJL
+141,South Asian,PJL
+142,American,MXL
+143,European,CEU
+144,European,GBR
+145,African,ACB
+146,East Asian,JPT
+147,East Asian,CDX
+148,South Asian,GIH
+149,African,ASW
+150,American,MXL
+151,South Asian,ITU
+152,African,LWK
+153,East Asian,CDX
+154,African,ACB
+155,East Asian,KHV
+156,American,CLM
+157,European,TSI
+158,East Asian,CHS
+159,American,MXL
+160,American,PEL
+161,South Asian,PJL
+162,European,IBS
+163,East Asian,CHS
+164,South Asian,BEB
+165,European,IBS
+166,African,ACB
+167,European,IBS
+168,European,IBS
+169,European,CEU
+170,South Asian,PJL
+171,African,GWD
+172,African,ACB
+173,South Asian,GIH
+174,African,ESN
+175,African,ESN
+176,African,LWK
+177,South Asian,BEB
+178,European,CEU
+179,American,MXL
+180,South Asian,GIH
+181,African,ASW
+182,East Asian,KHV
+183,American,PUR
+184,European,TSI
+185,American,CLM
+186,South Asian,PJL
+187,East Asian,KHV
+188,East Asian,CDX
+189,American,PUR
+190,African,LWK
+191,South Asian,BEB
+192,African,GWD
+193,American,CLM
+194,American,PUR
+195,African,ESN
+196,African,GWD
+197,South Asian,PJL
+198,European,GBR
+199,South Asian,BEB
+200,African,MSL
+201,American,CLM
+202,East Asian,CHB
+203,African,GWD
+204,European,CEU
+205,South Asian,GIH
+206,East Asian,CDX
+207,African,GWD
+208,European,FIN
+209,European,FIN
+210,African,ASW
+211,South Asian,BEB
+212,South Asian,BEB
+213,South Asian,STU
+214,African,YRI
+215,South Asian,GIH
+216,East Asian,CDX
+217,African,ASW
+218,American,CLM
+219,European,IBS
+220,South Asian,GIH
+221,African,LWK
+222,South Asian,PJL
+223,East Asian,KHV
+224,South Asian,GIH
+225,South Asian,ITU
+226,African,MSL
+227,South Asian,PJL
+228,American,PUR
+229,African,GWD
+230,European,IBS
+231,African,GWD
+232,East Asian,CHB
+233,African,GWD
+234,African,LWK
+235,East Asian,CHB
+236,East Asian,JPT
+237,East Asian,KHV
+238,African,ASW
+239,African,ASW
+240,African,ESN
+241,East Asian,CDX
+242,European,IBS
+243,East Asian,CHB
+244,European,FIN
+245,South Asian,PJL
+246,African,ACB
+247,European,TSI
+248,African,YRI
+249,African,MSL
+250,South Asian,STU
+251,South Asian,ITU
+252,American,CLM
+253,East Asian,CHB
+254,African,ASW
+255,African,LWK
+256,European,GBR
+257,South Asian,BEB
+258,European,TSI
+259,American,MXL
+260,East Asian,CHS
+261,European,TSI
+262,African,ACB
+263,South Asian,BEB
+264,South Asian,PJL
+265,European,GBR
+266,East Asian,CHB
+267,South Asian,ITU
+268,European,CEU
+269,South Asian,STU
+270,European,GBR
+271,American,MXL
+272,East Asian,CDX
+273,East Asian,CDX
+274,East Asian,KHV
+275,African,YRI
+276,European,FIN
+277,European,CEU
+278,African,ACB
+279,European,GBR
+280,European,CEU
+281,African,ESN
+282,African,YRI
+283,South Asian,ITU
+284,South Asian,STU
+285,East Asian,JPT
+286,European,CEU
+287,American,PEL
+288,East Asian,KHV
+289,European,GBR
+290,South Asian,STU
+291,South Asian,PJL
+292,European,FIN
+293,South Asian,STU
+294,African,YRI
+295,European,CEU
+296,African,YRI
+297,South Asian,BEB
+298,South Asian,ITU
+299,European,TSI
+300,East Asian,CHS
+301,African,YRI
+302,South Asian,STU
+303,African,GWD
+304,African,YRI
+305,South Asian,ITU
+306,East Asian,KHV
+307,East Asian,CDX
+308,African,YRI
+309,East Asian,CDX
+310,East Asian,KHV
+311,East Asian,CDX
+312,South Asian,STU
+313,East Asian,CHS
+314,African,YRI
+315,African,YRI
+316,African,YRI
+317,African,YRI
+318,African,ACB
+319,American,PUR
+320,African,LWK
+321,American,MXL
+322,American,CLM
+323,European,TSI
+324,African,GWD
+325,African,MSL
+326,American,MXL
+327,European,IBS
+328,African,YRI
+329,African,YRI
+330,European,TSI
+331,African,LWK
+332,European,FIN
+333,European,FIN
+334,East Asian,CHS
+335,American,PUR
+336,American,CLM
+337,European,IBS
+338,African,MSL
+339,South Asian,ITU
+340,European,TSI
+341,European,IBS
+342,East Asian,JPT
+343,American,CLM
+344,East Asian,KHV
+345,East Asian,KHV
+346,South Asian,ITU
+347,East Asian,CHB
+348,African,MSL
+349,European,IBS
+350,American,MXL
+351,African,GWD
+352,African,YRI
+353,African,LWK
+354,African,ASW
+355,European,TSI
+356,South Asian,BEB
+357,African,YRI
+358,European,CEU
+359,East Asian,CDX
+360,South Asian,GIH
+361,American,MXL
+362,European,CEU
+363,South Asian,ITU
+364,European,GBR
+365,East Asian,KHV
+366,East Asian,CHS
+367,South Asian,PJL
+368,African,MSL
+369,African,ASW
+370,African,ACB
+371,European,FIN
+372,South Asian,GIH
+373,East Asian,CHS
+374,European,CEU
+375,East Asian,CHB
+376,African,ACB
+377,East Asian,CDX
+378,American,MXL
+379,American,PUR
+380,South Asian,STU
+381,African,GWD
+382,South Asian,BEB
+383,East Asian,KHV
+384,American,CLM
+385,African,GWD
+386,European,CEU
+387,African,GWD
+388,American,PUR
+389,South Asian,BEB
+390,American,PEL
+391,European,IBS
+392,European,IBS
+393,American,MXL
+394,European,CEU
+395,African,ASW
+396,East Asian,CHB
+397,European,FIN
+398,South Asian,PJL
+399,African,YRI
+400,South Asian,ITU
+401,South Asian,GIH
+402,East Asian,CDX
+403,East Asian,CHS
+404,African,YRI
+405,African,LWK
+406,African,MSL
+407,American,PUR
+408,African,YRI
+409,African,YRI
+410,African,YRI
+411,South Asian,BEB
+412,European,TSI
+413,African,ASW
+414,African,GWD
+415,East Asian,JPT
+416,European,GBR
+417,South Asian,PJL
+418,East Asian,CHB
+419,European,CEU
+420,American,PUR
+421,South Asian,PJL
+422,South Asian,GIH
+423,South Asian,ITU
+424,European,IBS
+425,African,ACB
+426,South Asian,ITU
+427,African,GWD
+428,East Asian,CHB
+429,African,YRI
+430,African,YRI
+431,African,GWD
+432,East Asian,KHV
+433,South Asian,STU
+434,East Asian,CHB
+435,European,TSI
+436,European,FIN
+437,African,MSL
+438,South Asian,STU
+439,European,FIN
+440,African,YRI
+441,South Asian,BEB
+442,African,ACB
+443,European,FIN
+444,American,CLM
+445,South Asian,BEB
+446,European,IBS
+447,African,LWK
+448,South Asian,STU
+449,East Asian,CHS
+450,East Asian,KHV
+451,East Asian,CDX
+452,European,GBR
+453,East Asian,CDX
+454,South Asian,PJL
+455,African,LWK
+456,African,LWK
+457,European,FIN
+458,South Asian,STU
+459,South Asian,BEB
+460,East Asian,CHB
+461,African,LWK
+462,South Asian,BEB
+463,African,GWD
+464,African,LWK
+465,South Asian,STU
+466,American,PEL
+467,African,LWK
+468,American,PUR
+469,American,PUR
+470,European,GBR
+471,American,PEL
+472,African,LWK
+473,American,PEL
+474,African,YRI
+475,European,GBR
+476,European,IBS
+477,South Asian,PJL
+478,European,CEU
+479,American,PUR
+480,African,GWD
+481,African,YRI
+482,East Asian,JPT
+483,East Asian,CHB
+484,African,LWK
+485,East Asian,KHV
+486,East Asian,CDX
+487,East Asian,CDX
+488,African,GWD
+489,East Asian,JPT
+490,East Asian,CHB
+491,East Asian,CHS
+492,African,ESN
+493,South Asian,PJL
+494,American,PEL
+495,East Asian,CHB
+496,American,PUR
+497,American,PEL
+498,South Asian,STU
+499,European,CEU
+500,South Asian,GIH
+501,African,GWD
+502,East Asian,CDX
+503,European,TSI
+504,African,GWD
+505,East Asian,JPT
+506,East Asian,JPT
+507,South Asian,BEB
+508,African,LWK
+509,European,TSI
+510,American,PUR
+511,East Asian,CHS
+512,South Asian,GIH
+513,South Asian,GIH
+514,South Asian,STU
+515,East Asian,KHV
+516,European,TSI
+517,African,ACB
+518,South Asian,BEB
+519,South Asian,BEB
+520,African,YRI
+521,African,ASW
+522,South Asian,GIH
+523,African,GWD
+524,American,PUR
+525,European,IBS
+526,European,CEU
+527,European,FIN
+528,American,CLM
+529,American,PEL
+530,American,PUR
+531,African,ESN
+532,South Asian,STU
+533,African,YRI
+534,American,PEL
+535,American,CLM
+536,African,GWD
+537,American,PUR
+538,European,FIN
+539,South Asian,STU
+540,South Asian,STU
+541,South Asian,BEB
+542,East Asian,CHB
+543,African,YRI
+544,European,TSI
+545,European,IBS
+546,South Asian,PJL
+547,African,ACB
+548,European,CEU
+549,African,ACB
+550,East Asian,KHV
+551,East Asian,KHV
+552,American,PUR
+553,East Asian,CHS
+554,East Asian,CHB
+555,American,PEL
+556,European,FIN
+557,African,LWK
+558,African,ACB
+559,African,GWD
+560,East Asian,CDX
+561,South Asian,GIH
+562,American,CLM
+563,South Asian,ITU
+564,American,CLM
+565,South Asian,STU
+566,European,CEU
+567,European,CEU
+568,East Asian,CDX
+569,South Asian,GIH
+570,American,CLM
+571,American,PUR
+572,European,TSI
+573,American,MXL
+574,South Asian,PJL
+575,East Asian,CHB
+576,American,PEL
+577,African,MSL
+578,European,TSI
+579,East Asian,CDX
+580,American,PEL
+581,European,FIN
+582,European,TSI
+583,African,ACB
+584,African,MSL
+585,South Asian,ITU
+586,African,LWK
+587,African,LWK
+588,African,ASW
+589,African,YRI
+590,American,PUR
+591,South Asian,ITU
+592,East Asian,CDX
+593,East Asian,JPT
+594,African,ACB
+595,East Asian,CHS
+596,African,ACB
+597,South Asian,BEB
+598,American,CLM
+599,African,ESN
+600,American,PUR
+601,East Asian,CHS
+602,European,GBR
+603,South Asian,STU
+604,European,FIN
+605,African,ESN
+606,African,ACB
+607,African,ASW
+608,European,GBR
+609,South Asian,BEB
+610,American,CLM
+611,African,ASW
+612,African,ACB
+613,African,YRI
+614,African,ACB
+615,African,ASW
+616,American,PEL
+617,East Asian,JPT
+618,European,TSI
+619,African,MSL
+620,South Asian,ITU
+621,East Asian,KHV
+622,South Asian,STU
+623,East Asian,CHB
+624,American,MXL
+625,South Asian,GIH
+626,American,PUR
+627,East Asian,CDX
+628,African,GWD
+629,American,CLM
+630,East Asian,JPT
+631,African,LWK
+632,South Asian,STU
+633,American,PUR
+634,European,TSI
+635,European,FIN
+636,African,YRI
+637,South Asian,PJL
+638,African,ESN
+639,European,IBS
+640,European,IBS
+641,South Asian,PJL
+642,East Asian,JPT
+643,East Asian,CDX
+644,South Asian,ITU
+645,East Asian,CHB
+646,European,FIN
+647,European,IBS
+648,South Asian,STU
+649,East Asian,JPT
+650,African,YRI
+651,South Asian,BEB
+652,African,ACB
+653,American,MXL
+654,East Asian,JPT
+655,African,YRI
+656,European,IBS
+657,African,GWD
+658,East Asian,JPT
+659,East Asian,KHV
+660,East Asian,KHV
+661,East Asian,JPT
+662,East Asian,CDX
+663,European,TSI
+664,East Asian,CHB
+665,South Asian,ITU
+666,European,CEU
+667,African,YRI
+668,South Asian,GIH
+669,European,FIN
+670,American,PUR
+671,American,PUR
+672,South Asian,STU
+673,American,PUR
+674,European,FIN
+675,African,LWK
+676,South Asian,STU
+677,South Asian,BEB
+678,East Asian,JPT
+679,American,PUR
+680,American,PEL
+681,American,PUR
+682,African,GWD
+683,African,YRI
+684,American,PUR
+685,East Asian,CDX
+686,African,MSL
+687,European,CEU
+688,East Asian,CHS
+689,South Asian,PJL
+690,South Asian,BEB
+691,European,CEU
+692,South Asian,GIH
+693,South Asian,STU
+694,East Asian,CHS
+695,European,TSI
+696,South Asian,STU
+697,African,ACB
+698,East Asian,CDX
+699,African,LWK
+700,African,ASW
+701,American,PUR
+702,American,CLM
+703,East Asian,CHB
+704,African,GWD
+705,American,PUR
+706,South Asian,BEB
+707,European,TSI
+708,European,CEU
+709,East Asian,JPT
+710,South Asian,BEB
+711,African,MSL
+712,European,GBR
+713,African,YRI
+714,South Asian,BEB
+715,South Asian,GIH
+716,African,ASW
+717,East Asian,CHB
+718,European,CEU
+719,European,FIN
+720,African,ACB
+721,East Asian,KHV
+722,East Asian,CDX
+723,European,CEU
+724,African,ACB
+725,African,LWK
+726,South Asian,STU
+727,American,PUR
+728,African,ACB
+729,American,PUR
+730,African,GWD
+731,South Asian,PJL
+732,East Asian,JPT
+733,African,GWD
+734,African,MSL
+735,East Asian,JPT
+736,European,TSI
+737,African,MSL
+738,South Asian,GIH
+739,South Asian,BEB
+740,American,PUR
+741,European,CEU
+742,East Asian,JPT
+743,South Asian,PJL
+744,European,TSI
+745,East Asian,KHV
+746,East Asian,JPT
+747,American,CLM
+748,East Asian,JPT
+749,African,MSL
+750,South Asian,STU
+751,European,TSI
+752,European,GBR
+753,African,GWD
+754,South Asian,BEB
+755,African,LWK
+756,South Asian,GIH
+757,American,PUR
+758,African,LWK
+759,African,ACB
+760,East Asian,CHB
+761,European,GBR
+762,American,CLM
+763,African,GWD
+764,East Asian,CHB
+765,African,LWK
+766,South Asian,ITU
+767,European,IBS
+768,European,GBR
+769,African,ACB
+770,African,LWK
+771,East Asian,CDX
+772,East Asian,KHV
+773,European,IBS
+774,American,MXL
+775,European,CEU
+776,European,TSI
+777,American,CLM
+778,African,ESN
+779,East Asian,CHB
+780,African,GWD
+781,South Asian,GIH
+782,East Asian,CHS
+783,South Asian,PJL
+784,South Asian,ITU
+785,East Asian,CDX
+786,American,PEL
+787,South Asian,GIH
+788,African,ACB
+789,American,MXL
+790,East Asian,CHB
+791,African,YRI
+792,African,ESN
+793,African,YRI
+794,European,CEU
+795,East Asian,KHV
+796,East Asian,CHB
+797,South Asian,ITU
+798,European,IBS
+799,African,GWD
+800,African,LWK
+801,East Asian,CHS
+802,South Asian,STU
+803,American,CLM
+804,East Asian,KHV
+805,African,YRI
+806,South Asian,BEB
+807,East Asian,KHV
+808,European,FIN
+809,African,ESN
+810,South Asian,GIH
+811,African,ESN
+812,South Asian,PJL
+813,East Asian,CHB
+814,American,CLM
+815,European,FIN
+816,East Asian,KHV
+817,East Asian,CHB
+818,African,GWD
+819,European,IBS
+820,American,PUR
+821,East Asian,CHS
+822,African,LWK
+823,European,GBR
+824,East Asian,JPT
+825,American,PUR
+826,African,ESN
+827,South Asian,STU
+828,African,ASW
+829,European,IBS
+830,East Asian,JPT
+831,East Asian,CHS
+832,African,GWD
+833,European,FIN
+834,European,FIN
+835,American,CLM
+836,European,IBS
+837,African,YRI
+838,East Asian,KHV
+839,European,TSI
+840,South Asian,PJL
+841,East Asian,CHS
+842,European,CEU
+843,European,CEU
+844,East Asian,KHV
+845,South Asian,ITU
+846,South Asian,PJL
+847,African,GWD
+848,African,LWK
+849,American,CLM
+850,American,MXL
+851,European,IBS
+852,European,IBS
+853,African,GWD
+854,European,TSI
+855,South Asian,PJL
+856,European,GBR
+857,East Asian,CHS
+858,South Asian,PJL
+859,African,YRI
+860,African,YRI
+861,African,GWD
+862,European,TSI
+863,African,ESN
+864,East Asian,CHS
+865,American,PUR
+866,American,MXL
+867,European,CEU
+868,African,YRI
+869,European,FIN
+870,European,TSI
+871,American,MXL
+872,European,TSI
+873,South Asian,GIH
+874,African,MSL
+875,East Asian,CDX
+876,American,PEL
+877,European,TSI
+878,East Asian,CDX
+879,African,YRI
+880,American,MXL
+881,African,GWD
+882,South Asian,BEB
+883,American,PEL
+884,East Asian,JPT
+885,African,YRI
+886,American,PEL
+887,South Asian,PJL
+888,American,PUR
+889,American,CLM
+890,East Asian,CHS
+891,East Asian,JPT
+892,American,CLM
+893,European,CEU
+894,South Asian,STU
+895,South Asian,GIH
+896,African,ACB
+897,East Asian,CHB
+898,American,PUR
+899,East Asian,CHS
+900,East Asian,JPT
+901,East Asian,CHB
+902,East Asian,CDX
+903,East Asian,KHV
+904,East Asian,CHS
+905,East Asian,CHB
+906,South Asian,PJL
+907,African,ASW
+908,South Asian,GIH
+909,American,CLM
+910,American,PEL
+911,South Asian,STU
+912,South Asian,ITU
+913,European,TSI
+914,South Asian,PJL
+915,European,GBR
+916,African,ESN
+917,East Asian,CHS
+918,African,GWD
+919,South Asian,ITU
+920,European,FIN
+921,East Asian,CDX
+922,American,PEL
+923,South Asian,PJL
+924,African,LWK
+925,American,PEL
+926,African,ACB
+927,American,PUR
+928,South Asian,ITU
+929,East Asian,CHB
+930,East Asian,KHV
+931,European,FIN
+932,American,PEL
+933,South Asian,GIH
+934,East Asian,KHV
+935,American,CLM
+936,African,LWK
+937,African,ACB
+938,East Asian,JPT
+939,European,GBR
+940,African,ESN
+941,European,TSI
+942,African,LWK
+943,African,MSL
+944,American,PEL
+945,African,GWD
+946,South Asian,STU
+947,African,ASW
+948,European,IBS
+949,European,GBR
+950,European,IBS
+951,African,ESN
+952,European,IBS
+953,American,MXL
+954,American,PUR
+955,African,LWK
+956,African,MSL
+957,American,PEL
+958,African,GWD
+959,American,CLM
+960,South Asian,GIH
+961,American,PUR
+962,European,TSI
+963,European,FIN
+964,African,MSL
+965,East Asian,CHB
+966,East Asian,CDX
+967,European,IBS
+968,African,GWD
+969,South Asian,PJL
+970,South Asian,BEB
+971,African,ACB
+972,American,PUR
+973,African,YRI
+974,African,GWD
+975,European,GBR
+976,South Asian,ITU
+977,American,PEL
+978,East Asian,JPT
+979,South Asian,PJL
+980,South Asian,STU
+981,East Asian,CHS
+982,East Asian,KHV
+983,African,ASW
+984,European,GBR
+985,African,LWK
+986,South Asian,ITU
+987,American,MXL
+988,East Asian,JPT
+989,African,GWD
+990,European,GBR
+991,South Asian,PJL
+992,East Asian,JPT
+993,South Asian,PJL
+994,East Asian,CHB
+995,African,LWK
+996,East Asian,CHS
+997,African,YRI
+998,European,TSI
+999,East Asian,CHS
+1000,East Asian,CHB
+1001,East Asian,CDX
+1002,American,PUR
+1003,European,FIN
+1004,European,TSI
+1005,South Asian,PJL
+1006,American,PUR
+1007,African,YRI
+1008,African,ESN
+1009,East Asian,JPT
+1010,European,GBR
+1011,East Asian,JPT
+1012,South Asian,PJL
+1013,East Asian,CDX
+1014,African,ASW
+1015,South Asian,GIH
+1016,American,PEL
+1017,African,ACB
+1018,South Asian,STU
+1019,East Asian,JPT
+1020,African,LWK
+1021,European,CEU
+1022,European,TSI
+1023,East Asian,CHB
+1024,American,CLM
+1025,East Asian,CHB
+1026,East Asian,JPT
+1027,African,ACB
+1028,American,PUR
+1029,American,PUR
+1030,South Asian,PJL
+1031,American,MXL
+1032,African,ESN
+1033,African,MSL
+1034,East Asian,CDX
+1035,South Asian,ITU
+1036,South Asian,STU
+1037,South Asian,ITU
+1038,East Asian,CDX
+1039,European,TSI
+1040,East Asian,JPT
+1041,East Asian,CHB
+1042,African,LWK
+1043,South Asian,GIH
+1044,East Asian,CHS
+1045,American,MXL
+1046,South Asian,STU
+1047,European,FIN
+1048,European,GBR
+1049,East Asian,JPT
+1050,European,FIN
+1051,European,TSI
+1052,East Asian,CHS
+1053,African,GWD
+1054,African,YRI
+1055,East Asian,KHV
+1056,East Asian,CHS
+1057,South Asian,GIH
+1058,African,GWD
+1059,African,LWK
+1060,South Asian,BEB
+1061,South Asian,BEB
+1062,East Asian,CHB
+1063,European,FIN
+1064,African,ESN
+1065,African,ACB
+1066,East Asian,CHS
+1067,American,MXL
+1068,European,TSI
+1069,African,GWD
+1070,South Asian,GIH
+1071,East Asian,CHS
+1072,European,IBS
+1073,South Asian,GIH
+1074,American,PUR
+1075,African,ESN
+1076,European,FIN
+1077,South Asian,STU
+1078,European,IBS
+1079,South Asian,GIH
+1080,East Asian,CHB
+1081,African,ASW
+1082,American,MXL
+1083,African,GWD
+1084,South Asian,PJL
+1085,European,CEU
+1086,African,GWD
+1087,African,LWK
+1088,African,GWD
+1089,European,CEU
+1090,European,CEU
+1091,East Asian,KHV
+1092,European,IBS
+1093,East Asian,CHS
+1094,African,MSL
+1095,East Asian,KHV
+1096,African,GWD
+1097,European,FIN
+1098,European,IBS
+1099,American,CLM
+1100,African,YRI
+1101,African,MSL
+1102,European,IBS
+1103,African,ACB
+1104,African,LWK
+1105,African,YRI
+1106,European,TSI
+1107,East Asian,CDX
+1108,African,MSL
+1109,South Asian,PJL
+1110,South Asian,GIH
+1111,European,CEU
+1112,American,CLM
+1113,European,GBR
+1114,American,CLM
+1115,East Asian,JPT
+1116,European,FIN
+1117,European,TSI
+1118,African,GWD
+1119,European,IBS
+1120,African,LWK
+1121,East Asian,CDX
+1122,African,YRI
+1123,European,CEU
+1124,South Asian,BEB
+1125,East Asian,KHV
+1126,European,IBS
+1127,African,ESN
+1128,European,IBS
+1129,American,PUR
+1130,European,TSI
+1131,European,IBS
+1132,South Asian,GIH
+1133,East Asian,JPT
+1134,European,IBS
+1135,South Asian,STU
+1136,East Asian,CHS
+1137,East Asian,KHV
+1138,South Asian,BEB
+1139,East Asian,JPT
+1140,American,PUR
+1141,African,YRI
+1142,European,IBS
+1143,East Asian,CHB
+1144,American,PUR
+1145,African,LWK
+1146,European,CEU
+1147,East Asian,KHV
+1148,African,ESN
+1149,South Asian,PJL
+1150,East Asian,KHV
+1151,East Asian,KHV
+1152,East Asian,CHB
+1153,European,TSI
+1154,African,YRI
+1155,American,PUR
+1156,South Asian,STU
+1157,African,ASW
+1158,East Asian,CHB
+1159,South Asian,STU
+1160,African,MSL
+1161,East Asian,CHS
+1162,South Asian,BEB
+1163,European,IBS
+1164,European,FIN
+1165,American,MXL
+1166,European,TSI
+1167,East Asian,KHV
+1168,European,IBS
+1169,South Asian,ITU
+1170,American,PEL
+1171,East Asian,JPT
+1172,East Asian,CHB
+1173,European,TSI
+1174,African,GWD
+1175,African,ASW
+1176,South Asian,BEB
+1177,African,GWD
+1178,East Asian,KHV
+1179,East Asian,JPT
+1180,European,TSI
+1181,American,PEL
+1182,European,FIN
+1183,East Asian,CDX
+1184,European,GBR
+1185,African,LWK
+1186,African,ACB
+1187,European,FIN
+1188,European,GBR
+1189,American,MXL
+1190,European,IBS
+1191,African,MSL
+1192,European,GBR
+1193,East Asian,KHV
+1194,South Asian,PJL
+1195,African,YRI
+1196,East Asian,CDX
+1197,East Asian,KHV
+1198,East Asian,CDX
+1199,European,CEU
+1200,African,LWK
+1201,American,CLM
+1202,European,IBS
+1203,European,IBS
+1204,East Asian,KHV
+1205,European,FIN
+1206,African,ESN
+1207,American,PUR
+1208,African,GWD
+1209,East Asian,CHB
+1210,African,GWD
+1211,American,PUR
+1212,South Asian,ITU
+1213,East Asian,JPT
+1214,South Asian,ITU
+1215,African,LWK
+1216,African,ACB
+1217,African,ACB
+1218,European,GBR
+1219,African,MSL
+1220,American,CLM
+1221,South Asian,STU
+1222,European,TSI
+1223,European,FIN
+1224,African,ASW
+1225,African,ACB
+1226,European,TSI
+1227,South Asian,STU
+1228,South Asian,ITU
+1229,American,CLM
+1230,European,GBR
+1231,European,FIN
+1232,South Asian,GIH
+1233,South Asian,BEB
+1234,East Asian,JPT
+1235,East Asian,CHS
+1236,American,CLM
+1237,European,FIN
+1238,European,FIN
+1239,South Asian,BEB
+1240,African,GWD
+1241,African,ACB
+1242,East Asian,JPT
+1243,East Asian,CHB
+1244,American,MXL
+1245,South Asian,BEB
+1246,East Asian,JPT
+1247,African,YRI
+1248,South Asian,STU
+1249,European,GBR
+1250,East Asian,CHB
+1251,East Asian,KHV
+1252,African,GWD
+1253,African,LWK
+1254,South Asian,ITU
+1255,East Asian,CDX
+1256,African,MSL
+1257,European,CEU
+1258,American,PUR
+1259,East Asian,CDX
+1260,African,ESN
+1261,American,MXL
+1262,European,TSI
+1263,East Asian,JPT
+1264,African,ASW
+1265,American,PUR
+1266,East Asian,CHB
+1267,African,GWD
+1268,African,ESN
+1269,European,IBS
+1270,African,YRI
+1271,South Asian,BEB
+1272,South Asian,ITU
+1273,European,TSI
+1274,East Asian,CHS
+1275,European,TSI
+1276,South Asian,BEB
+1277,American,MXL
+1278,East Asian,KHV
+1279,South Asian,BEB
+1280,South Asian,GIH
+1281,African,ESN
+1282,African,ACB
+1283,European,GBR
+1284,South Asian,STU
+1285,African,ESN
+1286,South Asian,STU
+1287,East Asian,CHB
+1288,East Asian,CHS
+1289,European,CEU
+1290,African,ASW
+1291,East Asian,CHS
+1292,American,PEL
+1293,American,PUR
+1294,South Asian,PJL
+1295,European,FIN
+1296,East Asian,JPT
+1297,African,LWK
+1298,African,ESN
+1299,African,ACB
+1300,African,YRI
+1301,American,PEL
+1302,African,MSL
+1303,African,GWD
+1304,South Asian,PJL
+1305,African,GWD
+1306,South Asian,BEB
+1307,South Asian,BEB
+1308,African,YRI
+1309,South Asian,STU
+1310,East Asian,CHB
+1311,African,ASW
+1312,East Asian,CDX
+1313,South Asian,ITU
+1314,African,LWK
+1315,African,MSL
+1316,East Asian,KHV
+1317,African,GWD
+1318,South Asian,BEB
+1319,African,ESN
+1320,South Asian,BEB
+1321,East Asian,CDX
+1322,African,ACB
+1323,South Asian,ITU
+1324,East Asian,JPT
+1325,South Asian,PJL
+1326,American,CLM
+1327,South Asian,GIH
+1328,European,TSI
+1329,African,GWD
+1330,South Asian,STU
+1331,African,MSL
+1332,South Asian,STU
+1333,European,FIN
+1334,South Asian,BEB
+1335,African,ESN
+1336,East Asian,CHB
+1337,American,PUR
+1338,American,PEL
+1339,East Asian,CHB
+1340,South Asian,GIH
+1341,European,CEU
+1342,African,LWK
+1343,European,CEU
+1344,East Asian,CHS
+1345,American,PUR
+1346,American,CLM
+1347,African,ACB
+1348,East Asian,CHB
+1349,South Asian,BEB
+1350,East Asian,CHB
+1351,European,GBR
+1352,American,CLM
+1353,East Asian,JPT
+1354,European,FIN
+1355,American,CLM
+1356,East Asian,CDX
+1357,European,TSI
+1358,European,FIN
+1359,European,FIN
+1360,European,GBR
+1361,African,MSL
+1362,South Asian,STU
+1363,South Asian,ITU
+1364,African,LWK
+1365,East Asian,JPT
+1366,American,CLM
+1367,American,MXL
+1368,European,FIN
+1369,African,ACB
+1370,American,PEL
+1371,European,CEU
+1372,African,LWK
+1373,East Asian,CHB
+1374,East Asian,KHV
+1375,South Asian,ITU
+1376,American,PEL
+1377,South Asian,BEB
+1378,European,FIN
+1379,South Asian,ITU
+1380,East Asian,JPT
+1381,East Asian,CDX
+1382,African,MSL
+1383,East Asian,JPT
+1384,American,CLM
+1385,East Asian,CDX
+1386,European,TSI
+1387,American,PEL
+1388,East Asian,JPT
+1389,European,CEU
+1390,South Asian,PJL
+1391,American,CLM
+1392,South Asian,PJL
+1393,European,TSI
+1394,East Asian,CDX
+1395,American,MXL
+1396,American,CLM
+1397,South Asian,BEB
+1398,American,CLM
+1399,South Asian,GIH
+1400,African,ASW
+1401,American,CLM
+1402,European,CEU
+1403,East Asian,JPT
+1404,European,FIN
+1405,American,PUR
+1406,South Asian,GIH
+1407,South Asian,STU
+1408,European,IBS
+1409,American,PUR
+1410,East Asian,JPT
+1411,East Asian,KHV
+1412,European,GBR
+1413,East Asian,JPT
+1414,South Asian,STU
+1415,European,TSI
+1416,South Asian,STU
+1417,American,MXL
+1418,East Asian,CHS
+1419,European,GBR
+1420,American,PUR
+1421,European,IBS
+1422,American,PEL
+1423,East Asian,KHV
+1424,European,IBS
+1425,African,GWD
+1426,East Asian,KHV
+1427,European,FIN
+1428,European,CEU
+1429,African,ESN
+1430,South Asian,GIH
+1431,European,FIN
+1432,African,GWD
+1433,East Asian,KHV
+1434,South Asian,PJL
+1435,American,PEL
+1436,South Asian,ITU
+1437,African,LWK
+1438,African,GWD
+1439,African,ACB
+1440,African,YRI
+1441,East Asian,CHS
+1442,European,CEU
+1443,European,TSI
+1444,South Asian,GIH
+1445,African,MSL
+1446,American,CLM
+1447,American,CLM
+1448,African,ACB
+1449,European,IBS
+1450,South Asian,STU
+1451,East Asian,CHS
+1452,South Asian,GIH
+1453,American,PUR
+1454,East Asian,JPT
+1455,East Asian,JPT
+1456,African,ASW
+1457,American,CLM
+1458,South Asian,GIH
+1459,South Asian,PJL
+1460,European,TSI
+1461,African,LWK
+1462,European,GBR
+1463,South Asian,BEB
+1464,European,CEU
+1465,European,CEU
+1466,American,PUR
+1467,South Asian,BEB
+1468,European,GBR
+1469,European,TSI
+1470,European,TSI
+1471,European,IBS
+1472,European,TSI
+1473,European,GBR
+1474,European,IBS
+1475,South Asian,BEB
+1476,European,CEU
+1477,South Asian,BEB
+1478,East Asian,CHB
+1479,South Asian,PJL
+1480,East Asian,CDX
+1481,European,TSI
+1482,European,GBR
+1483,African,ACB
+1484,African,YRI
+1485,East Asian,CDX
+1486,South Asian,GIH
+1487,European,FIN
+1488,American,MXL
+1489,East Asian,KHV
+1490,American,CLM
+1491,African,LWK
+1492,European,IBS
+1493,East Asian,KHV
+1494,African,MSL
+1495,African,ACB
+1496,American,PEL
+1497,European,CEU
+1498,African,ASW
+1499,African,GWD
+1500,South Asian,BEB
+1501,East Asian,JPT
+1502,East Asian,JPT
+1503,European,IBS
+1504,South Asian,STU
+1505,South Asian,GIH
+1506,South Asian,GIH
+1507,East Asian,KHV
+1508,American,PUR
+1509,European,TSI
+1510,African,ASW
+1511,European,CEU
+1512,South Asian,STU
+1513,European,FIN
+1514,African,MSL
+1515,East Asian,KHV
+1516,European,CEU
+1517,East Asian,CHS
+1518,American,CLM
+1519,European,TSI
+1520,African,ASW
+1521,African,ASW
+1522,South Asian,BEB
+1523,American,PEL
+1524,European,TSI
+1525,African,YRI
+1526,East Asian,CHB
+1527,East Asian,CHB
+1528,East Asian,JPT
+1529,European,FIN
+1530,European,TSI
+1531,American,PUR
+1532,African,YRI
+1533,European,TSI
+1534,European,FIN
+1535,American,PUR
+1536,East Asian,JPT
+1537,East Asian,CHB
+1538,South Asian,GIH
+1539,American,PUR
+1540,South Asian,GIH
+1541,American,PEL
+1542,European,GBR
+1543,American,PEL
+1544,African,MSL
+1545,African,GWD
+1546,European,TSI
+1547,European,IBS
+1548,African,YRI
+1549,European,GBR
+1550,American,PEL
+1551,European,FIN
+1552,African,GWD
+1553,European,FIN
+1554,African,ASW
+1555,European,TSI
+1556,American,CLM
+1557,African,ESN
+1558,African,ASW
+1559,East Asian,CHS
+1560,African,YRI
+1561,East Asian,CHB
+1562,European,FIN
+1563,East Asian,CHS
+1564,European,CEU
+1565,East Asian,JPT
+1566,African,ESN
+1567,South Asian,PJL
+1568,European,IBS
+1569,African,ASW
+1570,South Asian,GIH
+1571,African,MSL
+1572,European,IBS
+1573,European,TSI
+1574,American,PUR
+1575,African,MSL
+1576,East Asian,KHV
+1577,European,CEU
+1578,East Asian,CHS
+1579,African,MSL
+1580,American,PUR
+1581,African,LWK
+1582,East Asian,CHB
+1583,East Asian,KHV
+1584,American,MXL
+1585,American,PEL
+1586,East Asian,JPT
+1587,European,GBR
+1588,South Asian,BEB
+1589,South Asian,GIH
+1590,African,LWK
+1591,South Asian,GIH
+1592,South Asian,PJL
+1593,American,MXL
+1594,African,GWD
+1595,South Asian,ITU
+1596,East Asian,KHV
+1597,East Asian,CDX
+1598,American,CLM
+1599,East Asian,CDX
+1600,East Asian,CDX
+1601,European,IBS
+1602,European,GBR
+1603,South Asian,BEB
+1604,African,ASW
+1605,African,ACB
+1606,South Asian,ITU
+1607,East Asian,CDX
+1608,American,PEL
+1609,European,GBR
+1610,European,FIN
+1611,African,LWK
+1612,South Asian,BEB
+1613,East Asian,CHS
+1614,African,YRI
+1615,American,MXL
+1616,African,GWD
+1617,African,ASW
+1618,East Asian,JPT
+1619,East Asian,CHB
+1620,South Asian,GIH
+1621,African,GWD
+1622,South Asian,ITU
+1623,African,YRI
+1624,South Asian,GIH
+1625,African,ESN
+1626,American,CLM
+1627,East Asian,JPT
+1628,South Asian,STU
+1629,East Asian,CHB
+1630,East Asian,CHS
+1631,East Asian,CHB
+1632,European,IBS
+1633,African,GWD
+1634,African,ESN
+1635,African,GWD
+1636,East Asian,JPT
+1637,East Asian,KHV
+1638,African,ACB
+1639,East Asian,CDX
+1640,East Asian,CHB
+1641,South Asian,BEB
+1642,American,PEL
+1643,South Asian,STU
+1644,European,IBS
+1645,American,MXL
+1646,European,IBS
+1647,East Asian,CHB
+1648,East Asian,KHV
+1649,South Asian,ITU
+1650,South Asian,ITU
+1651,American,PEL
+1652,American,PEL
+1653,European,FIN
+1654,South Asian,STU
+1655,African,GWD
+1656,East Asian,KHV
+1657,East Asian,CDX
+1658,African,ESN
+1659,African,ESN
+1660,American,PUR
+1661,African,ESN
+1662,European,GBR
+1663,European,FIN
+1664,East Asian,KHV
+1665,European,TSI
+1666,South Asian,GIH
+1667,African,ESN
+1668,African,ACB
+1669,African,MSL
+1670,European,GBR
+1671,South Asian,PJL
+1672,East Asian,KHV
+1673,South Asian,ITU
+1674,European,CEU
+1675,East Asian,KHV
+1676,East Asian,CHB
+1677,East Asian,JPT
+1678,African,YRI
+1679,South Asian,BEB
+1680,African,YRI
+1681,South Asian,STU
+1682,African,ESN
+1683,African,MSL
+1684,African,ACB
+1685,South Asian,ITU
+1686,East Asian,JPT
+1687,East Asian,CHS
+1688,European,TSI
+1689,South Asian,BEB
+1690,East Asian,CHS
+1691,East Asian,CDX
+1692,African,MSL
+1693,European,IBS
+1694,East Asian,KHV
+1695,East Asian,KHV
+1696,East Asian,CHS
+1697,East Asian,CHB
+1698,South Asian,ITU
+1699,South Asian,ITU
+1700,African,LWK
+1701,South Asian,ITU
+1702,American,CLM
+1703,East Asian,KHV
+1704,East Asian,JPT
+1705,African,ACB
+1706,African,MSL
+1707,South Asian,ITU
+1708,American,CLM
+1709,European,GBR
+1710,South Asian,PJL
+1711,American,MXL
+1712,African,ACB
+1713,African,GWD
+1714,African,GWD
+1715,East Asian,CHB
+1716,South Asian,ITU
+1717,European,FIN
+1718,East Asian,CHS
+1719,African,MSL
+1720,African,ASW
+1721,East Asian,KHV
+1722,East Asian,CHS
+1723,European,CEU
+1724,East Asian,CHB
+1725,American,PUR
+1726,European,CEU
+1727,European,FIN
+1728,African,ACB
+1729,African,ACB
+1730,European,FIN
+1731,East Asian,CDX
+1732,African,MSL
+1733,European,TSI
+1734,American,CLM
+1735,African,MSL
+1736,African,MSL
+1737,African,YRI
+1738,South Asian,GIH
+1739,East Asian,CHB
+1740,American,MXL
+1741,European,GBR
+1742,African,LWK
+1743,European,CEU
+1744,African,ACB
+1745,South Asian,PJL
+1746,East Asian,CHB
+1747,South Asian,GIH
+1748,East Asian,CHB
+1749,South Asian,GIH
+1750,East Asian,CHB
+1751,East Asian,JPT
+1752,East Asian,CHS
+1753,South Asian,PJL
+1754,South Asian,GIH
+1755,African,LWK
+1756,South Asian,BEB
+1757,American,PEL
+1758,American,CLM
+1759,South Asian,BEB
+1760,American,PUR
+1761,African,GWD
+1762,East Asian,CDX
+1763,East Asian,JPT
+1764,African,LWK
+1765,East Asian,JPT
+1766,American,MXL
+1767,East Asian,KHV
+1768,European,CEU
+1769,European,FIN
+1770,South Asian,GIH
+1771,East Asian,CDX
+1772,American,PEL
+1773,African,ASW
+1774,South Asian,BEB
+1775,African,ESN
+1776,South Asian,BEB
+1777,African,LWK
+1778,American,PEL
+1779,African,GWD
+1780,African,ESN
+1781,European,TSI
+1782,African,GWD
+1783,African,ACB
+1784,East Asian,JPT
+1785,European,IBS
+1786,East Asian,CHS
+1787,African,YRI
+1788,African,ESN
+1789,American,PUR
+1790,South Asian,PJL
+1791,American,CLM
+1792,American,CLM
+1793,East Asian,KHV
+1794,East Asian,CDX
+1795,African,LWK
+1796,European,IBS
+1797,East Asian,CHB
+1798,European,IBS
+1799,African,ACB
+1800,European,IBS
+1801,East Asian,CDX
+1802,African,LWK
+1803,South Asian,ITU
+1804,African,GWD
+1805,East Asian,JPT
+1806,African,LWK
+1807,East Asian,KHV
+1808,East Asian,CHB
+1809,American,PEL
+1810,East Asian,CHS
+1811,South Asian,PJL
+1812,African,ACB
+1813,South Asian,BEB
+1814,East Asian,CHS
+1815,African,LWK
+1816,European,GBR
+1817,East Asian,CHB
+1818,South Asian,PJL
+1819,East Asian,CHB
+1820,American,PUR
+1821,European,GBR
+1822,European,IBS
+1823,African,LWK
+1824,East Asian,CDX
+1825,European,IBS
+1826,East Asian,CDX
+1827,European,TSI
+1828,African,ESN
+1829,South Asian,BEB
+1830,East Asian,KHV
+1831,American,CLM
+1832,African,MSL
+1833,South Asian,GIH
+1834,South Asian,STU
+1835,European,FIN
+1836,African,ASW
+1837,European,CEU
+1838,African,YRI
+1839,East Asian,CDX
+1840,South Asian,ITU
+1841,American,MXL
+1842,African,LWK
+1843,African,MSL
+1844,South Asian,GIH
+1845,African,ESN
+1846,African,GWD
+1847,East Asian,KHV
+1848,African,GWD
+1849,East Asian,KHV
+1850,African,MSL
+1851,European,IBS
+1852,European,IBS
+1853,African,ESN
+1854,American,CLM
+1855,African,ACB
+1856,South Asian,PJL
+1857,African,ESN
+1858,European,IBS
+1859,South Asian,PJL
+1860,South Asian,BEB
+1861,African,YRI
+1862,South Asian,PJL
+1863,African,LWK
+1864,European,FIN
+1865,African,MSL
+1866,American,CLM
+1867,East Asian,JPT
+1868,East Asian,KHV
+1869,African,MSL
+1870,American,MXL
+1871,East Asian,CDX
+1872,South Asian,BEB
+1873,African,LWK
+1874,American,CLM
+1875,African,ESN
+1876,South Asian,PJL
+1877,European,GBR
+1878,South Asian,PJL
+1879,African,GWD
+1880,African,LWK
+1881,African,ASW
+1882,African,YRI
+1883,East Asian,CHB
+1884,European,FIN
+1885,European,IBS
+1886,American,PUR
+1887,American,CLM
+1888,East Asian,JPT
+1889,American,CLM
+1890,South Asian,STU
+1891,European,IBS
+1892,African,ASW
+1893,African,GWD
+1894,East Asian,JPT
+1895,East Asian,CHB
+1896,European,GBR
+1897,European,TSI
+1898,African,ESN
+1899,European,CEU
+1900,East Asian,CHB
+1901,South Asian,GIH
+1902,American,CLM
+1903,African,LWK
+1904,American,PEL
+1905,South Asian,GIH
+1906,African,ACB
+1907,European,GBR
+1908,African,YRI
+1909,European,IBS
+1910,East Asian,JPT
+1911,South Asian,BEB
+1912,African,ACB
+1913,South Asian,BEB
+1914,American,PUR
+1915,East Asian,CHB
+1916,African,GWD
+1917,East Asian,CHB
+1918,American,MXL
+1919,European,GBR
+1920,European,IBS
+1921,American,PEL
+1922,South Asian,BEB
+1923,European,GBR
+1924,East Asian,JPT
+1925,South Asian,ITU
+1926,African,ESN
+1927,South Asian,GIH
+1928,American,PEL
+1929,East Asian,JPT
+1930,African,MSL
+1931,African,GWD
+1932,American,PEL
+1933,European,CEU
+1934,East Asian,CDX
+1935,South Asian,GIH
+1936,East Asian,KHV
+1937,African,GWD
+1938,South Asian,BEB
+1939,East Asian,CHS
+1940,African,GWD
+1941,European,FIN
+1942,American,PEL
+1943,American,PUR
+1944,African,ESN
+1945,European,TSI
+1946,American,PEL
+1947,European,GBR
+1948,South Asian,ITU
+1949,American,PEL
+1950,African,ASW
+1951,European,CEU
+1952,South Asian,STU
+1953,European,TSI
+1954,American,MXL
+1955,East Asian,CDX
+1956,African,ESN
+1957,African,YRI
+1958,African,ACB
+1959,American,PUR
+1960,European,GBR
+1961,American,PUR
+1962,East Asian,CHS
+1963,East Asian,CHB
+1964,American,PUR
+1965,European,TSI
+1966,American,PEL
+1967,African,MSL
+1968,American,MXL
+1969,South Asian,STU
+1970,African,GWD
+1971,American,PEL
+1972,European,TSI
+1973,South Asian,STU
+1974,European,FIN
+1975,American,PEL
+1976,African,ACB
+1977,African,YRI
+1978,African,YRI
+1979,South Asian,GIH
+1980,European,FIN
+1981,South Asian,PJL
+1982,African,YRI
+1983,South Asian,GIH
+1984,European,FIN
+1985,African,GWD
+1986,European,CEU
+1987,East Asian,JPT
+1988,South Asian,STU
+1989,East Asian,CHB
+1990,African,LWK
+1991,American,PUR
+1992,European,CEU
+1993,East Asian,CDX
+1994,African,ACB
+1995,European,IBS
+1996,American,CLM
+1997,East Asian,CHS
+1998,African,MSL
+1999,African,YRI
+2000,European,CEU
+2001,African,YRI
+2002,European,FIN
+2003,American,MXL
+2004,South Asian,BEB
+2005,African,MSL
+2006,American,PEL
+2007,East Asian,CHS
+2008,European,IBS
+2009,American,CLM
+2010,South Asian,GIH
+2011,African,GWD
+2012,South Asian,BEB
+2013,African,ACB
+2014,East Asian,JPT
+2015,African,ESN
+2016,American,MXL
+2017,American,CLM
+2018,African,MSL
+2019,European,IBS
+2020,South Asian,GIH
+2021,European,IBS
+2022,American,MXL
+2023,European,FIN
+2024,American,MXL
+2025,African,GWD
+2026,American,MXL
+2027,African,ACB
+2028,East Asian,CDX
+2029,East Asian,CDX
+2030,East Asian,CDX
+2031,African,ESN
+2032,African,LWK
+2033,East Asian,CHB
+2034,African,ACB
+2035,East Asian,CDX
+2036,South Asian,PJL
+2037,European,GBR
+2038,East Asian,CDX
+2039,African,ACB
+2040,South Asian,GIH
+2041,South Asian,PJL
+2042,American,MXL
+2043,African,GWD
+2044,South Asian,ITU
+2045,European,GBR
+2046,European,FIN
+2047,East Asian,KHV
+2048,European,FIN
+2049,African,ESN
+2050,European,IBS
+2051,African,LWK
+2052,European,CEU
+2053,African,GWD
+2054,African,MSL
+2055,African,LWK
+2056,South Asian,PJL
+2057,East Asian,CHB
+2058,South Asian,ITU
+2059,American,CLM
+2060,East Asian,CHS
+2061,East Asian,CDX
+2062,American,CLM
+2063,American,PUR
+2064,East Asian,JPT
+2065,European,CEU
+2066,East Asian,CHS
+2067,East Asian,CHS
+2068,African,LWK
+2069,East Asian,CHB
+2070,African,ACB
+2071,African,LWK
+2072,East Asian,CHS
+2073,African,ESN
+2074,South Asian,BEB
+2075,South Asian,ITU
+2076,African,LWK
+2077,African,GWD
+2078,European,IBS
+2079,European,GBR
+2080,European,CEU
+2081,African,ESN
+2082,African,LWK
+2083,African,YRI
+2084,South Asian,PJL
+2085,European,IBS
+2086,South Asian,STU
+2087,European,TSI
+2088,African,ESN
+2089,European,FIN
+2090,South Asian,STU
+2091,African,YRI
+2092,African,ACB
+2093,European,IBS
+2094,African,ESN
+2095,African,ESN
+2096,African,YRI
+2097,European,FIN
+2098,East Asian,CDX
+2099,European,CEU
+2100,American,PUR
+2101,American,PUR
+2102,African,ESN
+2103,South Asian,ITU
+2104,European,IBS
+2105,East Asian,JPT
+2106,South Asian,STU
+2107,European,FIN
+2108,American,MXL
+2109,East Asian,CHB
+2110,South Asian,STU
+2111,South Asian,PJL
+2112,African,ASW
+2113,East Asian,CHB
+2114,East Asian,CHB
+2115,American,PUR
+2116,American,PEL
+2117,East Asian,CHB
+2118,European,FIN
+2119,East Asian,JPT
+2120,East Asian,JPT
+2121,European,IBS
+2122,European,IBS
+2123,American,PUR
+2124,East Asian,KHV
+2125,European,TSI
+2126,East Asian,CDX
+2127,South Asian,GIH
+2128,European,IBS
+2129,African,ESN
+2130,South Asian,PJL
+2131,East Asian,KHV
+2132,African,ASW
+2133,East Asian,CDX
+2134,East Asian,JPT
+2135,American,CLM
+2136,South Asian,STU
+2137,European,FIN
+2138,East Asian,JPT
+2139,East Asian,JPT
+2140,European,FIN
+2141,European,CEU
+2142,African,YRI
+2143,European,CEU
+2144,South Asian,GIH
+2145,South Asian,ITU
+2146,East Asian,JPT
+2147,East Asian,KHV
+2148,South Asian,BEB
+2149,East Asian,CHS
+2150,African,YRI
+2151,European,TSI
+2152,American,CLM
+2153,European,FIN
+2154,African,LWK
+2155,East Asian,JPT
+2156,African,ACB
+2157,European,FIN
+2158,South Asian,GIH
+2159,East Asian,CDX
+2160,African,MSL
+2161,South Asian,STU
+2162,South Asian,GIH
+2163,African,YRI
+2164,South Asian,BEB
+2165,African,LWK
+2166,African,MSL
+2167,South Asian,ITU
+2168,European,IBS
+2169,African,GWD
+2170,South Asian,ITU
+2171,American,PEL
+2172,African,ACB
+2173,African,LWK
+2174,South Asian,GIH
+2175,East Asian,CHS
+2176,European,TSI
+2177,African,ASW
+2178,East Asian,JPT
+2179,East Asian,KHV
+2180,East Asian,CHS
+2181,African,ACB
+2182,European,FIN
+2183,European,IBS
+2184,African,GWD
+2185,East Asian,CHS
+2186,East Asian,JPT
+2187,East Asian,JPT
+2188,East Asian,CHS
+2189,South Asian,STU
+2190,European,IBS
+2191,African,GWD
+2192,African,LWK
+2193,South Asian,GIH
+2194,East Asian,CHS
+2195,American,PUR
+2196,African,MSL
+2197,South Asian,PJL
+2198,African,GWD
+2199,European,FIN
+2200,African,ACB
+2201,American,PUR
+2202,East Asian,CHS
+2203,American,PEL
+2204,South Asian,BEB
+2205,South Asian,ITU
+2206,European,CEU
+2207,South Asian,STU
+2208,African,ESN
+2209,East Asian,KHV
+2210,American,PUR
+2211,American,PEL
+2212,South Asian,GIH
+2213,African,ACB
+2214,African,GWD
+2215,East Asian,CDX
+2216,East Asian,CDX
+2217,East Asian,CHS
+2218,American,PUR
+2219,African,MSL
+2220,South Asian,GIH
+2221,South Asian,ITU
+2222,South Asian,STU
+2223,European,CEU
+2224,African,ESN
+2225,East Asian,CHS
+2226,African,ACB
+2227,South Asian,ITU
+2228,African,ESN
+2229,East Asian,CHS
+2230,South Asian,GIH
+2231,South Asian,PJL
+2232,European,FIN
+2233,East Asian,CHB
+2234,African,LWK
+2235,African,MSL
+2236,African,ACB
+2237,South Asian,ITU
+2238,South Asian,BEB
+2239,African,ACB
+2240,East Asian,CDX
+2241,African,ESN
+2242,South Asian,GIH
+2243,East Asian,CDX
+2244,European,IBS
+2245,East Asian,JPT
+2246,African,GWD
+2247,African,GWD
+2248,East Asian,CHS
+2249,European,FIN
+2250,African,LWK
+2251,East Asian,CHS
+2252,South Asian,PJL
+2253,European,TSI
+2254,European,TSI
+2255,European,CEU
+2256,European,GBR
+2257,American,MXL
+2258,East Asian,JPT
+2259,South Asian,ITU
+2260,African,GWD
+2261,American,PEL
+2262,European,TSI
+2263,African,ACB
+2264,African,YRI
+2265,African,GWD
+2266,South Asian,GIH
+2267,European,CEU
+2268,European,IBS
+2269,East Asian,JPT
+2270,American,MXL
+2271,South Asian,ITU
+2272,African,ACB
+2273,American,PUR
+2274,East Asian,CHB
+2275,East Asian,JPT
+2276,African,LWK
+2277,African,ASW
+2278,East Asian,CHB
+2279,East Asian,KHV
+2280,South Asian,PJL
+2281,South Asian,GIH
+2282,European,FIN
+2283,American,PUR
+2284,African,YRI
+2285,South Asian,ITU
+2286,European,CEU
+2287,African,GWD
+2288,South Asian,BEB
+2289,South Asian,GIH
+2290,South Asian,GIH
+2291,African,MSL
+2292,East Asian,JPT
+2293,European,FIN
+2294,European,CEU
+2295,South Asian,STU
+2296,South Asian,BEB
+2297,South Asian,BEB
+2298,American,PUR
+2299,European,FIN
+2300,European,CEU
+2301,European,CEU
+2302,African,LWK
+2303,American,CLM
+2304,South Asian,PJL
+2305,American,CLM
+2306,American,PEL
+2307,South Asian,BEB
+2308,European,FIN
+2309,African,LWK
+2310,African,YRI
+2311,European,FIN
+2312,African,ESN
+2313,East Asian,CHB
+2314,South Asian,STU
+2315,European,TSI
+2316,South Asian,STU
+2317,East Asian,KHV
+2318,South Asian,GIH
+2319,African,ASW
+2320,European,IBS
+2321,African,MSL
+2322,European,GBR
+2323,African,LWK
+2324,East Asian,JPT
+2325,African,ACB
+2326,East Asian,CHB
+2327,American,CLM
+2328,East Asian,CHB
+2329,European,IBS
+2330,African,ESN
+2331,African,MSL
+2332,European,CEU
+2333,European,FIN
+2334,American,CLM
+2335,American,CLM
+2336,African,ACB
+2337,African,LWK
+2338,East Asian,CHB
+2339,American,PEL
+2340,European,IBS
+2341,South Asian,BEB
+2342,East Asian,JPT
+2343,East Asian,CDX
+2344,African,GWD
+2345,East Asian,CHB
+2346,African,LWK
+2347,African,ACB
+2348,African,ESN
+2349,American,MXL
+2350,European,GBR
+2351,East Asian,KHV
+2352,East Asian,JPT
+2353,East Asian,KHV
+2354,East Asian,CHS
+2355,African,ASW
+2356,European,CEU
+2357,African,YRI
+2358,African,YRI
+2359,American,MXL
+2360,European,IBS
+2361,East Asian,CHB
+2362,East Asian,CDX
+2363,European,GBR
+2364,East Asian,CHS
+2365,European,GBR
+2366,European,TSI
+2367,African,ESN
+2368,East Asian,CHS
+2369,European,GBR
+2370,South Asian,GIH
+2371,South Asian,PJL
+2372,African,YRI
+2373,African,ESN
+2374,South Asian,ITU
+2375,South Asian,PJL
+2376,European,IBS
+2377,African,ESN
+2378,South Asian,PJL
+2379,European,TSI
+2380,South Asian,BEB
+2381,South Asian,STU
+2382,European,FIN
+2383,African,ESN
+2384,East Asian,CHS
+2385,European,GBR
+2386,African,ASW
+2387,American,CLM
+2388,East Asian,JPT
+2389,African,GWD
+2390,East Asian,CHS
+2391,East Asian,CHB
+2392,African,LWK
+2393,African,ASW
+2394,American,PEL
+2395,East Asian,JPT
+2396,South Asian,BEB
+2397,American,PEL
+2398,American,PUR
+2399,East Asian,CHS
+2400,South Asian,PJL
+2401,European,IBS
+2402,South Asian,ITU
+2403,East Asian,KHV
+2404,African,YRI
+2405,European,TSI
+2406,South Asian,ITU
+2407,European,CEU
+2408,African,ACB
+2409,European,IBS
+2410,African,GWD
+2411,African,YRI
+2412,European,FIN
+2413,African,LWK
+2414,South Asian,ITU
+2415,European,IBS
+2416,East Asian,CHS
+2417,African,ACB
+2418,American,CLM
+2419,European,IBS
+2420,African,YRI
+2421,South Asian,ITU
+2422,African,ACB
+2423,East Asian,JPT
+2424,South Asian,BEB
+2425,African,GWD
+2426,European,FIN
+2427,African,YRI
+2428,East Asian,CDX
+2429,African,GWD
+2430,American,PUR
+2431,African,LWK
+2432,European,FIN
+2433,European,TSI
+2434,African,YRI
+2435,American,PEL
+2436,African,GWD
+2437,African,YRI
+2438,East Asian,CHB
+2439,American,CLM
+2440,African,LWK
+2441,South Asian,ITU
+2442,South Asian,PJL
+2443,European,IBS
+2444,South Asian,GIH
+2445,African,ESN
+2446,African,ASW
+2447,South Asian,STU
+2448,South Asian,STU
+2449,African,YRI
+2450,American,PEL
+2451,American,CLM
+2452,European,IBS
+2453,South Asian,ITU
+2454,East Asian,CDX
+2455,European,CEU
+2456,East Asian,CHS
+2457,African,LWK
+2458,European,TSI
+2459,African,ESN
+2460,East Asian,KHV
+2461,European,TSI
+2462,East Asian,JPT
+2463,African,GWD
+2464,South Asian,GIH
+2465,American,MXL
+2466,American,PUR
+2467,South Asian,STU
+2468,South Asian,GIH
+2469,American,PUR
+2470,East Asian,CHS
+2471,South Asian,STU
+2472,African,LWK
+2473,South Asian,BEB
+2474,African,MSL
+2475,European,GBR
+2476,American,PEL
+2477,American,CLM
+2478,South Asian,PJL
+2479,South Asian,ITU
+2480,American,MXL
+2481,South Asian,GIH
+2482,European,TSI
+2483,East Asian,CHB
+2484,American,CLM
+2485,European,CEU
+2486,African,GWD
+2487,American,MXL
+2488,East Asian,JPT
+2489,East Asian,JPT
+2490,American,CLM
+2491,African,ACB
+2492,African,ESN
+2493,East Asian,CHB
+2494,African,YRI
+2495,East Asian,CHS
+2496,East Asian,KHV
+2497,South Asian,GIH
+2498,African,MSL
+2499,African,ACB
+2500,American,PEL
+2501,African,GWD
+2502,European,GBR
+2503,African,ACB
+2504,European,IBS
+2505,European,CEU
+2506,African,GWD
+2507,African,GWD
+2508,East Asian,CDX
+2509,East Asian,CHB
+2510,South Asian,STU
+2511,African,ACB
+2512,American,PEL
+2513,European,CEU
+2514,European,CEU
+2515,African,YRI
+2516,East Asian,CHS
+2517,South Asian,STU
+2518,European,IBS
+2519,European,IBS
+2520,East Asian,JPT
+2521,East Asian,CHB
+2522,European,TSI
+2523,African,ACB
+2524,African,LWK
+2525,African,YRI
+2526,African,MSL
+2527,European,GBR
+2528,South Asian,STU
+2529,American,MXL
+2530,South Asian,STU
+2531,American,MXL
+2532,European,GBR
+2533,African,ESN
+2534,African,GWD
+2535,South Asian,STU
+2536,American,PUR
+2537,African,ACB
+2538,American,PUR
+2539,African,ESN
+2540,East Asian,JPT
+2541,South Asian,STU
+2542,African,MSL
+2543,African,LWK
+2544,European,GBR
+2545,East Asian,CHS
+2546,East Asian,CDX
+2547,African,GWD
+2548,American,PUR
+2549,South Asian,STU
+2550,African,GWD
+2551,African,ASW
+2552,East Asian,CHS
+2553,South Asian,STU
+2554,South Asian,BEB
+2555,South Asian,ITU
+2556,European,GBR
+2557,East Asian,KHV
+2558,European,CEU
+2559,European,CEU
+2560,African,GWD
+2561,East Asian,CHB
+2562,East Asian,JPT
+2563,East Asian,CHB
+2564,South Asian,PJL
+2565,American,PUR
+2566,East Asian,JPT
+2567,African,MSL
+2568,African,GWD
+2569,South Asian,BEB
+2570,American,CLM
+2571,European,TSI
+2572,East Asian,CHS
+2573,African,ESN
+2574,East Asian,CHS
+2575,European,FIN
+2576,American,PUR
+2577,European,TSI
+2578,African,GWD
+2579,African,YRI
+2580,South Asian,ITU
+2581,African,ASW
+2582,South Asian,BEB
+2583,East Asian,CHB
+2584,East Asian,CDX
+2585,African,MSL
+2586,American,PEL
+2587,African,LWK
+2588,European,CEU
+2589,East Asian,CHS
+2590,American,PEL
+2591,European,FIN
+2592,European,GBR
+2593,American,MXL
+2594,South Asian,BEB
+2595,European,TSI
+2596,East Asian,JPT
+2597,American,CLM
+2598,South Asian,STU
+2599,East Asian,JPT
+2600,African,MSL
+2601,American,CLM
+2602,American,PUR
+2603,African,ESN
+2604,American,CLM
+2605,African,MSL
+2606,African,LWK
+2607,African,MSL
+2608,African,YRI
+2609,African,GWD
+2610,European,CEU
+2611,South Asian,ITU
+2612,South Asian,STU
+2613,European,GBR
+2614,South Asian,ITU
+2615,South Asian,GIH
+2616,American,CLM
+2617,American,PUR
+2618,African,ESN
+2619,South Asian,PJL
+2620,American,PEL
+2621,African,ASW
+2622,American,CLM
+2623,European,IBS
+2624,South Asian,STU
+2625,American,MXL
+2626,European,CEU
+2627,East Asian,CHB
+2628,East Asian,CDX
+2629,East Asian,CHS
+2630,European,CEU
+2631,South Asian,STU
+2632,South Asian,PJL
+2633,American,MXL
+2634,African,ESN
+2635,East Asian,KHV
+2636,South Asian,STU
+2637,European,IBS
+2638,European,GBR
+2639,American,PEL
+2640,African,GWD
+2641,East Asian,CHS
+2642,African,MSL
+2643,European,FIN
+2644,African,GWD
+2645,East Asian,KHV
+2646,East Asian,KHV
+2647,African,LWK
+2648,South Asian,STU
+2649,South Asian,GIH
+2650,South Asian,GIH
+2651,European,GBR
+2652,African,ACB
+2653,American,PUR
+2654,East Asian,KHV
+2655,American,PEL
+2656,African,ASW
+2657,East Asian,CHS
+2658,African,YRI
+2659,European,IBS
+2660,African,YRI
+2661,European,TSI
+2662,European,CEU
+2663,European,IBS
+2664,European,IBS
+2665,African,ACB
+2666,East Asian,CHB
+2667,African,ESN
+2668,East Asian,KHV
+2669,American,PUR
+2670,African,ESN
+2671,European,FIN
+2672,European,IBS
+2673,East Asian,JPT
+2674,American,CLM
+2675,African,YRI
+2676,South Asian,BEB
+2677,African,GWD
+2678,African,ESN
+2679,African,ESN
+2680,East Asian,CHS
+2681,East Asian,CDX
+2682,South Asian,PJL
+2683,East Asian,CHS
+2684,South Asian,GIH
+2685,European,IBS
+2686,African,LWK
+2687,African,LWK
+2688,American,PUR
+2689,European,CEU
+2690,East Asian,KHV
+2691,South Asian,PJL
+2692,South Asian,STU
+2693,African,LWK
+2694,East Asian,CDX
+2695,African,LWK
+2696,South Asian,STU
+2697,European,IBS
+2698,African,ASW
+2699,South Asian,GIH
+2700,South Asian,ITU
+2701,American,CLM
+2702,European,GBR
+2703,African,ESN
+2704,European,CEU
+2705,East Asian,KHV
+2706,South Asian,PJL
+2707,European,FIN
+2708,European,TSI
+2709,African,ASW
+2710,American,PEL
+2711,African,ESN
+2712,American,CLM
+2713,European,CEU
+2714,European,TSI
+2715,East Asian,JPT
+2716,American,PEL
+2717,European,IBS
+2718,South Asian,STU
+2719,African,YRI
+2720,East Asian,JPT
+2721,African,MSL
+2722,South Asian,PJL
+2723,American,PEL
+2724,African,YRI
+2725,African,ASW
+2726,East Asian,KHV
+2727,East Asian,CDX
+2728,African,GWD
+2729,European,CEU
+2730,South Asian,ITU
+2731,East Asian,JPT
+2732,East Asian,CHB
+2733,East Asian,CDX
+2734,European,GBR
+2735,American,CLM
+2736,East Asian,CHB
+2737,South Asian,GIH
+2738,East Asian,JPT
+2739,African,YRI
+2740,European,FIN
+2741,African,YRI
+2742,South Asian,ITU
+2743,African,MSL
+2744,European,TSI
+2745,European,IBS
+2746,European,IBS
+2747,African,ASW
+2748,East Asian,KHV
+2749,South Asian,ITU
+2750,South Asian,PJL
+2751,African,ESN
+2752,East Asian,CHB
+2753,East Asian,CDX
+2754,South Asian,STU
+2755,South Asian,ITU
+2756,East Asian,JPT
+2757,European,GBR
+2758,European,TSI
+2759,East Asian,CHS
+2760,African,ACB
+2761,European,CEU
+2762,American,CLM
+2763,African,ESN
+2764,African,YRI
+2765,African,ACB
+2766,African,ESN
+2767,European,TSI
+2768,European,IBS
+2769,European,CEU
+2770,South Asian,PJL
+2771,African,GWD
+2772,South Asian,GIH
+2773,South Asian,STU
+2774,South Asian,STU
+2775,European,FIN
+2776,American,MXL
+2777,South Asian,BEB
+2778,European,GBR
+2779,East Asian,CDX
+2780,African,GWD
+2781,African,ACB
+2782,African,ESN
+2783,East Asian,CDX
+2784,East Asian,CHS
+2785,African,YRI
+2786,East Asian,CDX
+2787,African,ACB
+2788,South Asian,PJL
+2789,American,MXL
+2790,European,IBS
+2791,East Asian,CDX
+2792,European,CEU
+2793,East Asian,CHS
+2794,African,LWK
+2795,East Asian,CDX
+2796,East Asian,CDX
+2797,South Asian,PJL
+2798,African,ESN
+2799,American,MXL
+2800,African,GWD
+2801,South Asian,GIH
+2802,South Asian,BEB
+2803,American,MXL
+2804,American,CLM
+2805,South Asian,ITU
+2806,South Asian,BEB
+2807,East Asian,CHB
+2808,South Asian,BEB
+2809,African,ACB
+2810,European,CEU
+2811,African,YRI
+2812,African,YRI
+2813,African,ACB
+2814,African,YRI
+2815,East Asian,CDX
+2816,African,YRI
+2817,European,IBS
+2818,African,YRI
+2819,East Asian,KHV
+2820,European,GBR
+2821,African,ACB
+2822,South Asian,STU
+2823,East Asian,KHV
+2824,South Asian,ITU
+2825,South Asian,STU
+2826,South Asian,STU
+2827,South Asian,PJL
+2828,African,GWD
+2829,African,ASW
+2830,European,CEU
+2831,South Asian,BEB
+2832,African,ESN
+2833,African,ESN
+2834,European,TSI
+2835,African,ASW
+2836,African,YRI
+2837,European,TSI
+2838,American,PEL
+2839,East Asian,CDX
+2840,African,MSL
+2841,East Asian,CDX
+2842,East Asian,CHB
+2843,African,GWD
+2844,American,PEL
+2845,American,CLM
+2846,South Asian,ITU
+2847,East Asian,CHS
+2848,European,GBR
+2849,African,ASW
+2850,South Asian,GIH
+2851,European,IBS
+2852,African,GWD
+2853,South Asian,PJL
+2854,American,PUR
+2855,East Asian,CHS
+2856,South Asian,GIH
+2857,African,MSL
+2858,African,ESN
+2859,European,IBS
+2860,South Asian,PJL
+2861,East Asian,JPT
+2862,East Asian,JPT
+2863,American,PEL
+2864,African,LWK
+2865,East Asian,CHS
+2866,South Asian,BEB
+2867,African,ACB
+2868,African,GWD
+2869,East Asian,JPT
+2870,European,CEU
+2871,American,MXL
+2872,South Asian,BEB
+2873,European,FIN
+2874,American,PUR
+2875,American,CLM
+2876,American,PUR
+2877,European,FIN
+2878,European,CEU
+2879,East Asian,CHS
+2880,African,ACB
+2881,African,MSL
+2882,South Asian,ITU
+2883,European,TSI
+2884,African,GWD
+2885,American,MXL
+2886,East Asian,CHS
+2887,American,CLM
+2888,African,LWK
+2889,South Asian,GIH
+2890,South Asian,PJL
+2891,African,GWD
+2892,African,ACB
+2893,American,CLM
+2894,European,IBS
+2895,South Asian,STU
+2896,South Asian,ITU
+2897,South Asian,STU
+2898,African,YRI
+2899,American,CLM
+2900,East Asian,CHS
+2901,East Asian,JPT
+2902,European,IBS
+2903,South Asian,GIH
+2904,South Asian,ITU
+2905,East Asian,KHV
+2906,African,GWD
+2907,South Asian,ITU
+2908,South Asian,PJL
+2909,African,ESN
+2910,American,PUR
+2911,East Asian,CDX
+2912,East Asian,CHB
+2913,East Asian,CHS
+2914,European,TSI
+2915,American,PEL
+2916,South Asian,ITU
+2917,South Asian,ITU
+2918,South Asian,ITU
+2919,East Asian,JPT
+2920,American,CLM
+2921,East Asian,KHV
+2922,East Asian,CHB
+2923,South Asian,ITU
+2924,European,CEU
+2925,African,GWD
+2926,South Asian,BEB
+2927,South Asian,ITU
+2928,South Asian,ITU
+2929,American,PUR
+2930,African,YRI
+2931,East Asian,JPT
+2932,South Asian,GIH
+2933,European,IBS
+2934,East Asian,CDX
+2935,European,GBR
+2936,African,ESN
+2937,American,MXL
+2938,African,ESN
+2939,European,CEU
+2940,African,MSL
+2941,East Asian,KHV
+2942,European,FIN
+2943,African,MSL
+2944,American,PUR
+2945,East Asian,CHB
+2946,East Asian,CHB
+2947,East Asian,CDX
+2948,East Asian,CDX
+2949,American,MXL
+2950,African,ACB
+2951,East Asian,CHB
+2952,African,ESN
+2953,African,MSL
+2954,South Asian,BEB
+2955,East Asian,CDX
+2956,South Asian,BEB
+2957,American,CLM
+2958,European,IBS
+2959,American,PEL
+2960,South Asian,ITU
+2961,European,TSI
+2962,African,GWD
+2963,African,LWK
+2964,East Asian,CDX
+2965,European,IBS
+2966,East Asian,CDX
+2967,South Asian,STU
+2968,American,CLM
+2969,European,CEU
+2970,African,MSL
+2971,American,PEL
+2972,European,IBS
+2973,European,GBR
+2974,African,ACB
+2975,American,CLM
+2976,East Asian,JPT
+2977,American,PUR
+2978,South Asian,GIH
+2979,South Asian,PJL
+2980,American,MXL
+2981,European,TSI
+2982,East Asian,KHV
+2983,African,ASW
+2984,European,TSI
+2985,East Asian,CHS
+2986,South Asian,GIH
+2987,East Asian,KHV
+2988,American,PEL
+2989,East Asian,KHV
+2990,European,TSI
+2991,European,FIN
+2992,African,YRI
+2993,African,GWD
+2994,East Asian,CHB
+2995,South Asian,STU
+2996,East Asian,JPT
+2997,East Asian,JPT
+2998,European,GBR
+2999,East Asian,CHS
+3000,African,GWD
+3001,American,PEL
+3002,American,PUR
+3003,African,LWK
+3004,African,LWK
+3005,East Asian,CHB
+3006,American,CLM
+3007,African,GWD
+3008,South Asian,GIH
+3009,European,TSI
+3010,East Asian,CHS
+3011,African,YRI
+3012,European,TSI
+3013,East Asian,CHB
+3014,American,PUR
+3015,American,PUR
+3016,African,MSL
+3017,East Asian,KHV
+3018,African,ESN
+3019,South Asian,BEB
+3020,South Asian,ITU
+3021,South Asian,STU
+3022,South Asian,GIH
+3023,South Asian,ITU
+3024,African,ESN
+3025,East Asian,CHB
+3026,European,FIN
+3027,European,CEU
+3028,African,YRI
+3029,South Asian,STU
+3030,African,ESN
+3031,African,LWK
+3032,South Asian,PJL
+3033,East Asian,KHV
+3034,American,PUR
+3035,East Asian,JPT
+3036,South Asian,STU
+3037,East Asian,CHS
+3038,American,PEL
+3039,American,PUR
+3040,East Asian,CHS
+3041,American,PEL
+3042,East Asian,CHB
+3043,European,IBS
+3044,East Asian,CHS
+3045,European,TSI
+3046,East Asian,CDX
+3047,East Asian,CDX
+3048,South Asian,STU
+3049,European,CEU
+3050,East Asian,CHS
+3051,African,GWD
+3052,East Asian,CHB
+3053,African,LWK
+3054,African,LWK
+3055,American,CLM
+3056,South Asian,BEB
+3057,African,ESN
+3058,European,FIN
+3059,South Asian,STU
+3060,South Asian,ITU
+3061,South Asian,STU
+3062,African,YRI
+3063,East Asian,KHV
+3064,African,LWK
+3065,African,ACB
+3066,East Asian,JPT
+3067,American,MXL
+3068,American,PEL
+3069,American,MXL
+3070,East Asian,CHS
+3071,African,ESN
+3072,American,PUR
+3073,American,PEL
+3074,African,GWD
+3075,European,FIN
+3076,East Asian,KHV
+3077,South Asian,STU
+3078,East Asian,CHB
+3079,East Asian,JPT
+3080,African,ESN
+3081,European,CEU
+3082,European,TSI
+3083,East Asian,KHV
+3084,American,MXL
+3085,East Asian,KHV
+3086,East Asian,CDX
+3087,African,YRI
+3088,European,IBS
+3089,African,YRI
+3090,South Asian,GIH
+3091,African,LWK
+3092,American,PUR
+3093,African,ACB
+3094,South Asian,GIH
+3095,American,PUR
+3096,South Asian,BEB
+3097,European,TSI
+3098,South Asian,ITU
+3099,African,ESN
+3100,European,CEU
+3101,African,ESN
+3102,European,IBS
+3103,South Asian,GIH
+3104,African,GWD
+3105,East Asian,CHS
+3106,African,GWD
+3107,African,YRI
+3108,African,GWD
+3109,American,PEL
+3110,South Asian,GIH
+3111,African,LWK
+3112,European,GBR
+3113,African,ACB
+3114,African,ASW
+3115,East Asian,CHS
+3116,European,TSI
+3117,South Asian,GIH
+3118,South Asian,BEB
+3119,American,MXL
+3120,American,PUR
+3121,European,GBR
+3122,East Asian,CHB
+3123,East Asian,JPT
+3124,East Asian,CHS
+3125,European,TSI
+3126,American,CLM
+3127,East Asian,CDX
+3128,African,ASW
+3129,South Asian,BEB
+3130,African,ACB
+3131,East Asian,CHB
+3132,European,GBR
+3133,South Asian,ITU
+3134,African,MSL
+3135,African,ACB
+3136,East Asian,CHB
+3137,East Asian,CHS
+3138,South Asian,PJL
+3139,African,ACB
+3140,European,CEU
+3141,South Asian,STU
+3142,African,GWD
+3143,South Asian,ITU
+3144,East Asian,CDX
+3145,African,ACB
+3146,South Asian,ITU
+3147,American,CLM
+3148,American,CLM
+3149,African,ASW
+3150,African,ASW
+3151,European,FIN
+3152,African,ESN
+3153,East Asian,CHB
+3154,East Asian,CHS
+3155,African,ESN
+3156,American,PUR
+3157,American,PEL
+3158,South Asian,BEB
+3159,African,GWD
+3160,African,GWD
+3161,European,FIN
+3162,African,GWD
+3163,East Asian,JPT
+3164,South Asian,BEB
+3165,European,FIN
+3166,East Asian,CHB
+3167,European,IBS
+3168,American,PUR
+3169,East Asian,CHS
+3170,American,PUR
+3171,European,FIN
+3172,American,MXL
+3173,East Asian,CHS
+3174,African,YRI
+3175,African,ESN
+3176,East Asian,CHS
+3177,African,ACB
+3178,African,LWK
+3179,East Asian,KHV
+3180,European,TSI
+3181,European,FIN
+3182,East Asian,CHS
+3183,East Asian,JPT
+3184,East Asian,CHB
+3185,European,GBR
+3186,South Asian,ITU
+3187,South Asian,STU
+3188,African,ACB
+3189,African,GWD
+3190,South Asian,STU
+3191,East Asian,CHB
+3192,South Asian,GIH
+3193,South Asian,GIH
+3194,African,ASW
+3195,American,PUR
+3196,East Asian,JPT
+3197,East Asian,KHV
+3198,African,GWD
+3199,South Asian,STU
+3200,African,LWK
+3201,South Asian,PJL
+3202,African,GWD
+3203,European,CEU
+3204,European,GBR
+3205,American,PUR
+3206,African,MSL
+3207,East Asian,CHB
+3208,East Asian,KHV
+3209,African,ASW
+3210,South Asian,ITU
+3211,African,MSL
+3212,European,CEU
+3213,European,IBS
+3214,African,YRI
+3215,East Asian,JPT
+3216,American,PEL
+3217,African,GWD
+3218,African,YRI
+3219,European,IBS
+3220,African,ACB
+3221,European,GBR
+3222,European,IBS
+3223,South Asian,ITU
+3224,South Asian,STU
+3225,African,YRI
+3226,South Asian,STU
+3227,African,ASW
+3228,African,MSL
+3229,European,GBR
+3230,American,MXL
+3231,European,IBS
+3232,East Asian,CHB
+3233,African,ESN
+3234,East Asian,KHV
+3235,African,GWD
+3236,American,CLM
+3237,European,TSI
+3238,European,TSI
+3239,South Asian,ITU
+3240,African,LWK
+3241,European,IBS
+3242,African,ACB
+3243,European,FIN
+3244,European,CEU
+3245,American,CLM
+3246,African,ESN
+3247,South Asian,BEB
+3248,European,CEU
+3249,South Asian,ITU
+3250,European,IBS
+3251,South Asian,ITU
+3252,American,PEL
+3253,American,PEL
+3254,East Asian,JPT
+3255,American,PUR
+3256,African,LWK
+3257,East Asian,CDX
+3258,African,ASW
+3259,South Asian,PJL
+3260,African,YRI
+3261,South Asian,GIH
+3262,South Asian,STU
+3263,South Asian,STU
+3264,European,GBR
+3265,East Asian,JPT
+3266,African,ACB
+3267,East Asian,CHB
+3268,African,GWD
+3269,South Asian,STU
+3270,South Asian,STU
+3271,South Asian,BEB
+3272,American,PEL
+3273,African,GWD
+3274,American,MXL
+3275,South Asian,STU
+3276,American,CLM
+3277,East Asian,CHB
+3278,African,ASW
+3279,American,PUR
+3280,European,TSI
+3281,European,TSI
+3282,European,IBS
+3283,African,LWK
+3284,African,YRI
+3285,European,TSI
+3286,South Asian,GIH
+3287,European,GBR
+3288,European,TSI
+3289,South Asian,STU
+3290,African,LWK
+3291,East Asian,KHV
+3292,African,LWK
+3293,American,MXL
+3294,European,TSI
+3295,African,ESN
+3296,American,MXL
+3297,American,PUR
+3298,European,CEU
+3299,European,IBS
+3300,European,TSI
+3301,East Asian,KHV
+3302,South Asian,GIH
+3303,American,PUR
+3304,South Asian,GIH
+3305,American,PEL
+3306,South Asian,PJL
+3307,European,FIN
+3308,South Asian,ITU
+3309,South Asian,STU
+3310,African,ESN
+3311,South Asian,GIH
+3312,South Asian,STU
+3313,American,PEL
+3314,East Asian,KHV
+3315,European,FIN
+3316,European,FIN
+3317,American,PUR
+3318,East Asian,CDX
+3319,American,PEL
+3320,American,CLM
+3321,South Asian,ITU
+3322,South Asian,ITU
+3323,East Asian,CDX
+3324,African,MSL
+3325,American,PEL
+3326,South Asian,PJL
+3327,East Asian,CHB
+3328,East Asian,JPT
+3329,African,MSL
+3330,East Asian,CDX
+3331,African,LWK
+3332,South Asian,STU
+3333,East Asian,JPT
+3334,East Asian,KHV
+3335,African,ACB
+3336,East Asian,CDX
+3337,African,LWK
+3338,American,PUR
+3339,African,ACB
+3340,American,PUR
+3341,East Asian,CHS
+3342,South Asian,GIH
+3343,European,TSI
+3344,East Asian,CHB
+3345,European,FIN
+3346,European,GBR
+3347,African,MSL
+3348,African,YRI
+3349,African,MSL
+3350,European,TSI
+3351,South Asian,STU
+3352,European,GBR
+3353,European,IBS
+3354,European,FIN
+3355,South Asian,ITU
+3356,African,ACB
+3357,East Asian,CHB
+3358,South Asian,STU
+3359,East Asian,CHB
+3360,African,YRI
+3361,African,LWK
+3362,East Asian,JPT
+3363,American,PEL
+3364,South Asian,STU
+3365,East Asian,CHS
+3366,European,GBR
+3367,African,ACB
+3368,South Asian,STU
+3369,African,ESN
+3370,European,IBS
+3371,East Asian,JPT
+3372,African,ESN
+3373,European,GBR
+3374,European,TSI
+3375,European,CEU
+3376,European,GBR
+3377,American,PUR
+3378,East Asian,KHV
+3379,South Asian,BEB
+3380,African,ESN
+3381,East Asian,CDX
+3382,South Asian,GIH
+3383,East Asian,CDX
+3384,East Asian,CHS
+3385,European,GBR
+3386,South Asian,ITU
+3387,African,YRI
+3388,African,ASW
+3389,African,YRI
+3390,American,CLM
+3391,European,FIN
+3392,European,CEU
+3393,American,MXL
+3394,European,GBR
+3395,American,PEL
+3396,American,PEL
+3397,American,MXL
+3398,African,GWD
+3399,East Asian,JPT
+3400,European,FIN
+3401,East Asian,CDX
+3402,South Asian,STU
+3403,African,MSL
+3404,East Asian,KHV
+3405,American,CLM
+3406,American,MXL
+3407,American,PUR
+3408,African,ESN
+3409,South Asian,ITU
+3410,South Asian,PJL
+3411,African,ACB
+3412,South Asian,ITU
+3413,African,ACB
+3414,African,MSL
+3415,American,PEL
+3416,European,TSI
+3417,South Asian,BEB
+3418,African,LWK
+3419,East Asian,CHB
+3420,African,ASW
+3421,African,GWD
+3422,European,IBS
+3423,East Asian,CHS
+3424,South Asian,STU
+3425,European,IBS
+3426,American,CLM
+3427,American,PEL
+3428,East Asian,CDX
+3429,East Asian,CHS
+3430,East Asian,JPT
+3431,African,MSL
+3432,East Asian,JPT
+3433,European,CEU
+3434,South Asian,ITU
+3435,East Asian,CDX
+3436,South Asian,ITU
+3437,South Asian,GIH
+3438,African,YRI
+3439,European,CEU
+3440,South Asian,GIH
+3441,South Asian,ITU
+3442,East Asian,CDX
+3443,South Asian,GIH
+3444,South Asian,GIH
+3445,African,YRI
+3446,African,GWD
+3447,African,GWD
+3448,European,IBS
+3449,South Asian,ITU
+3450,African,ACB
+3451,East Asian,CDX
+3452,African,MSL
+3453,African,LWK
+3454,African,MSL
+3455,European,GBR
+3456,South Asian,STU
+3457,European,GBR
+3458,European,IBS
+3459,East Asian,KHV
+3460,American,PEL
+3461,South Asian,PJL
+3462,African,YRI
+3463,American,MXL
+3464,European,IBS
+3465,South Asian,ITU
+3466,European,GBR
+3467,African,YRI
+3468,American,PEL
+3469,South Asian,STU
+3470,South Asian,GIH
+3471,African,YRI
+3472,African,ASW
+3473,African,MSL
+3474,African,ACB
+3475,African,LWK
+3476,European,IBS
+3477,African,ASW
+3478,East Asian,KHV
+3479,American,CLM
+3480,European,GBR
+3481,South Asian,GIH
+3482,East Asian,CHS
+3483,European,FIN
+3484,South Asian,STU
+3485,African,ESN
+3486,American,CLM
+3487,European,CEU
+3488,African,LWK
+3489,African,GWD
+3490,East Asian,KHV
+3491,African,ESN
+3492,South Asian,GIH
+3493,South Asian,ITU
+3494,South Asian,ITU
+3495,South Asian,STU
+3496,American,MXL
+3497,European,GBR
+3498,African,YRI
+3499,European,CEU
+3500,American,PEL
+3501,South Asian,GIH
+3502,East Asian,JPT
+3503,African,LWK
+3504,South Asian,ITU
+3505,African,MSL
+3506,African,LWK
+3507,South Asian,PJL
+3508,East Asian,JPT
+3509,East Asian,JPT
+3510,African,ESN
+3511,South Asian,GIH
+3512,South Asian,ITU
+3513,American,MXL
+3514,East Asian,CHS
+3515,East Asian,JPT
+3516,European,CEU
+3517,American,PUR
+3518,American,MXL
+3519,European,CEU
+3520,European,GBR
+3521,East Asian,JPT
+3522,East Asian,JPT
+3523,African,ASW
+3524,African,ESN
+3525,European,TSI
+3526,South Asian,ITU
+3527,European,GBR
+3528,South Asian,PJL
+3529,South Asian,BEB
+3530,South Asian,PJL
+3531,African,YRI
+3532,African,ACB
+3533,European,TSI
+3534,American,PUR
+3535,African,MSL
+3536,European,GBR
+3537,South Asian,BEB
+3538,East Asian,JPT
+3539,East Asian,CHS
+3540,South Asian,STU
+3541,European,GBR
+3542,European,IBS
+3543,European,GBR
+3544,European,IBS
+3545,European,FIN
+3546,East Asian,JPT
+3547,East Asian,CHS
+3548,East Asian,CHB
+3549,American,PUR
+3550,African,LWK
+3551,African,LWK
+3552,European,FIN
+3553,American,CLM
+3554,South Asian,PJL
+3555,European,IBS
+3556,East Asian,CHS
+3557,African,LWK
+3558,European,IBS
+3559,East Asian,KHV
+3560,African,GWD
+3561,African,YRI
+3562,East Asian,KHV
+3563,African,ESN
+3564,East Asian,KHV
+3565,European,GBR
+3566,South Asian,GIH
+3567,South Asian,BEB
+3568,European,TSI
+3569,South Asian,STU
+3570,South Asian,PJL
+3571,South Asian,ITU
+3572,East Asian,KHV
+3573,European,TSI
+3574,European,IBS
+3575,African,LWK
+3576,South Asian,GIH
+3577,South Asian,STU
+3578,South Asian,ITU
+3579,European,CEU
+3580,African,LWK
+3581,South Asian,PJL
+3582,South Asian,STU
+3583,European,GBR
+3584,African,MSL
+3585,European,IBS
+3586,African,ASW
+3587,European,GBR
+3588,African,MSL
+3589,African,LWK
+3590,South Asian,PJL
+3591,South Asian,ITU
+3592,African,ESN
+3593,South Asian,GIH
+3594,East Asian,CHS
+3595,South Asian,GIH
+3596,African,ACB
+3597,South Asian,STU
+3598,East Asian,CHS
+3599,American,CLM
+3600,European,FIN
+3601,American,CLM
+3602,African,GWD
+3603,European,CEU
+3604,African,GWD
+3605,South Asian,BEB
+3606,African,ACB
+3607,African,LWK
+3608,East Asian,CHB
+3609,East Asian,CDX
+3610,East Asian,CHB
+3611,South Asian,STU
+3612,East Asian,KHV
+3613,African,GWD
+3614,South Asian,PJL
+3615,African,LWK
+3616,European,GBR
+3617,South Asian,GIH
+3618,European,FIN
+3619,European,TSI
+3620,East Asian,CDX
+3621,European,FIN
+3622,East Asian,JPT
+3623,East Asian,CDX
+3624,African,ESN
+3625,European,IBS
+3626,East Asian,CHB
+3627,American,CLM
+3628,European,FIN
+3629,South Asian,STU
+3630,American,MXL
+3631,European,FIN
+3632,South Asian,BEB
+3633,South Asian,PJL
+3634,African,LWK
+3635,East Asian,CHS
+3636,European,IBS
+3637,East Asian,CHB
+3638,East Asian,KHV
+3639,South Asian,ITU
+3640,European,IBS
+3641,South Asian,PJL
+3642,African,LWK
+3643,American,PUR
+3644,European,CEU
+3645,African,MSL
+3646,South Asian,BEB
+3647,East Asian,JPT
+3648,African,YRI
+3649,African,ESN
+3650,American,CLM
+3651,African,MSL
+3652,East Asian,CHB
+3653,African,GWD
+3654,European,TSI
+3655,East Asian,CHS
+3656,American,CLM
+3657,African,ESN
+3658,South Asian,STU
+3659,South Asian,BEB
+3660,American,CLM
+3661,African,LWK
+3662,East Asian,JPT
+3663,African,YRI
+3664,European,TSI
+3665,East Asian,KHV
+3666,East Asian,JPT
+3667,South Asian,BEB
+3668,African,MSL
+3669,African,ASW
+3670,European,IBS
+3671,European,GBR
+3672,East Asian,CHB
+3673,American,PEL
+3674,South Asian,STU
+3675,East Asian,CHB
+3676,East Asian,CDX
+3677,African,LWK
+3678,European,TSI
+3679,American,CLM
+3680,African,ESN
+3681,American,PEL
+3682,European,IBS
+3683,African,LWK
+3684,East Asian,CHB
+3685,East Asian,CHB
+3686,African,ESN
+3687,African,GWD
+3688,African,MSL
+3689,European,IBS
+3690,European,IBS
+3691,East Asian,CDX
+3692,European,FIN
+3693,European,GBR
+3694,East Asian,KHV
+3695,American,PEL
+3696,European,TSI
+3697,East Asian,CHB
+3698,African,YRI
+3699,South Asian,GIH
+3700,American,MXL
+3701,East Asian,KHV
+3702,East Asian,CHS
+3703,American,CLM
+3704,European,FIN
+3705,South Asian,BEB
+3706,South Asian,ITU
+3707,East Asian,KHV
+3708,East Asian,CHB
+3709,South Asian,GIH
+3710,American,PUR
+3711,East Asian,CHS
+3712,American,CLM
+3713,South Asian,BEB
+3714,African,ACB
+3715,American,PEL
+3716,American,PUR
+3717,East Asian,CHS
+3718,South Asian,GIH
+3719,American,MXL
+3720,East Asian,CHS
+3721,African,ESN
+3722,European,TSI
+3723,South Asian,BEB
+3724,African,LWK
+3725,African,ACB
+3726,East Asian,JPT
+3727,African,MSL
+3728,European,CEU
+3729,American,PUR
+3730,South Asian,STU
+3731,East Asian,KHV
+3732,South Asian,ITU
+3733,South Asian,BEB
+3734,South Asian,PJL
+3735,East Asian,CDX
+3736,African,MSL
+3737,European,TSI
+3738,American,PUR
+3739,South Asian,PJL
+3740,European,TSI
+3741,East Asian,KHV
+3742,African,ACB
+3743,European,TSI
+3744,African,ACB
+3745,African,YRI
+3746,European,CEU
+3747,East Asian,CHS
+3748,South Asian,ITU
+3749,East Asian,JPT
+3750,European,GBR
+3751,European,FIN
+3752,South Asian,STU
+3753,African,GWD
+3754,American,CLM
+3755,American,PEL
+3756,American,PEL
+3757,American,PEL
+3758,South Asian,STU
+3759,South Asian,ITU
+3760,African,LWK
+3761,European,IBS
+3762,American,MXL
+3763,South Asian,GIH
+3764,American,PEL
+3765,African,LWK
+3766,European,TSI
+3767,American,PUR
+3768,European,TSI
+3769,African,ACB
+3770,African,LWK
+3771,African,GWD
+3772,East Asian,KHV
+3773,European,CEU
+3774,East Asian,CHB
+3775,European,GBR
+3776,American,PUR
+3777,South Asian,GIH
+3778,East Asian,KHV
+3779,South Asian,BEB
+3780,African,LWK
+3781,American,PEL
+3782,African,MSL
+3783,European,IBS
+3784,South Asian,PJL
+3785,African,ASW
+3786,East Asian,CDX
+3787,African,MSL
+3788,American,PEL
+3789,European,IBS
+3790,African,ESN
+3791,South Asian,ITU
+3792,African,ASW
+3793,African,ESN
+3794,European,TSI
+3795,South Asian,BEB
+3796,European,CEU
+3797,African,YRI
+3798,East Asian,KHV
+3799,African,LWK
+3800,South Asian,GIH
+3801,South Asian,PJL
+3802,South Asian,STU
+3803,African,ACB
+3804,American,PUR
+3805,African,LWK
+3806,African,LWK
+3807,East Asian,CHB
+3808,European,TSI
+3809,European,GBR
+3810,East Asian,CHB
+3811,African,ASW
+3812,East Asian,KHV
+3813,American,CLM
+3814,East Asian,CHS
+3815,East Asian,JPT
+3816,South Asian,STU
+3817,East Asian,CHS
+3818,South Asian,PJL
+3819,East Asian,CHB
+3820,American,PUR
+3821,East Asian,KHV
+3822,East Asian,CHS
+3823,American,PUR
+3824,American,PEL
+3825,African,MSL
+3826,South Asian,PJL
+3827,European,CEU
+3828,African,ESN
+3829,South Asian,PJL
+3830,American,PEL
+3831,European,FIN
+3832,European,IBS
+3833,African,ACB
+3834,East Asian,CHB
+3835,South Asian,PJL
+3836,South Asian,STU
+3837,South Asian,GIH
+3838,American,PUR
+3839,African,YRI
+3840,South Asian,PJL
+3841,East Asian,CHB
+3842,African,YRI
+3843,East Asian,KHV
+3844,South Asian,ITU
+3845,African,YRI
+3846,South Asian,GIH
+3847,South Asian,BEB
+3848,American,CLM
+3849,East Asian,KHV
+3850,African,ASW
+3851,African,ACB
+3852,European,CEU
+3853,East Asian,CHS
+3854,African,ACB
+3855,European,TSI
+3856,East Asian,CDX
+3857,African,ESN
+3858,South Asian,ITU
+3859,African,ESN
+3860,European,TSI
+3861,African,GWD
+3862,East Asian,CDX
+3863,South Asian,STU
+3864,American,PUR
+3865,American,CLM
+3866,European,CEU
+3867,American,CLM
+3868,African,ACB
+3869,American,PUR
+3870,East Asian,CDX
+3871,African,MSL
+3872,European,FIN
+3873,East Asian,CHS
+3874,European,GBR
+3875,American,MXL
+3876,European,GBR
+3877,East Asian,CDX
+3878,South Asian,STU
+3879,East Asian,KHV
+3880,European,FIN
+3881,European,IBS
+3882,East Asian,CHS
+3883,European,GBR
+3884,African,LWK
+3885,African,MSL
+3886,East Asian,KHV
+3887,American,CLM
+3888,American,PUR
+3889,American,PEL
+3890,African,ASW
+3891,American,PUR
+3892,European,IBS
+3893,African,MSL
+3894,South Asian,ITU
+3895,American,CLM
+3896,East Asian,CHS
+3897,East Asian,CDX
+3898,African,LWK
+3899,African,YRI
+3900,European,GBR
+3901,European,FIN
+3902,American,PEL
+3903,South Asian,PJL
+3904,South Asian,STU
+3905,African,YRI
+3906,African,LWK
+3907,European,IBS
+3908,African,GWD
+3909,American,CLM
+3910,African,MSL
+3911,South Asian,GIH
+3912,South Asian,PJL
+3913,American,PUR
+3914,European,GBR
+3915,South Asian,GIH
+3916,East Asian,CHS
+3917,European,TSI
+3918,South Asian,GIH
+3919,European,CEU
+3920,East Asian,CHS
+3921,European,CEU
+3922,African,GWD
+3923,South Asian,ITU
+3924,South Asian,GIH
+3925,European,CEU
+3926,American,PEL
+3927,European,TSI
+3928,South Asian,BEB
+3929,American,PEL
+3930,African,ESN
+3931,South Asian,BEB
+3932,African,YRI
+3933,European,CEU
+3934,African,ESN
+3935,East Asian,JPT
+3936,European,TSI
+3937,South Asian,ITU
+3938,American,CLM
+3939,African,YRI
+3940,South Asian,STU
+3941,African,GWD
+3942,South Asian,ITU
+3943,European,TSI
+3944,American,PEL
+3945,European,FIN
+3946,South Asian,ITU
+3947,East Asian,CDX
+3948,East Asian,CHB
+3949,European,TSI
+3950,East Asian,CHB
+3951,South Asian,BEB
+3952,European,FIN
+3953,European,CEU
+3954,East Asian,CHS
+3955,South Asian,STU
+3956,African,ESN
+3957,American,PUR
+3958,African,YRI
+3959,African,ESN
+3960,South Asian,PJL
+3961,European,IBS
+3962,East Asian,CHB
+3963,European,CEU
+3964,European,FIN
+3965,South Asian,STU
+3966,East Asian,CHS
+3967,African,ACB
+3968,African,YRI
+3969,African,YRI
+3970,East Asian,CDX
+3971,African,LWK
+3972,European,IBS
+3973,African,ASW
+3974,South Asian,GIH
+3975,East Asian,KHV
+3976,East Asian,CHS
+3977,East Asian,JPT
+3978,East Asian,JPT
+3979,European,FIN
+3980,East Asian,CHB
+3981,African,ACB
+3982,East Asian,KHV
+3983,European,CEU
+3984,European,IBS
+3985,European,TSI
+3986,East Asian,CHS
+3987,South Asian,ITU
+3988,European,IBS
+3989,South Asian,STU
+3990,American,PEL
+3991,European,CEU
+3992,South Asian,GIH
+3993,African,ASW
+3994,African,YRI
+3995,East Asian,CDX
+3996,East Asian,JPT
+3997,African,GWD
+3998,African,MSL
+3999,East Asian,JPT
+4000,African,YRI
+4001,South Asian,BEB
+4002,American,CLM
+4003,South Asian,STU
+4004,South Asian,ITU
+4005,African,LWK
+4006,American,PUR
+4007,African,MSL
+4008,South Asian,PJL
+4009,American,PEL
+4010,South Asian,GIH
+4011,European,GBR
+4012,South Asian,STU
+4013,African,YRI
+4014,European,GBR
+4015,African,ESN
+4016,American,PEL
+4017,East Asian,CHB
+4018,European,GBR
+4019,East Asian,CDX
+4020,East Asian,CDX
+4021,East Asian,KHV
+4022,European,GBR
+4023,East Asian,CDX
+4024,African,ACB
+4025,South Asian,ITU
+4026,South Asian,GIH
+4027,American,PUR
+4028,East Asian,KHV
+4029,American,MXL
+4030,South Asian,ITU
+4031,South Asian,GIH
+4032,European,IBS
+4033,European,GBR
+4034,African,YRI
+4035,African,YRI
+4036,South Asian,PJL
+4037,South Asian,GIH
+4038,African,YRI
+4039,East Asian,CHS
+4040,South Asian,BEB
+4041,East Asian,KHV
+4042,South Asian,ITU
+4043,African,ESN
+4044,African,YRI
+4045,European,FIN
+4046,African,YRI
+4047,African,ASW
+4048,African,ACB
+4049,South Asian,GIH
+4050,African,ASW
+4051,American,PUR
+4052,African,GWD
+4053,African,YRI
+4054,European,GBR
+4055,African,MSL
+4056,European,FIN
+4057,East Asian,KHV
+4058,American,PUR
+4059,East Asian,CDX
+4060,East Asian,CHS
+4061,European,GBR
+4062,South Asian,PJL
+4063,South Asian,PJL
+4064,African,ESN
+4065,East Asian,CHS
+4066,African,YRI
+4067,African,ESN
+4068,European,GBR
+4069,East Asian,KHV
+4070,European,IBS
+4071,American,CLM
+4072,African,ACB
+4073,South Asian,STU
+4074,American,PUR
+4075,American,MXL
+4076,European,TSI
+4077,South Asian,GIH
+4078,European,CEU
+4079,African,ESN
+4080,European,FIN
+4081,East Asian,KHV
+4082,South Asian,STU
+4083,African,ACB
+4084,European,TSI
+4085,South Asian,BEB
+4086,East Asian,CHB
+4087,American,MXL
+4088,African,ESN
+4089,African,MSL
+4090,South Asian,PJL
+4091,South Asian,STU
+4092,East Asian,CDX
+4093,East Asian,KHV
+4094,East Asian,CHS
+4095,South Asian,BEB
+4096,East Asian,CHS
+4097,African,GWD
+4098,European,IBS
+4099,African,ASW
+4100,East Asian,CHS
+4101,East Asian,JPT
+4102,African,MSL
+4103,South Asian,GIH
+4104,African,LWK
+4105,European,FIN
+4106,East Asian,CHS
+4107,American,PUR
+4108,East Asian,CHB
+4109,South Asian,PJL
+4110,American,CLM
+4111,East Asian,JPT
+4112,American,PUR
+4113,South Asian,PJL
+4114,East Asian,CHB
+4115,African,ASW
+4116,American,PEL
+4117,American,PUR
+4118,East Asian,JPT
+4119,East Asian,CDX
+4120,South Asian,PJL
+4121,South Asian,PJL
+4122,African,MSL
+4123,South Asian,PJL
+4124,American,CLM
+4125,American,MXL
+4126,European,GBR
+4127,African,ACB
+4128,European,IBS
+4129,South Asian,PJL
+4130,African,LWK
+4131,American,PUR
+4132,East Asian,JPT
+4133,South Asian,ITU
+4134,European,IBS
+4135,East Asian,KHV
+4136,American,PEL
+4137,African,ACB
+4138,African,LWK
+4139,South Asian,GIH
+4140,African,ASW
+4141,South Asian,GIH
+4142,African,LWK
+4143,American,PEL
+4144,European,GBR
+4145,African,ESN
+4146,American,PEL
+4147,European,IBS
+4148,European,TSI
+4149,European,CEU
+4150,East Asian,CHB
+4151,East Asian,KHV
+4152,South Asian,PJL
+4153,European,GBR
+4154,European,FIN
+4155,African,LWK
+4156,American,PEL
+4157,East Asian,JPT
+4158,American,PUR
+4159,European,FIN
+4160,American,PUR
+4161,East Asian,CHB
+4162,South Asian,STU
+4163,American,PEL
+4164,African,GWD
+4165,African,MSL
+4166,African,LWK
+4167,European,TSI
+4168,European,GBR
+4169,South Asian,BEB
+4170,African,ACB
+4171,European,FIN
+4172,European,GBR
+4173,South Asian,GIH
+4174,European,GBR
+4175,East Asian,CHB
+4176,African,MSL
+4177,African,MSL
+4178,East Asian,CHB
+4179,East Asian,CHS
+4180,American,CLM
+4181,American,MXL
+4182,South Asian,BEB
+4183,African,GWD
+4184,American,MXL
+4185,American,MXL
+4186,European,TSI
+4187,African,ESN
+4188,American,PUR
+4189,South Asian,ITU
+4190,African,ACB
+4191,African,ASW
+4192,East Asian,CDX
+4193,American,PEL
+4194,American,PUR
+4195,European,FIN
+4196,American,PEL
+4197,South Asian,STU
+4198,South Asian,GIH
+4199,East Asian,CHB
+4200,South Asian,PJL
+4201,American,PUR
+4202,African,GWD
+4203,South Asian,GIH
+4204,European,GBR
+4205,European,GBR
+4206,African,YRI
+4207,American,MXL
+4208,African,ESN
+4209,South Asian,ITU
+4210,African,ASW
+4211,East Asian,KHV
+4212,European,TSI
+4213,South Asian,GIH
+4214,South Asian,STU
+4215,African,ESN
+4216,East Asian,CHS
+4217,European,TSI
+4218,African,YRI
+4219,East Asian,CHS
+4220,African,ACB
+4221,East Asian,CDX
+4222,African,ASW
+4223,South Asian,BEB
+4224,African,ESN
+4225,African,ACB
+4226,European,IBS
+4227,South Asian,STU
+4228,South Asian,ITU
+4229,South Asian,STU
+4230,East Asian,KHV
+4231,East Asian,CHB
+4232,East Asian,JPT
+4233,East Asian,CDX
+4234,European,GBR
+4235,European,FIN
+4236,European,FIN
+4237,South Asian,GIH
+4238,African,YRI
+4239,East Asian,KHV
+4240,American,CLM
+4241,European,GBR
+4242,South Asian,PJL
+4243,African,MSL
+4244,African,ASW
+4245,European,GBR
+4246,African,ACB
+4247,African,MSL
+4248,East Asian,CHS
+4249,European,GBR
+4250,African,GWD
+4251,East Asian,JPT
+4252,European,FIN
+4253,East Asian,JPT
+4254,African,YRI
+4255,South Asian,ITU
+4256,African,ACB
+4257,European,FIN
+4258,East Asian,CDX
+4259,African,ESN
+4260,European,IBS
+4261,African,YRI
+4262,South Asian,GIH
+4263,American,PEL
+4264,American,PUR
+4265,South Asian,STU
+4266,East Asian,CHS
+4267,European,GBR
+4268,European,TSI
+4269,European,GBR
+4270,European,TSI
+4271,South Asian,PJL
+4272,South Asian,STU
+4273,East Asian,JPT
+4274,African,MSL
+4275,European,TSI
+4276,South Asian,BEB
+4277,South Asian,GIH
+4278,South Asian,STU
+4279,South Asian,STU
+4280,South Asian,BEB
+4281,South Asian,STU
+4282,East Asian,CHS
+4283,South Asian,ITU
+4284,European,TSI
+4285,American,PEL
+4286,South Asian,BEB
+4287,South Asian,PJL
+4288,American,CLM
+4289,European,TSI
+4290,East Asian,KHV
+4291,European,GBR
+4292,African,MSL
+4293,South Asian,GIH
+4294,European,TSI
+4295,European,TSI
+4296,East Asian,CHB
+4297,European,TSI
+4298,African,ESN
+4299,South Asian,PJL
+4300,African,GWD
+4301,South Asian,GIH
+4302,African,LWK
+4303,African,ASW
+4304,European,IBS
+4305,South Asian,BEB
+4306,African,ESN
+4307,African,ACB
+4308,European,GBR
+4309,East Asian,CDX
+4310,African,ESN
+4311,East Asian,CHB
+4312,European,GBR
+4313,African,LWK
+4314,African,GWD
+4315,South Asian,PJL
+4316,East Asian,JPT
+4317,African,ACB
+4318,American,PEL
+4319,African,LWK
+4320,East Asian,CDX
+4321,African,GWD
+4322,African,ESN
+4323,South Asian,BEB
+4324,European,TSI
+4325,East Asian,CHB
+4326,African,ACB
+4327,South Asian,GIH
+4328,European,IBS
+4329,European,GBR
+4330,South Asian,PJL
+4331,African,ACB
+4332,African,ACB
+4333,East Asian,CHS
+4334,African,ESN
+4335,European,GBR
+4336,European,CEU
+4337,African,ASW
+4338,European,CEU
+4339,African,MSL
+4340,European,GBR
+4341,South Asian,GIH
+4342,American,MXL
+4343,African,ASW
+4344,South Asian,GIH
+4345,European,GBR
+4346,African,GWD
+4347,American,CLM
+4348,South Asian,PJL
+4349,African,ESN
+4350,African,ASW
+4351,East Asian,CHB
+4352,European,FIN
+4353,African,GWD
+4354,South Asian,ITU
+4355,American,MXL
+4356,African,MSL
+4357,African,ACB
+4358,European,CEU
+4359,American,CLM
+4360,South Asian,BEB
+4361,African,ACB
+4362,African,LWK
+4363,African,GWD
+4364,East Asian,KHV
+4365,African,MSL
+4366,European,FIN
+4367,American,PUR
+4368,European,FIN
+4369,American,CLM
+4370,African,GWD
+4371,American,MXL
+4372,European,FIN
+4373,African,ASW
+4374,African,LWK
+4375,American,PEL
+4376,European,IBS
+4377,African,ESN
+4378,European,TSI
+4379,African,GWD
+4380,African,MSL
+4381,East Asian,CDX
+4382,South Asian,BEB
+4383,African,ESN
+4384,European,FIN
+4385,East Asian,CDX
+4386,South Asian,PJL
+4387,African,GWD
+4388,European,TSI
+4389,East Asian,KHV
+4390,South Asian,ITU
+4391,African,LWK
+4392,South Asian,GIH
+4393,African,ESN
+4394,American,CLM
+4395,American,MXL
+4396,African,MSL
+4397,European,CEU
+4398,European,FIN
+4399,European,CEU
+4400,East Asian,JPT
+4401,South Asian,PJL
+4402,African,LWK
+4403,European,CEU
+4404,European,TSI
+4405,South Asian,STU
+4406,African,ESN
+4407,East Asian,CHS
+4408,East Asian,CDX
+4409,South Asian,PJL
+4410,East Asian,JPT
+4411,South Asian,ITU
+4412,European,TSI
+4413,South Asian,STU
+4414,American,PUR
+4415,African,GWD
+4416,American,PUR
+4417,South Asian,ITU
+4418,East Asian,CHS
+4419,South Asian,PJL
+4420,European,CEU
+4421,European,CEU
+4422,European,FIN
+4423,European,FIN
+4424,East Asian,CDX
+4425,European,TSI
+4426,African,ESN
+4427,European,TSI
+4428,East Asian,CDX
+4429,American,CLM
+4430,South Asian,STU
+4431,African,MSL
+4432,East Asian,KHV
+4433,European,GBR
+4434,African,GWD
+4435,European,TSI
+4436,East Asian,CHB
+4437,American,CLM
+4438,African,GWD
+4439,African,MSL
+4440,African,LWK
+4441,American,PEL
+4442,East Asian,CHS
+4443,South Asian,ITU
+4444,European,TSI
+4445,European,CEU
+4446,African,ACB
+4447,East Asian,KHV
+4448,South Asian,ITU
+4449,European,TSI
+4450,American,CLM
+4451,African,GWD
+4452,African,GWD
+4453,American,CLM
+4454,South Asian,ITU
+4455,American,PUR
+4456,European,IBS
+4457,European,TSI
+4458,African,YRI
+4459,American,PEL
+4460,European,IBS
+4461,African,YRI
+4462,South Asian,BEB
+4463,American,PEL
+4464,South Asian,STU
+4465,African,YRI
+4466,South Asian,ITU
+4467,European,IBS
+4468,East Asian,CDX
+4469,American,PUR
+4470,East Asian,KHV
+4471,American,MXL
+4472,East Asian,CHB
+4473,American,CLM
+4474,American,PUR
+4475,South Asian,GIH
+4476,European,TSI
+4477,African,MSL
+4478,South Asian,ITU
+4479,South Asian,ITU
+4480,European,FIN
+4481,East Asian,CHS
+4482,South Asian,ITU
+4483,African,ACB
+4484,East Asian,CHS
+4485,American,MXL
+4486,African,ACB
+4487,South Asian,ITU
+4488,African,YRI
+4489,East Asian,CHS
+4490,European,CEU
+4491,East Asian,KHV
+4492,South Asian,ITU
+4493,European,CEU
+4494,South Asian,STU
+4495,South Asian,PJL
+4496,East Asian,CHB
+4497,African,ACB
+4498,African,ACB
+4499,European,FIN
+4500,South Asian,GIH
+4501,East Asian,JPT
+4502,African,ESN
+4503,European,GBR
+4504,East Asian,KHV
+4505,East Asian,KHV
+4506,South Asian,STU
+4506,African,MSL
+4507,African,ESN
+4508,American,CLM
+4509,South Asian,ITU
+4510,European,FIN
+4511,European,IBS
+4512,African,MSL
+4513,American,PEL
+4514,American,PUR
+4515,African,ESN
+4516,East Asian,JPT
+4517,East Asian,KHV
+4518,American,CLM
+4519,East Asian,CHS
+4520,East Asian,JPT
+4521,South Asian,STU
+4522,African,GWD
+4523,American,PEL
+4524,South Asian,BEB
+4525,South Asian,PJL
+4526,European,CEU
+4527,European,CEU
+4528,African,LWK
+4529,European,TSI
+4530,European,IBS
+4531,European,IBS
+4532,African,MSL
+4533,East Asian,KHV
+4534,East Asian,KHV
+4535,East Asian,CDX
+4536,African,ACB
+4537,South Asian,PJL
+4538,American,CLM
+4539,African,LWK
+4540,American,CLM
+4541,American,MXL
+4542,East Asian,KHV
+4543,East Asian,CHS
+4544,East Asian,CHB
+4545,American,PUR
+4546,African,GWD
+4547,African,YRI
+4548,South Asian,PJL
+4549,African,ESN
+4550,European,GBR
+4551,East Asian,CHS
+4552,European,TSI
+4553,South Asian,GIH
+4554,African,YRI
+4555,East Asian,KHV
+4556,South Asian,ITU
+4557,European,CEU
+4558,South Asian,ITU
+4559,African,GWD
+4560,African,MSL
+4561,African,LWK
+4562,East Asian,JPT
+4563,European,FIN
+4564,South Asian,PJL
+4565,East Asian,CHB
+4566,African,YRI
+4567,East Asian,CHB
+4568,African,ESN
+4569,South Asian,PJL
+4570,European,FIN
+4571,South Asian,GIH
+4572,African,GWD
+4573,European,IBS
+4574,American,MXL
+4575,American,CLM
+4576,American,PEL
+4577,East Asian,CHS
+4578,European,IBS
+4579,South Asian,STU
+4580,European,CEU
+4581,African,MSL
+4582,American,PUR
+4583,East Asian,KHV
+4584,South Asian,PJL
+4585,African,MSL
+4586,South Asian,GIH
+4587,East Asian,JPT
+4588,South Asian,ITU
+4589,European,FIN
+4590,East Asian,KHV
+4591,American,CLM
+4592,East Asian,JPT
+4593,East Asian,CHB
+4594,African,ASW
+4595,East Asian,CHS
+4596,African,MSL
+4597,African,GWD
+4598,East Asian,CHB
+4599,African,LWK
+4600,American,PEL
+4601,South Asian,GIH
+4602,American,CLM
+4603,African,ESN
+4604,American,MXL
+4605,American,PUR
+4606,South Asian,ITU
+4607,African,GWD
+4608,European,TSI
+4609,African,MSL
+4610,African,GWD
+4611,African,ASW
+4612,American,PEL
+4613,European,CEU
+4614,East Asian,CHB
+4615,South Asian,GIH
+4616,African,GWD
+4617,South Asian,ITU
+4618,South Asian,STU
+4619,South Asian,GIH
+4620,European,GBR
+4621,South Asian,BEB
+4622,European,FIN
+4623,African,ASW
+4624,East Asian,CHB
+4625,African,GWD
+4626,European,FIN
+4627,African,YRI
+4628,East Asian,CHB
+4629,African,ASW
+4630,East Asian,CHB
+4631,African,ACB
+4632,East Asian,CHB
+4633,European,GBR
+4634,East Asian,JPT
+4635,African,MSL
+4636,East Asian,CHS
+4637,African,ESN
+4638,South Asian,ITU
+4639,East Asian,KHV
+4640,American,CLM
+4641,East Asian,CHS
+4642,European,GBR
+4643,European,IBS
+4644,African,ESN
+4645,African,GWD
+4646,East Asian,KHV
+4647,European,FIN
+4648,East Asian,CHS
+4649,South Asian,ITU
+4650,East Asian,CHS
+4651,African,ESN
+4652,American,PUR
+4653,South Asian,ITU
+4654,American,PEL
+4655,East Asian,CHS
+4656,American,PUR
+4657,African,GWD
+4658,American,PEL
+4659,African,ESN
+4660,American,MXL
+4661,South Asian,PJL
+4662,African,GWD
+4663,African,YRI
+4664,East Asian,KHV
+4665,South Asian,BEB
+4666,African,MSL
+4667,East Asian,CDX
+4668,European,GBR
+4669,East Asian,JPT
+4670,European,TSI
+4671,East Asian,CHS
+4672,American,PUR
+4673,East Asian,CHS
+4674,European,IBS
+4675,East Asian,CHB
+4676,African,GWD
+4677,African,MSL
+4678,European,GBR
+4679,East Asian,CHS
+4680,African,LWK
+4681,East Asian,KHV
+4682,American,CLM
+4683,African,ASW
+4684,African,ESN
+4685,European,GBR
+4686,European,TSI
+4687,East Asian,KHV
+4688,African,LWK
+4689,East Asian,JPT
+4690,African,MSL
+4691,South Asian,BEB
+4692,European,IBS
+4693,East Asian,JPT
+4694,European,FIN
+4695,American,PUR
+4696,African,MSL
+4697,South Asian,ITU
+4698,East Asian,CHB
+4699,African,YRI
+4700,African,YRI
+4701,European,FIN
+4702,East Asian,CHS
+4703,African,ACB
+4704,European,CEU
+4705,African,ESN
+4706,European,FIN
+4707,European,CEU
+4708,East Asian,CDX
+4709,African,ACB
+4710,South Asian,PJL
+4711,African,LWK
+4712,South Asian,GIH
+4713,African,MSL
+4714,East Asian,CDX
+4715,East Asian,KHV
+4716,East Asian,JPT
+4717,East Asian,JPT
+4718,African,MSL
+4719,European,IBS
+4720,African,GWD
+4721,European,IBS
+4722,African,LWK
+4723,African,GWD
+4724,African,ESN
+4725,East Asian,JPT
+4726,East Asian,JPT
+4727,South Asian,GIH
+4728,American,PUR
+4729,East Asian,CHB
+4730,American,CLM
+4731,South Asian,ITU
+4732,American,CLM
+4733,African,YRI
+4734,American,CLM
+4735,American,PUR
+4736,African,MSL
+4737,South Asian,PJL
+4738,African,ASW
+4739,South Asian,PJL
+4740,American,MXL
+4741,American,PUR
+4742,South Asian,STU
+4743,American,PEL
+4744,East Asian,CDX
+4745,American,PUR
+4746,African,ACB
+4747,African,ESN
+4748,American,CLM
+4749,African,ESN
+4750,European,CEU
+4751,African,GWD
+4752,South Asian,STU
+4753,African,ASW
+4754,African,ESN
+4755,South Asian,GIH
+4756,East Asian,JPT
+4757,South Asian,BEB
+4758,American,CLM
+4759,African,LWK
+4760,East Asian,CHS
+4761,American,CLM
+4762,South Asian,ITU
+4763,East Asian,CHS
+4764,South Asian,PJL
+4765,European,FIN
+4766,European,CEU
+4767,African,MSL
+4768,South Asian,BEB
+4769,European,TSI
+4770,East Asian,CDX
+4771,American,CLM
+4772,South Asian,PJL
+4773,European,GBR
+4774,American,PUR
+4775,African,ACB
+4776,European,FIN
+4777,South Asian,PJL
+4778,European,CEU
+4779,East Asian,CHS
+4780,South Asian,PJL
+4781,European,FIN
+4782,East Asian,CDX
+4783,European,GBR
+4784,African,YRI
+4785,American,PUR
+4786,African,ACB
+4787,American,PEL
+4788,South Asian,GIH
+4789,American,MXL
+4790,European,GBR
+4791,European,GBR
+4792,African,ESN
+4793,African,LWK
+4794,South Asian,GIH
+4795,African,ACB
+4796,African,YRI
+4797,American,MXL
+4798,South Asian,GIH
+4799,East Asian,CHS
+4800,East Asian,CHS
+4801,American,MXL
+4802,South Asian,BEB
+4803,East Asian,CHB
+4804,European,CEU
+4805,African,YRI
+4806,American,PUR
+4807,South Asian,PJL
+4808,African,ESN
+4809,African,LWK
+4810,South Asian,GIH
+4811,South Asian,GIH
+4812,African,LWK
+4813,European,CEU
+4814,South Asian,ITU
+4815,East Asian,JPT
+4816,South Asian,ITU
+4817,East Asian,CHS
+4818,African,MSL
+4819,African,ACB
+4820,European,IBS
+4821,American,MXL
+4822,European,CEU
+4823,European,TSI
+4824,African,ASW
+4825,South Asian,GIH
+4826,African,GWD
+4827,African,MSL
+4828,American,CLM
+4829,East Asian,CDX
+4830,European,GBR
+4831,South Asian,GIH
+4832,South Asian,STU
+4833,African,ESN
+4834,South Asian,BEB
+4835,European,CEU
+4836,African,YRI
+4837,East Asian,CHB
+4838,European,IBS
+4839,European,TSI
+4840,European,IBS
+4841,European,FIN
+4842,American,PEL
+4843,East Asian,KHV
+4844,South Asian,STU
+4845,East Asian,CHB
+4846,European,TSI
+4847,African,GWD
+4848,South Asian,STU
+4849,South Asian,PJL
+4850,South Asian,GIH
+4851,European,CEU
+4852,South Asian,BEB
+4853,South Asian,ITU
+4854,South Asian,STU
+4855,South Asian,PJL
+4856,South Asian,PJL
+4857,European,FIN
+4858,European,CEU
+4859,East Asian,JPT
+4860,African,ESN
+4861,African,YRI
+4862,South Asian,PJL
+4863,European,TSI
+4864,European,TSI
+4865,American,PUR
+4866,African,GWD
+4867,South Asian,ITU
+4868,African,YRI
+4869,European,GBR
+4870,East Asian,CHB
+4871,American,CLM
+4872,South Asian,PJL
+4873,European,FIN
+4874,African,ACB
+4875,South Asian,ITU
+4876,South Asian,PJL
+4877,East Asian,KHV
+4878,European,FIN
+4879,South Asian,BEB
+4880,European,GBR
+4881,European,GBR
+4882,South Asian,ITU
+4883,African,YRI
+4884,African,ASW
+4885,East Asian,CHS
+4886,South Asian,STU
+4887,South Asian,BEB
+4888,African,ACB
+4889,European,GBR
+4890,African,YRI
+4891,African,MSL
+4892,East Asian,CHS
+4893,European,TSI
+4894,American,PUR
+4895,South Asian,STU
+4896,South Asian,PJL
+4897,European,CEU
+4898,European,TSI
+4899,African,YRI
+4900,East Asian,KHV
+4901,East Asian,CDX
+4902,African,GWD
+4903,African,ACB
+4904,American,PUR
+4905,African,YRI
+4906,African,YRI
+4907,East Asian,JPT
+4908,South Asian,PJL
+4909,South Asian,GIH
+4910,European,GBR
+4911,European,CEU
+4912,European,FIN
+4913,European,CEU
+4914,American,PEL
+4915,African,LWK
+4916,South Asian,PJL
+4917,East Asian,JPT
+4918,European,FIN
+4919,South Asian,BEB
+4920,South Asian,ITU
+4921,African,ASW
+4922,African,GWD
+4923,East Asian,KHV
+4924,South Asian,BEB
+4925,African,ASW
+4926,African,ACB
+4927,African,ASW
+4928,European,IBS
+4929,American,PUR
+4930,African,ESN
+4931,East Asian,CDX
+4932,African,ESN
+4933,East Asian,CDX
+4934,American,MXL
+4935,European,TSI
+4936,African,YRI
+4937,African,ACB
+4938,European,IBS
+4939,European,TSI
+4940,African,YRI
+4941,South Asian,ITU
+4942,East Asian,CDX
+4943,American,PEL
+4944,South Asian,GIH
+4945,African,MSL
+4946,European,CEU
+4947,African,MSL
+4948,South Asian,BEB
+4949,South Asian,ITU
+4950,East Asian,JPT
+4951,African,MSL
+4952,South Asian,ITU
+4953,African,MSL
+4954,African,MSL
+4955,American,PEL
+4956,European,CEU
+4957,African,ASW
+4958,East Asian,JPT
+4959,East Asian,CHS
+4960,American,CLM
+4961,European,FIN
+4962,South Asian,STU
+4963,South Asian,PJL
+4964,American,MXL
+4965,European,IBS
+4966,East Asian,JPT
+4967,East Asian,CDX
+4968,African,ACB
+4969,East Asian,JPT
+4970,African,LWK
+4971,South Asian,STU
+4972,East Asian,CDX
+4973,South Asian,GIH
+4974,South Asian,PJL
+4975,East Asian,CDX
+4976,South Asian,GIH
+4977,European,CEU
+4978,American,PUR
+4979,European,FIN
+4980,East Asian,JPT
+4981,European,TSI
+4982,African,ACB
+4983,European,FIN
+4984,South Asian,ITU
+4985,African,ESN
+4986,African,YRI
+4987,South Asian,PJL
+4988,European,FIN
+4989,American,MXL
+4990,East Asian,KHV
+4991,American,PUR
+4992,European,CEU
+4993,African,YRI
+4994,American,MXL
+4995,American,CLM
+4996,African,ESN
+4997,American,PEL
+4998,American,MXL
+4999,African,ESN
+5000,American,CLM
+5001,South Asian,PJL
+5002,African,YRI
+5003,European,CEU
+5004,American,CLM
+5005,African,LWK
+5006,American,PUR

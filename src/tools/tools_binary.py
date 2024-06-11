@@ -1,9 +1,11 @@
+#!/usr/bin/python3
+
 import torch
 from typing import Tuple
 from tqdm import tqdm
 import numpy as np
 import h5py
-from treeRBM import get_params, get_epochs
+from ioRBM import get_params, get_epochs
 
 Tensor = torch.Tensor
 

@@ -1,0 +1,32 @@
+Label,Color,Legend
+European,#0094FF,Continent
+South Asian,#009A00,Continent
+East Asian,#C43CC8,Continent
+American,#D03A24,Continent
+African,#A89400,Continent
+FIN,#002CFF,Population
+GBR,#0094FF,Population
+CEU,#00CEFF,Population
+IBS,#58FBDA,Population
+TSI,#B0CBD2,Population
+CHS,#A005A6,Population
+CDX,#C43CC8,Population
+CHB,#E861EB,Population
+JPT,#FF84FF,Population
+KHV,#FFA7FF,Population
+GIH,#003D00,Population
+STU,#006900,Population
+PJL,#009A00,Population
+ITU,#00CB00,Population
+BEB,#15FF00,Population
+PEL,#A60505,Population
+MXL,#D03A24,Population
+CLM,#FA5F43,Population
+PUR,#FF8463,Population
+ACB,#382600,Population
+GWD,#554900,Population
+YRI,#7C6D00,Population
+LWK,#A89400,Population
+ESN,#D5BC15,Population
+MSL,#FFBA4A,Population
+ASW,#FFEDCB,Population

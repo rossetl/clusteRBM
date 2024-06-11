@@ -68,14 +68,14 @@ def import_from_fasta(fasta_name : Union[str, Path]) -> List[list]:
 class DatasetRBM(Dataset):
     def __init__(self,
                  data_path : Union[str, Path],
-                 ann_path : Union[str, Path],
+                 ann_path : Union[str, Path]=None,
                  colors_path : Optional[Union[str, Path]]=None,
                  alphabet : str="protein"):
         """Initialize the dataset.
 
         Args:
             data_path (Union[str, Path]): Path to the data file (plain text or fasta).
-            ann_path (Union[str, Path]): Path to the annotations file (csv).
+            ann_path (Union[str, Path], optional): Path to the annotations file (csv). Defaults to None.
             colors_path (Union[str, Path], optional): Path to the color mapping file (csv). If None, colors are assigned automatically. Defaults to None.
             alphabet (str, optional): Selects the type of encoding of the sequences. Default choices are ("protein", "rna", "dna"). Defaults to "protein".
         """
@@ -103,17 +103,21 @@ class DatasetRBM(Dataset):
             self.names = np.arange(len(self.data)).astype("str")
         
         # Load annotations
-        ann_df = pd.read_csv(ann_path).astype(str)
-        self.legend = [n for n in ann_df.columns if n != "Name"]
-        
-        # Validate the legend format: special characters are not allowed
-        special_characters = '!@#$%^&*()-+?=,<>/'
-        for leg in self.legend:
-            if any(c in special_characters for c in leg):
-                raise KeyError("Legend names can't contain any special characters.")
-        
-        for leg in self.legend:
-            self.labels.append({str(n) : str(l) for n, l in zip(ann_df["Name"], ann_df[leg])})
+        if ann_path:
+            ann_df = pd.read_csv(ann_path).astype(str)
+            self.legend = [n for n in ann_df.columns if n != "Name"]
+
+            # Validate the legend format: special characters are not allowed
+            special_characters = '!@#$%^&*()-+?=,<>/'
+            for leg in self.legend:
+                if any(c in special_characters for c in leg):
+                    raise KeyError("Legend names can't contain any special characters.")
+
+            for leg in self.legend:
+                self.labels.append({str(n) : str(l) for n, l in zip(ann_df["Name"], ann_df[leg])})
+        else:
+            self.legend = None
+            self.labels = None
         
         # Load colors
         if colors_path is not None:
