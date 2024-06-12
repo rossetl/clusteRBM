@@ -83,7 +83,7 @@ if __name__ == '__main__':
     
     # Load the data and the module
     logger.info('Loading the data')
-    dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations, colors_path=args.colors)
+    dataset = DatasetRBM(data_path=args.data, ann_path=args.annotations, colors_path=args.colors, alphabet=args.alphabet)
     num_states = int(dataset.get_num_states())
     
     if num_states > 2:
