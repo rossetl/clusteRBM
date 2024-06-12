@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "treerbm"
+version = "0.0.1"
+authors = [
+  { name="Lorenzo Rosset", email="rosset.lorenzo@gmail.com"},
+  { name="Aurélien Decelle"},
+  { name="Beatriz Seoane"},
+]
+description = "Unsupervised hierarchical clustering using the learning dynamics of the Restricted Boltzmann Machine"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/rossetl/clusteRBM"
+Issues = "https://github.com/rossetl/clusteRBM/issues"

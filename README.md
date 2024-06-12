@@ -14,14 +14,9 @@ ClusteRBM generates a relational tree of some input dataset using a previously t
 
 ## Installation
 
-- Include the main directory to your PATH environment variable by adding the following line to your ~/.bashrc file:
+To install the package do
 ```
-CLUSTERBM=/path/to/clusteRBM
-```
-
-- (Optional) Create some repositories for storing the data and the programs' outputs
-```
-mkdir data models trees
+pip install -e .
 ```
 
 ## Usage
@@ -44,10 +39,10 @@ The list of available arguments can be printed using:
 - `--model, -m`: Path to the RBM model;
 - `--output, -o`: Name of the repository where to save the output. If not already existent, it will be created;
 - `--data, -d`: Path to the data file (fasta for categorical variables and plain text for binary variables (0, 1));
-- `--annotations, -a`: Path to the `csv` file containing the data annotations. See [Annotation Format](#annotations-format) for the details;
 
 ### Optional arguments
 
+- `--annotations, -a`: Path to the `csv` file containing the data annotations. See [Annotation Format](#annotations-format) for the details;
 - `--colors, -c`: Path to the `csv` file containing the label-color mapping. See [Color mapping format](#color-mapping-format) for the details;
 - `--n_data`: Number of data to include in the tree. By default, the program takes the first 500 data encountered in the data file.
 - `--save_node_features`: If this flag is specified, all the fixed points corresponding to the tree nodes will be saved into a `.h5` file;
@@ -60,6 +55,24 @@ The list of available arguments can be printed using:
 - `--alphabet`: When the input data come from a file in fasta format, an alphabet for the symbols encoding is needed. You can choose among the default alphabets "protein", "dna", "rna", or a coherent alphabet of your choice. Defaults to "protein";
 - `--alpha`: Convergence threshold for the mean-field equations. Defaults to 1e-4;
 - `--eps`: Epsilon parameter of the DBSCAN algorithm.
+
+## Data format
+The input data can be either binary or categorical.
+
+### Binary data
+Binary data are accepted in any text file format, where each line represents a single data vector.
+
+**Note**: Since data points do not have an identifier when using this format, the row index of the annotation appearing in the annotation file must match the row index of the points appearing in the data file.
+
+### Categorical data
+Categorical data must be given in `fasta` format. The `fasta` format consists of alternating lines of headers (identifiers for the data points) and data vector. The headers are preceeded by the token '>'.
+
+**Example**:
+
+\>sequence_1 <br />  
+-KLVIQAAPYGPEWLPGDADDLPL<br />  
+\>sequence_2 <br />  
+-KKIILEARVNEYAPRTSNPNIPYTA
 
 ## Annotations format
 Annotations must be contained in a `csv` file. The file must have a mandatory column called "Name" and one or more columns having arbitrary names. We refer to these columns as "Legends". Each row must contain a name for the annotated data and one category for each Legend. If there is more than one Legend but you don't have annotations for all of them for a given data, just put '-1' where the information is missing. Data that do not have any annotation must not be included in this file.

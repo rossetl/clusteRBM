@@ -1,20 +1,13 @@
-import sys
-import os
-
-if os.getenv('CLUSTERBM') != None:
-    os.chdir(os.getenv('CLUSTERBM'))
-
-from typing import Tuple, Union
+from typing import Tuple
 import matplotlib.colors as plt_colors
 import numpy as np
 import torch
-from h5py import File
 from sklearn.cluster import DBSCAN
 from ete3 import Tree
 from tqdm import tqdm
 
-from ioRBM import get_params
-from branch_metrics import l2_dist
+from treerbm.ioRBM import get_params
+from treerbm.branch_metrics import l2_dist
 
 Tensor = torch.Tensor
 Array = np.ndarray

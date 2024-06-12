@@ -2,6 +2,7 @@ from typing import Tuple, Union
 import numpy as np
 import torch
 import h5py
+
 Tensor = torch.Tensor
 
 def get_params(filename : str, stamp : Union[str, int], device : torch.device="cpu") -> Tuple[Tensor, Tensor, Tensor]:

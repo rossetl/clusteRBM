@@ -29,7 +29,7 @@ while [ -n "${1}" ]; do
     shift
 done
 
-SCRIPT_FILE="${CMD_DIR}/src/maketree.py"
+SCRIPT_FILE="${CMD_DIR}/treerbm/maketree.py"
 
 export HOME_PATH=$CMD_DIR
 if $INFO

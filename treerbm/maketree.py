@@ -1,11 +1,6 @@
 #!/usr/bin/python3
 
 import sys
-import os
-
-if os.getenv('CLUSTERBM') != None:
-    os.chdir(os.getenv('CLUSTERBM'))
-
 import matplotlib
 from matplotlib.colors import to_hex
 from pathlib import Path
@@ -18,10 +13,10 @@ import torch
 from h5py import File
 import logging
 
-from dataset import DatasetRBM
-from ioRBM import get_epochs
-from treeRBM import fit, generate_tree
-from branch_metrics import l2_dist
+from treerbm.dataset import DatasetRBM
+from treerbm.ioRBM import get_epochs
+from treerbm.treeRBM import fit, generate_tree
+from treerbm.branch_metrics import l2_dist
 
 
 def create_parser():
@@ -136,7 +131,8 @@ if __name__ == '__main__':
         colors = matplotlib.colormaps[args.colormap]
         colors_dict = [{l : to_hex(colors(i)) for i, l in enumerate(np.unique(list(labels.values())))} for labels in labels_dict]
     if args.max_depth > max_depth:
-        args.max_depth = max_depth
+        args.max_depth = max_depth 
+        
     generate_tree(
         tree_codes=tree_codes,
         leaves_names=leaves_names,
