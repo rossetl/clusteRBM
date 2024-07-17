@@ -12,7 +12,7 @@ authors = [
 ]
 description = "Unsupervised hierarchical clustering using the learning dynamics of the Restricted Boltzmann Machine"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache Software License",
